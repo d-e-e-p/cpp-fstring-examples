@@ -57,7 +57,7 @@ int main() {
 
 // Generated formatter for PUBLIC enum Foo of type INT scoped
 constexpr auto format_as(const Foo obj) {
-  fmt::string_view name = "<invalid>";
+  fmt::string_view name = "<missing>";
   switch (obj) {
     case Foo::a: name = "a"; break;  // index=0
     case Foo::b: name = "b"; break;  // index=1
@@ -71,7 +71,7 @@ constexpr auto format_as(const Foo obj) {
 }
 // Generated formatter for PUBLIC enum Color of type INT scoped
 constexpr auto format_as(const Color obj) {
-  fmt::string_view name = "<invalid>";
+  fmt::string_view name = "<missing>";
   switch (obj) {
     case Color::red   : name = "red"   ; break;  // index=0
     case Color::yellow: name = "yellow"; break;  // index=1
@@ -82,7 +82,7 @@ constexpr auto format_as(const Color obj) {
 }
 // Generated formatter for PUBLIC enum X::direction of type UINT 
 constexpr auto format_as(const X::direction obj) {
-  fmt::string_view name = "<invalid>";
+  fmt::string_view name = "<missing>";
   switch (obj) {
     case X::left : name = "left" ; break;  // index=108
     case X::right: name = "right"; break;  // index=114
@@ -91,7 +91,7 @@ constexpr auto format_as(const X::direction obj) {
 }
 // Generated formatter for PUBLIC enum E2 of type UINT 
 constexpr auto format_as(const E2 obj) {
-  fmt::string_view name = "<invalid>";
+  fmt::string_view name = "<missing>";
   switch (obj) {
     case e1: name = "e1"; break;  // index=0
   }
@@ -99,7 +99,7 @@ constexpr auto format_as(const E2 obj) {
 }
 // Generated formatter for PUBLIC enum Fruit of type INT scoped
 constexpr auto format_as(const Fruit obj) {
-  fmt::string_view name = "<invalid>";
+  fmt::string_view name = "<missing>";
   switch (obj) {
     case Fruit::orange: name = "orange"; break;  // index=0
     case Fruit::apple : name = "apple" ; break;  // index=1
@@ -109,7 +109,7 @@ constexpr auto format_as(const Fruit obj) {
 }
 // Generated formatter for PUBLIC enum E11 of type INT scoped
 constexpr auto format_as(const E11 obj) {
-  fmt::string_view name = "<invalid>";
+  fmt::string_view name = "<missing>";
   switch (obj) {
     case E11::x: name = "x"; break;  // index=0
     case E11::y: name = "y"; break;  // index=1

@@ -182,7 +182,7 @@ int main() {
 
 // Generated formatter for PUBLIC enum Cowboys of type INT scoped
 constexpr auto format_as(const Cowboys obj) {
-  fmt::string_view name = "<invalid>";
+  fmt::string_view name = "<missing>";
   switch (obj) {
     case Cowboys::good: name = "good"; break;  // index=0
     case Cowboys::bad : name = "bad" ; break;  // index=1

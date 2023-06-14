@@ -7077,7 +7077,7 @@ private:
 
 // Generated formatter for PRIVATE enum clipp::documentation::paragraph of type INT scoped
  friend constexpr auto format_as(const clipp::documentation::paragraph obj) {
-  fmt::string_view name = "<invalid>";
+  fmt::string_view name = "<missing>";
   switch (obj) {
     case clipp::documentation::paragraph::param: name = "param"; break;  // index=0
     case clipp::documentation::paragraph::group: name = "group"; break;  // index=1
@@ -7400,7 +7400,7 @@ void print(OStream& os, const group& g, int level)
 
 // Generated formatter for PUBLIC enum clipp::tri of type CHAR_S scoped
 constexpr auto format_as(const clipp::tri obj) {
-  fmt::string_view name = "<invalid>";
+  fmt::string_view name = "<missing>";
   switch (obj) {
     case clipp::tri::no    : name = "no"    ; break;  // index=0
     case clipp::tri::yes   : name = "yes"   ; break;  // index=1

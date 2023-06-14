@@ -127,7 +127,7 @@ int main() {
 
 // Generated formatter for PUBLIC enum X::direction3 of type UINT 
 constexpr auto format_as(const X::direction3 obj) {
-  fmt::string_view name = "<invalid>";
+  fmt::string_view name = "<missing>";
   switch (obj) {
     case X::left : name = "left" ; break;  // index=108
     case X::right: name = "right"; break;  // index=114
@@ -136,7 +136,7 @@ constexpr auto format_as(const X::direction3 obj) {
 }
 // Generated formatter for PUBLIC enum Color1 of type INT scoped
 constexpr auto format_as(const Color1 obj) {
-  fmt::string_view name = "<invalid>";
+  fmt::string_view name = "<missing>";
   switch (obj) {
     case Color1::RED  : name = "RED"  ; break;  // index=-12
     case Color1::GREEN: name = "GREEN"; break;  // index=7
@@ -146,7 +146,7 @@ constexpr auto format_as(const Color1 obj) {
 }
 // Generated formatter for PUBLIC enum Color2 of type INT 
 constexpr auto format_as(const Color2 obj) {
-  fmt::string_view name = "<invalid>";
+  fmt::string_view name = "<missing>";
   switch (obj) {
     case RED  : name = "RED"  ; break;  // index=-12
     case GREEN: name = "GREEN"; break;  // index=7
@@ -156,7 +156,7 @@ constexpr auto format_as(const Color2 obj) {
 }
 // Generated formatter for PUBLIC enum Color3 of type UCHAR scoped
 constexpr auto format_as(const Color3 obj) {
-  fmt::string_view name = "<invalid>";
+  fmt::string_view name = "<missing>";
   switch (obj) {
     case Color3::RED  : name = "RED"  ; break;  // index=114
     case Color3::GREEN: name = "GREEN"; break;  // index=103
@@ -166,7 +166,7 @@ constexpr auto format_as(const Color3 obj) {
 }
 // Generated formatter for PUBLIC enum Directions of type INT 
 constexpr auto format_as(const Directions obj) {
-  fmt::string_view name = "<invalid>";
+  fmt::string_view name = "<missing>";
   switch (obj) {
     case Up   : name = "Up"   ; break;  // index=85
     case Down : name = "Down" ; break;  // index=-42
@@ -177,7 +177,7 @@ constexpr auto format_as(const Directions obj) {
 }
 // Generated formatter for PUBLIC enum crc_hack of type INT scoped
 constexpr auto format_as(const crc_hack obj) {
-  fmt::string_view name = "<invalid>";
+  fmt::string_view name = "<missing>";
   switch (obj) {
     case crc_hack::b5a7b602ab754d7ab30fb42c4fb28d82: name = "b5a7b602ab754d7ab30fb42c4fb28d82"; break;  // index=0
   }
@@ -185,7 +185,7 @@ constexpr auto format_as(const crc_hack obj) {
 }
 // Generated formatter for PUBLIC enum crc_hack_2 of type INT scoped
 constexpr auto format_as(const crc_hack_2 obj) {
-  fmt::string_view name = "<invalid>";
+  fmt::string_view name = "<missing>";
   switch (obj) {
     case crc_hack_2::b5a7b602ab754d7ab30fb42c4fb28d82: name = "b5a7b602ab754d7ab30fb42c4fb28d82"; break;  // index=0
     case crc_hack_2::d19f2e9e82d14b96be4fa12b8a27ee9f: name = "d19f2e9e82d14b96be4fa12b8a27ee9f"; break;  // index=1
@@ -194,7 +194,7 @@ constexpr auto format_as(const crc_hack_2 obj) {
 }
 // Generated formatter for PUBLIC enum MaxUsedAsInvalid of type INT scoped
 constexpr auto format_as(const MaxUsedAsInvalid obj) {
-  fmt::string_view name = "<invalid>";
+  fmt::string_view name = "<missing>";
   switch (obj) {
     case MaxUsedAsInvalid::ONE    : name = "ONE"    ; break;  // index=0
     case MaxUsedAsInvalid::TWO    : name = "TWO"    ; break;  // index=63
@@ -204,7 +204,7 @@ constexpr auto format_as(const MaxUsedAsInvalid obj) {
 }
 // Generated formatter for PUBLIC enum Binary of type BOOL scoped
 constexpr auto format_as(const Binary obj) {
-  fmt::string_view name = "<invalid>";
+  fmt::string_view name = "<missing>";
   switch (obj) {
     case Binary::ONE: name = "ONE"; break;  // index=0
     case Binary::TWO: name = "TWO"; break;  // index=-1
@@ -213,7 +213,7 @@ constexpr auto format_as(const Binary obj) {
 }
 // Generated formatter for PUBLIC enum Number1 of type INT scoped
 constexpr auto format_as(const Number1 obj) {
-  fmt::string_view name = "<invalid>";
+  fmt::string_view name = "<missing>";
   switch (obj) {
     case Number1::one  : name = "one"  ; break;  // index=1
     case Number1::two  : name = "two"  ; break;  // index=2
@@ -224,7 +224,7 @@ constexpr auto format_as(const Number1 obj) {
 }
 // Generated formatter for PUBLIC enum Number2 of type INT 
 constexpr auto format_as(const Number2 obj) {
-  fmt::string_view name = "<invalid>";
+  fmt::string_view name = "<missing>";
   switch (obj) {
     case one  : name = "one"  ; break;  // index=100
     case two  : name = "two"  ; break;  // index=200
@@ -236,7 +236,7 @@ constexpr auto format_as(const Number2 obj) {
 }
 // Generated formatter for PUBLIC enum Number3 of type INT scoped
 constexpr auto format_as(const Number3 obj) {
-  fmt::string_view name = "<invalid>";
+  fmt::string_view name = "<missing>";
   switch (obj) {
     case Number3::one  : name = "one"  ; break;  // index=2
     case Number3::two  : name = "two"  ; break;  // index=4
@@ -247,7 +247,7 @@ constexpr auto format_as(const Number3 obj) {
 }
 // Generated formatter for PUBLIC enum Dir of type INT 
 constexpr auto format_as(const Dir obj) {
-  fmt::string_view name = "<invalid>";
+  fmt::string_view name = "<missing>";
   switch (obj) {
     case L: name = "L"; break;  // index=0
     case D: name = "D"; break;  // index=1
@@ -258,7 +258,7 @@ constexpr auto format_as(const Dir obj) {
 }
 // Generated formatter for PUBLIC enum space::rangers of type INT scoped
 constexpr auto format_as(const space::rangers obj) {
-  fmt::string_view name = "<invalid>";
+  fmt::string_view name = "<missing>";
   switch (obj) {
     case space::rangers::humans  : name = "humans"  ; break;  // index=0
     case space::rangers::maloqs  : name = "maloqs"  ; break;  // index=1

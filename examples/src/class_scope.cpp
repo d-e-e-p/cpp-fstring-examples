@@ -80,7 +80,7 @@ class documentation {
     //std::vector<KeyValue>::const_iterator m_iter;
 // Generated formatter for PRIVATE enum documentation::paragraph of type INT scoped
  friend constexpr auto format_as(const documentation::paragraph obj) {
-  fmt::string_view name = "<invalid>";
+  fmt::string_view name = "<missing>";
   switch (obj) {
     case documentation::paragraph::param: name = "param"; break;  // index=0
     case documentation::paragraph::group: name = "group"; break;  // index=1

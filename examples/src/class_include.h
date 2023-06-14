@@ -115,7 +115,7 @@ namespace Alpha
     	} Zebra;
     // Generated formatter for PROTECTED enum Alpha::AlphaClass::Zebra of type UINT 
  friend constexpr auto format_as(const Alpha::AlphaClass::Zebra obj) {
-  fmt::string_view name = "<invalid>";
+  fmt::string_view name = "<missing>";
   switch (obj) {
     case Alpha::AlphaClass::Z_A: name = "Z_A"; break;  // index=0
     case Alpha::AlphaClass::Z_B: name = "Z_B"; break;  // index=43
@@ -158,7 +158,7 @@ namespace Alpha
 			} Rino;
 		// Generated formatter for PROTECTED enum Alpha::Omega::OmegaClass::Rino of type UINT 
  friend constexpr auto format_as(const Alpha::Omega::OmegaClass::Rino obj) {
-  fmt::string_view name = "<invalid>";
+  fmt::string_view name = "<missing>";
   switch (obj) {
     case Alpha::Omega::OmegaClass::RI_ZERO : name = "RI_ZERO" ; break;  // index=0
     case Alpha::Omega::OmegaClass::RI_ONE  : name = "RI_ONE"  ; break;  // index=1
@@ -663,7 +663,7 @@ public:
 
 // Generated formatter for PUBLIC enum SampleClass::Elephant of type UINT 
 constexpr auto format_as(const SampleClass::Elephant obj) {
-  fmt::string_view name = "<invalid>";
+  fmt::string_view name = "<missing>";
   switch (obj) {
     case SampleClass::EL_ONE : name = "EL_ONE" ; break;  // index=1
     case SampleClass::EL_TWO : name = "EL_TWO" ; break;  // index=2
