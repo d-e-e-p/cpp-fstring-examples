@@ -29,12 +29,48 @@ struct Xstruct {
   public:
     enum dir { left, right };
     enum class cdir { left, right };
+// Generated formatter for PUBLIC enum Xstruct::cdir of type INT scoped
+ friend constexpr auto format_as(const Xstruct::cdir obj) {
+  fmt::string_view name = "<missing>";
+  switch (obj) {
+    case Xstruct::cdir::left : name = "left" ; break;  // index=0
+    case Xstruct::cdir::right: name = "right"; break;  // index=1
+  }
+  return name;
+}
+// Generated formatter for PUBLIC enum Xstruct::dir of type UINT 
+ friend constexpr auto format_as(const Xstruct::dir obj) {
+  fmt::string_view name = "<missing>";
+  switch (obj) {
+    case Xstruct::left : name = "left" ; break;  // index=0
+    case Xstruct::right: name = "right"; break;  // index=1
+  }
+  return name;
+}
 };
 
 class Xclass {
   public:
     enum dir { left, right };
     enum class cdir { left, right };
+// Generated formatter for PUBLIC enum Xclass::cdir of type INT scoped
+ friend constexpr auto format_as(const Xclass::cdir obj) {
+  fmt::string_view name = "<missing>";
+  switch (obj) {
+    case Xclass::cdir::left : name = "left" ; break;  // index=0
+    case Xclass::cdir::right: name = "right"; break;  // index=1
+  }
+  return name;
+}
+// Generated formatter for PUBLIC enum Xclass::dir of type UINT 
+ friend constexpr auto format_as(const Xclass::dir obj) {
+  fmt::string_view name = "<missing>";
+  switch (obj) {
+    case Xclass::left : name = "left" ; break;  // index=0
+    case Xclass::right: name = "right"; break;  // index=1
+  }
+  return name;
+}
 };
 
 
@@ -124,42 +160,6 @@ constexpr auto format_as(const edir obj) {
   }
   return name;
 }
-// Generated formatter for PUBLIC enum Xstruct::dir of type UINT 
-constexpr auto format_as(const Xstruct::dir obj) {
-  fmt::string_view name = "<missing>";
-  switch (obj) {
-    case Xstruct::left : name = "left" ; break;  // index=0
-    case Xstruct::right: name = "right"; break;  // index=1
-  }
-  return name;
-}
-// Generated formatter for PUBLIC enum Xstruct::cdir of type INT scoped
-constexpr auto format_as(const Xstruct::cdir obj) {
-  fmt::string_view name = "<missing>";
-  switch (obj) {
-    case Xstruct::cdir::left : name = "left" ; break;  // index=0
-    case Xstruct::cdir::right: name = "right"; break;  // index=1
-  }
-  return name;
-}
-// Generated formatter for PUBLIC enum Xclass::dir of type UINT 
-constexpr auto format_as(const Xclass::dir obj) {
-  fmt::string_view name = "<missing>";
-  switch (obj) {
-    case Xclass::left : name = "left" ; break;  // index=0
-    case Xclass::right: name = "right"; break;  // index=1
-  }
-  return name;
-}
-// Generated formatter for PUBLIC enum Xclass::cdir of type INT scoped
-constexpr auto format_as(const Xclass::cdir obj) {
-  fmt::string_view name = "<missing>";
-  switch (obj) {
-    case Xclass::cdir::left : name = "left" ; break;  // index=0
-    case Xclass::cdir::right: name = "right"; break;  // index=1
-  }
-  return name;
-}
 // Generated formatter for PUBLIC enum Xnamespace::dir of type UINT 
 constexpr auto format_as(const Xnamespace::dir obj) {
   fmt::string_view name = "<missing>";
@@ -194,6 +194,6 @@ constexpr auto format_as(const roman::sym obj) {
 }
 
 namespace  {using ::format_as;}
-namespace Xnamespace {using ::format_as;}
 namespace roman {using ::format_as;}
+namespace Xnamespace {using ::format_as;}
 

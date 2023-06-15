@@ -46,7 +46,7 @@
 #include <iterator>
 #include <functional>
 
-#include "fstring.hpp"
+#include "fstr.h"
 
 /*************************************************************************//**
  *

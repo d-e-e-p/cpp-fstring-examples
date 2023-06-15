@@ -25,11 +25,7 @@
 using std::string;
 using std::vector;
 
-class BaseSampleClass {};
-
-class SampleClass: public BaseSampleClass
-{
-public:
+class BaseSampleClass {
 	enum Elephant
 	{
 		EL_ONE = 1,
@@ -37,60 +33,52 @@ public:
 		EL_NINE = 9,
 		EL_TEN,
 	};
+  Elephant el_base = EL_TWO ;
 
-    SampleClass();
-    /*!
-     * Method 1
-     */
-    string meth1();
+  friend class SampleClass;
+// Generated formatter for PRIVATE enum BaseSampleClass::Elephant of type UINT 
+ friend constexpr auto format_as(const BaseSampleClass::Elephant obj) {
+  fmt::string_view name = "<missing>";
+  switch (obj) {
+    case BaseSampleClass::EL_ONE : name = "EL_ONE" ; break;  // index=1
+    case BaseSampleClass::EL_TWO : name = "EL_TWO" ; break;  // index=2
+    case BaseSampleClass::EL_NINE: name = "EL_NINE"; break;  // index=9
+    case BaseSampleClass::EL_TEN : name = "EL_TEN" ; break;  // index=10
+  }
+  return name;
+}
+// Generated to_string for PUBLIC CLASS_DECL BaseSampleClass
+  public:
+  auto to_string() const {
+    return fstr::format(R"( BaseSampleClass:
+    PRIVATE Elephant el_base: {} 
+)", el_base);
+  }
+};
 
-    ///
-    /// Method 2 description
-    ///
-    /// @param v1 Variable 1
-    ///
-    int meth2(int v1);
-
-    /**
-     * Method 3 description
-     *
-     * \param v1 Variable 1 with a really long
-     * wrapping description
-     * \param v2 Variable 2
-     */
-    void meth3(const string & v1, vector<string> & v2);
-
-    /**********************************
-     * Method 4 description
-     *
-     * @return Return value
-     *********************************/
-    unsigned int meth4();
-private:
-    void * meth5(){return NULL;}
-
-    /// prop1 description
+class SampleClass: public BaseSampleClass
+{
     string prop1;
-    //! prop5 description
-    int prop5;
-
-    bool prop6;     /*!< prop6 description */
-
-    double prop7;   //!< prop7 description
+    int prop2;
+    bool prop3;     /*!< prop6 description */
+    double prop4;   //!< prop7 description
                     //!< with two lines
     
     /// prop8 description
-    int prop8;
+    int prop5;
+    Elephant el_derived = EL_TEN;
 // Generated to_string for PUBLIC CLASS_DECL SampleClass
   public:
   auto to_string() const {
     return fstr::format(R"( SampleClass:
     PRIVATE int prop1: {} 
+    PRIVATE int prop2: {} 
+    PRIVATE bool prop3: {} 
+    PRIVATE double prop4: {} 
     PRIVATE int prop5: {} 
-    PRIVATE bool prop6: {} 
-    PRIVATE double prop7: {} 
-    PRIVATE int prop8: {} 
-)", prop1, prop5, prop6, prop7, prop8);
+    PRIVATE Elephant el_derived: {} 
+     PRIVATE Elephant el_base: {} 
+)", prop1, prop2, prop3, prop4, prop5, el_derived, this->el_base);
   }
 };
 namespace Alpha
@@ -661,18 +649,5 @@ public:
 
 
 
-// Generated formatter for PUBLIC enum SampleClass::Elephant of type UINT 
-constexpr auto format_as(const SampleClass::Elephant obj) {
-  fmt::string_view name = "<missing>";
-  switch (obj) {
-    case SampleClass::EL_ONE : name = "EL_ONE" ; break;  // index=1
-    case SampleClass::EL_TWO : name = "EL_TWO" ; break;  // index=2
-    case SampleClass::EL_NINE: name = "EL_NINE"; break;  // index=9
-    case SampleClass::EL_TEN : name = "EL_TEN" ; break;  // index=10
-  }
-  return name;
-}
 
-namespace Alpha {using ::format_as;}
-namespace Alpha::Omega {using ::format_as;}
 

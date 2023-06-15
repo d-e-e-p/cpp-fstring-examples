@@ -12,6 +12,7 @@
 #include <map>
 #include <string>
 #include <vector>
+#include <array>
 
 #include "fstr.h"
 
@@ -37,7 +38,6 @@ struct Auto {
 };
 
 /* TODO
-
 template <auto... Values>
 struct ValueList {
     static constexpr auto values = std::array{Values...};
@@ -64,19 +64,18 @@ struct A {
     } u;
 };
  
-A<int> a{1,{2,4}};
 
 template<class T>
 struct B {
-    T a, b;
+    T t;
+    A<T> a;
 };
-auto b = B<int>{1, 2};
-
-
 
 int main() {
   using std::cout;
 
+  A<int> a{1,{2,3}};
+  auto b = B<int>{1, {2,{3,4}}};
   cout << "{a=} {b=}";
   cout << "\n";
 

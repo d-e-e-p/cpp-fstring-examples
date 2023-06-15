@@ -80,8 +80,8 @@ namespace Parent {
              T member;
          };
     }
-     template<>
-     class C<int> {};
+    // TODO(deep): including the next line masks to_string
+    // template<> class C<int> {};
 }
 
 //
@@ -127,9 +127,8 @@ int main() {
     cout << " {obj=} \n";
 
     Parent::C<int> c;
-    // TODO{deep): to_string in Parent::C is not seen by fstr.h finder ... need to promote
-    //cout << " {c=} \n";
-    //
+    cout << " {c=} \n";
+    
     Map<int, std::string> m1; // uses my_array as default container type
     cout << " {m1=} \n";
 

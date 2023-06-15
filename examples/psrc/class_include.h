@@ -25,11 +25,7 @@
 using std::string;
 using std::vector;
 
-class BaseSampleClass {};
-
-class SampleClass: public BaseSampleClass
-{
-public:
+class BaseSampleClass {
 	enum Elephant
 	{
 		EL_ONE = 1,
@@ -37,50 +33,20 @@ public:
 		EL_NINE = 9,
 		EL_TEN,
 	};
+  Elephant el_base = EL_TWO ;
+};
 
-    SampleClass();
-    /*!
-     * Method 1
-     */
-    string meth1();
-
-    ///
-    /// Method 2 description
-    ///
-    /// @param v1 Variable 1
-    ///
-    int meth2(int v1);
-
-    /**
-     * Method 3 description
-     *
-     * \param v1 Variable 1 with a really long
-     * wrapping description
-     * \param v2 Variable 2
-     */
-    void meth3(const string & v1, vector<string> & v2);
-
-    /**********************************
-     * Method 4 description
-     *
-     * @return Return value
-     *********************************/
-    unsigned int meth4();
-private:
-    void * meth5(){return NULL;}
-
-    /// prop1 description
+class SampleClass: public BaseSampleClass
+{
     string prop1;
-    //! prop5 description
-    int prop5;
-
-    bool prop6;     /*!< prop6 description */
-
-    double prop7;   //!< prop7 description
+    int prop2;
+    bool prop3;     /*!< prop6 description */
+    double prop4;   //!< prop7 description
                     //!< with two lines
     
     /// prop8 description
-    int prop8;
+    int prop5;
+    Elephant el_derived = EL_TEN;
 };
 namespace Alpha
 {

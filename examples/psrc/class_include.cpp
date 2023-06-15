@@ -25,16 +25,10 @@
 int main()
 {
     using std::cout;
-    Bug_3488053 foo;
-    Bananna boo;
-    Bird bird;
-    EagleClass eagle;
-    FrogClass frog;
-/*
-    cout << "{foo=}";
-    cout << "{boo=}";
-    cout << "{bird=}";
-    cout << "{eagle=}";
-    cout << "{frog=}";
-*/
+    cout << "1. {SampleClass()}";
+    cout << "2. {Bug_3488053()}";
+    cout << "3. {Bananna()}";
+    cout << "4. {Bird()}";
+    cout << "5. {EagleClass()}";
+    cout << "6. {FrogClass()}";
 }

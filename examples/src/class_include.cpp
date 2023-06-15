@@ -25,18 +25,12 @@
 int main()
 {
     using std::cout;
-    Bug_3488053 foo;
-    Bananna boo;
-    Bird bird;
-    EagleClass eagle;
-    FrogClass frog;
-/*
-    cout << "{foo=}";
-    cout << "{boo=}";
-    cout << "{bird=}";
-    cout << "{eagle=}";
-    cout << "{frog=}";
-*/
+    cout << fmt::format("1. {}", SampleClass());
+    cout << fmt::format("2. {}", Bug_3488053());
+    cout << fmt::format("3. {}", Bananna());
+    cout << fmt::format("4. {}", Bird());
+    cout << fmt::format("5. {}", EagleClass());
+    cout << fmt::format("6. {}", FrogClass());
 }
 
 

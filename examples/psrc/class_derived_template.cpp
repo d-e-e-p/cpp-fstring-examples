@@ -16,35 +16,37 @@
 
 #include "fstr.h"
 
-template <typename T> class M {
-  public:
-  T m;
+
+class A {
+  int a = 32;
 };
 
-class N {
-  int n = 32;
-};
-
-class B : public M<bool> { 
-  public:
+class B : public A { 
   int b = 13;
 };
 
-template<class T>
-class Base { };
-class X1 : public Base<X1> {};
-class Y1 {};
-class X2 : public Y1 {};
+
+template <typename T> class X {
+  public:
+  T x;
+};
+
+class Y : public X<bool> { 
+  int y = 13;
+};
 
 int main() {
     using std::cout;
 
-    cout << " {M<int>()=} ";
-    cout << " {N()=} ";
-    // TODO(deep): make this print base class M as well
+    // should print both a and b
     cout << " {B()=} \n";
-    auto b = B();
-    cout << " B() should print both b and m,  b.b:" << b.b << " b.m:" << b.m << " \n";
+
+    cout << " {X<int>()=} ";
+    cout << " {X<bool>()=} ";
+    cout << " {X<std::string>()=} ";
+    cout << " {Y()=} ";
+    auto y = Y();
+    cout << " Y() should print both y and x="  << y.x << " \n";
     
     return 0;
 }

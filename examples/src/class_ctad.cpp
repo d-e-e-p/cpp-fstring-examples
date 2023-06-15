@@ -12,6 +12,7 @@
 #include <map>
 #include <string>
 #include <vector>
+#include <array>
 
 #include "fstr.h"
 
@@ -51,7 +52,6 @@ struct Auto {
 };
 
 /* TODO
-
 template <auto... Values>
 struct ValueList {
     static constexpr auto values = std::array{Values...};
@@ -87,27 +87,26 @@ struct A {
   }
 };
  
-A<int> a{1,{2,4}};
 
 template<class T>
 struct B {
-    T a, b;
+    T t;
+    A<T> a;
 // Generated to_string for PUBLIC CLASS_TEMPLATE B<T>
   public:
   auto to_string() const {
     return fstr::format(R"( B<T>:
-    PUBLIC T={} a: {} 
-    PUBLIC T={} b: {} 
-)", typeid(T).name(), a, typeid(T).name(), b);
+    PUBLIC T={} t: {} 
+    PUBLIC A<T> a: {} 
+)", typeid(T).name(), t, a);
   }
 };
-auto b = B<int>{1, 2};
-
-
 
 int main() {
   using std::cout;
 
+  A<int> a{1,{2,3}};
+  auto b = B<int>{1, {2,{3,4}}};
   cout << fmt::format("a={} b={}", a, b);
   cout << "\n";
 

@@ -42,6 +42,15 @@ enum { a, b, c = 0, d = a + 2 }; // defines a = 0, b = 1, c = 0, d = 2
 
 struct X {
     enum direction3 { left = 'l', right = 'r' };
+// Generated formatter for PUBLIC enum X::direction3 of type UINT 
+ friend constexpr auto format_as(const X::direction3 obj) {
+  fmt::string_view name = "<missing>";
+  switch (obj) {
+    case X::left : name = "left" ; break;  // index=108
+    case X::right: name = "right"; break;  // index=114
+  }
+  return name;
+}
 };
                                  
 // test cases from:
@@ -125,15 +134,6 @@ int main() {
 
 }
 
-// Generated formatter for PUBLIC enum X::direction3 of type UINT 
-constexpr auto format_as(const X::direction3 obj) {
-  fmt::string_view name = "<missing>";
-  switch (obj) {
-    case X::left : name = "left" ; break;  // index=108
-    case X::right: name = "right"; break;  // index=114
-  }
-  return name;
-}
 // Generated formatter for PUBLIC enum Color1 of type INT scoped
 constexpr auto format_as(const Color1 obj) {
   fmt::string_view name = "<missing>";

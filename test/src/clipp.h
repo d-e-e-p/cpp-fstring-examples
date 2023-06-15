@@ -129,8 +129,7 @@ private:
 // Generated to_string for PUBLIC CLASS_DECL clipp::subrange
   public:
   auto to_string() const {
-    return fstr::format(R"(
-clipp::subrange:
+    return fstr::format(R"( clipp::subrange:
     PRIVATE int at_: {} 
     PRIVATE int length_: {} 
 )", at_, length_);
@@ -263,8 +262,7 @@ struct is_input_range :
 {// Generated to_string for PUBLIC CLASS_TEMPLATE clipp::traits::is_input_range<T>
   public:
   auto to_string() const {
-    return fstr::format(R"(
-clipp::traits::is_input_range<T>:
+    return fstr::format(R"( clipp::traits::is_input_range<T>:
 )");
   }
 };
@@ -291,8 +289,7 @@ struct has_size_getter :
 {// Generated to_string for PUBLIC CLASS_TEMPLATE clipp::traits::has_size_getter<T>
   public:
   auto to_string() const {
-    return fstr::format(R"(
-clipp::traits::has_size_getter<T>:
+    return fstr::format(R"( clipp::traits::has_size_getter<T>:
 )");
   }
 };
@@ -348,8 +345,7 @@ struct limits_clamped {
 // Generated to_string for PUBLIC CLASS_TEMPLATE clipp::detail::limits_clamped<T, V, bool>
   public:
   auto to_string() const {
-    return fstr::format(R"(
-clipp::detail::limits_clamped<T, V, bool>:
+    return fstr::format(R"( clipp::detail::limits_clamped<T, V, bool>:
 )");
   }
 };
@@ -388,8 +384,7 @@ struct make {
 // Generated to_string for PUBLIC CLASS_TEMPLATE clipp::detail::make<T>
   public:
   auto to_string() const {
-    return fstr::format(R"(
-clipp::detail::make<T>:
+    return fstr::format(R"( clipp::detail::make<T>:
 )");
   }
 };
@@ -536,8 +531,7 @@ private:
 // Generated to_string for PUBLIC CLASS_TEMPLATE clipp::detail::assign_value<T, V>
   public:
   auto to_string() const {
-    return fstr::format(R"(
-clipp::detail::assign_value<T, V>:
+    return fstr::format(R"( clipp::detail::assign_value<T, V>:
     PRIVATE T={}* t_: {} 
     PRIVATE V={} v_: {} 
 )", typeid(T).name(), fmt::ptr(t_), typeid(V).name(), v_);
@@ -568,8 +562,7 @@ private:
 // Generated to_string for PUBLIC CLASS_DECL clipp::detail::flip_bool
   public:
   auto to_string() const {
-    return fstr::format(R"(
-clipp::detail::flip_bool:
+    return fstr::format(R"( clipp::detail::flip_bool:
     PRIVATE bool * b_: {} 
 )", fmt::ptr(b_));
   }
@@ -598,8 +591,7 @@ private:
 // Generated to_string for PUBLIC CLASS_TEMPLATE clipp::detail::increment<T>
   public:
   auto to_string() const {
-    return fstr::format(R"(
-clipp::detail::increment<T>:
+    return fstr::format(R"( clipp::detail::increment<T>:
     PRIVATE T={}* t_: {} 
 )", typeid(T).name(), fmt::ptr(t_));
   }
@@ -628,8 +620,7 @@ private:
 // Generated to_string for PUBLIC CLASS_TEMPLATE clipp::detail::decrement<T>
   public:
   auto to_string() const {
-    return fstr::format(R"(
-clipp::detail::decrement<T>:
+    return fstr::format(R"( clipp::detail::decrement<T>:
     PRIVATE T={}* t_: {} 
 )", typeid(T).name(), fmt::ptr(t_));
   }
@@ -661,8 +652,7 @@ private:
 // Generated to_string for PUBLIC CLASS_TEMPLATE clipp::detail::increment_by<T>
   public:
   auto to_string() const {
-    return fstr::format(R"(
-clipp::detail::increment_by<T>:
+    return fstr::format(R"( clipp::detail::increment_by<T>:
     PRIVATE T={}* t_: {} 
     PRIVATE T={} by_: {} 
 )", typeid(T).name(), fmt::ptr(t_), typeid(T).name(), by_);
@@ -693,8 +683,7 @@ private:
 // Generated to_string for PUBLIC CLASS_TEMPLATE clipp::detail::map_arg_to<T>
   public:
   auto to_string() const {
-    return fstr::format(R"(
-clipp::detail::map_arg_to<T>:
+    return fstr::format(R"( clipp::detail::map_arg_to<T>:
     PRIVATE T={}* t_: {} 
 )", typeid(T).name(), fmt::ptr(t_));
   }
@@ -740,8 +729,7 @@ private:
 // Generated to_string for PUBLIC CLASS_DECL clipp::detail::map_arg_to<bool>
   public:
   auto to_string() const {
-    return fstr::format(R"(
-clipp::detail::map_arg_to<bool>:
+    return fstr::format(R"( clipp::detail::map_arg_to<bool>:
     PRIVATE bool * t_: {} 
 )", fmt::ptr(t_));
   }
@@ -1295,8 +1283,7 @@ private:
     // Generated to_string for PUBLIC CLASS_DECL clipp::detail::action_provider<Derived>::simple_action_adapter
   public:
   auto to_string() const {
-    return fstr::format(R"(
-clipp::detail::action_provider<Derived>::simple_action_adapter:
+    return fstr::format(R"( clipp::detail::action_provider<Derived>::simple_action_adapter:
     PRIVATE int action_: {} 
 )", action_);
   }
@@ -1544,8 +1531,7 @@ private:
 // Generated to_string for PUBLIC CLASS_TEMPLATE clipp::detail::action_provider<Derived>
   public:
   auto to_string() const {
-    return fstr::format(R"(
-clipp::detail::action_provider<Derived>:
+    return fstr::format(R"( clipp::detail::action_provider<Derived>:
     PUBLIC int repeatActions_: {} 
     PUBLIC int missingActions_: {} 
     PUBLIC int blockedActions_: {} 
@@ -1625,8 +1611,7 @@ private:
 // Generated to_string for PUBLIC CLASS_TEMPLATE clipp::detail::token<Derived>
   public:
   auto to_string() const {
-    return fstr::format(R"(
-clipp::detail::token<Derived>:
+    return fstr::format(R"( clipp::detail::token<Derived>:
     PRIVATE int doc_: {} 
     PRIVATE bool repeatable_: {} 
     PRIVATE bool blocking_: {} 
@@ -1797,8 +1782,7 @@ private:
 // Generated to_string for PUBLIC CLASS_DECL clipp::match::none_of
   public:
   auto to_string() const {
-    return fstr::format(R"(
-clipp::match::none_of:
+    return fstr::format(R"( clipp::match::none_of:
     PRIVATE int excluded_: {} 
 )", excluded_);
   }
@@ -1836,8 +1820,7 @@ private:
 // Generated to_string for PUBLIC CLASS_DECL clipp::match::numbers
   public:
   auto to_string() const {
-    return fstr::format(R"(
-clipp::match::numbers:
+    return fstr::format(R"( clipp::match::numbers:
     PRIVATE char decpoint_: {} 
     PRIVATE char separator_: {} 
     PRIVATE char exp_: {} 
@@ -1867,8 +1850,7 @@ private:
 // Generated to_string for PUBLIC CLASS_DECL clipp::match::integers
   public:
   auto to_string() const {
-    return fstr::format(R"(
-clipp::match::integers:
+    return fstr::format(R"( clipp::match::integers:
     PRIVATE char separator_: {} 
 )", separator_);
   }
@@ -1899,8 +1881,7 @@ private:
 // Generated to_string for PUBLIC CLASS_DECL clipp::match::positive_integers
   public:
   auto to_string() const {
-    return fstr::format(R"(
-clipp::match::positive_integers:
+    return fstr::format(R"( clipp::match::positive_integers:
     PRIVATE char separator_: {} 
 )", separator_);
   }
@@ -1929,8 +1910,7 @@ private:
 // Generated to_string for PUBLIC CLASS_DECL clipp::match::substring
   public:
   auto to_string() const {
-    return fstr::format(R"(
-clipp::match::substring:
+    return fstr::format(R"( clipp::match::substring:
     PRIVATE int str_: {} 
 )", str_);
   }
@@ -1958,8 +1938,7 @@ private:
 // Generated to_string for PUBLIC CLASS_DECL clipp::match::prefix
   public:
   auto to_string() const {
-    return fstr::format(R"(
-clipp::match::prefix:
+    return fstr::format(R"( clipp::match::prefix:
     PRIVATE int prefix_: {} 
 )", prefix_);
   }
@@ -1987,8 +1966,7 @@ private:
 // Generated to_string for PUBLIC CLASS_DECL clipp::match::prefix_not
   public:
   auto to_string() const {
-    return fstr::format(R"(
-clipp::match::prefix_not:
+    return fstr::format(R"( clipp::match::prefix_not:
     PRIVATE int prefix_: {} 
 )", prefix_);
   }
@@ -2028,8 +2006,7 @@ private:
 // Generated to_string for PUBLIC CLASS_DECL clipp::match::length
   public:
   auto to_string() const {
-    return fstr::format(R"(
-clipp::match::length:
+    return fstr::format(R"( clipp::match::length:
     PRIVATE int min_: {} 
     PRIVATE int max_: {} 
 )", min_, max_);
@@ -2090,8 +2067,7 @@ class parameter :
     // Generated to_string for PUBLIC CLASS_DECL clipp::parameter::predicate_adapter
   public:
   auto to_string() const {
-    return fstr::format(R"(
-clipp::parameter::predicate_adapter:
+    return fstr::format(R"( clipp::parameter::predicate_adapter:
     PRIVATE int match_: {} 
 )", match_);
   }
@@ -2349,8 +2325,7 @@ private:
 // Generated to_string for PUBLIC CLASS_DECL clipp::parameter
   public:
   auto to_string() const {
-    return fstr::format(R"(
-clipp::parameter:
+    return fstr::format(R"( clipp::parameter:
     PRIVATE int flags_: {} 
     PRIVATE int matcher_: {} 
     PRIVATE int label_: {} 
@@ -4546,8 +4521,7 @@ private:
 // Generated to_string for PUBLIC CLASS_DECL clipp::detail::scoped_dfs_traverser
   public:
   auto to_string() const {
-    return fstr::format(R"(
-clipp::detail::scoped_dfs_traverser:
+    return fstr::format(R"( clipp::detail::scoped_dfs_traverser:
     PRIVATE int pos_: {} 
     PRIVATE int lastMatch_: {} 
     PRIVATE int posAfterLastMatch_: {} 
@@ -4613,8 +4587,7 @@ private:
 // Generated to_string for PUBLIC CLASS_DECL clipp::detail::match_t
   public:
   auto to_string() const {
-    return fstr::format(R"(
-clipp::detail::match_t:
+    return fstr::format(R"( clipp::detail::match_t:
     PRIVATE int str_: {} 
     PRIVATE scoped_dfs_traverser pos_: {} 
 )", str_, pos_);
@@ -4791,8 +4764,7 @@ public:
     // Generated to_string for PUBLIC CLASS_DECL clipp::parser::arg_mapping
   public:
   auto to_string() const {
-    return fstr::format(R"(
-clipp::parser::arg_mapping:
+    return fstr::format(R"( clipp::parser::arg_mapping:
     PRIVATE arg_index index_: {} 
     PRIVATE int arg_: {} 
     PRIVATE int match_: {} 
@@ -4824,8 +4796,7 @@ clipp::parser::arg_mapping:
     // Generated to_string for PUBLIC CLASS_DECL clipp::parser::missing_event
   public:
   auto to_string() const {
-    return fstr::format(R"(
-clipp::parser::missing_event:
+    return fstr::format(R"( clipp::parser::missing_event:
     PRIVATE const parameter * param_: {} 
     PRIVATE arg_index aftIndex_: {} 
 )", fmt::ptr(param_), aftIndex_);
@@ -4851,8 +4822,7 @@ public:
     // Generated to_string for PUBLIC STRUCT_DECL clipp::parser::miss_candidate
   public:
   auto to_string() const {
-    return fstr::format(R"(
-clipp::parser::miss_candidate:
+    return fstr::format(R"( clipp::parser::miss_candidate:
     PUBLIC int pos: {} 
     PUBLIC arg_index index: {} 
     PUBLIC bool startsRepeatGroup: {} 
@@ -5340,8 +5310,7 @@ private:
 // Generated to_string for PUBLIC CLASS_DECL clipp::parser
   public:
   auto to_string() const {
-    return fstr::format(R"(
-clipp::parser:
+    return fstr::format(R"( clipp::parser:
     PRIVATE const int * root_: {} 
     PRIVATE scoped_dfs_traverser pos_: {} 
     PRIVATE arg_index index_: {} 
@@ -5439,8 +5408,7 @@ private:
 // Generated to_string for PUBLIC CLASS_DECL clipp::parsing_result
   public:
   auto to_string() const {
-    return fstr::format(R"(
-clipp::parsing_result:
+    return fstr::format(R"( clipp::parsing_result:
     PRIVATE int arg2param_: {} 
     PRIVATE int missing_: {} 
 )", arg2param_, missing_);
@@ -5991,8 +5959,7 @@ private:
 // Generated to_string for PUBLIC CLASS_DECL clipp::doc_formatting
   public:
   auto to_string() const {
-    return fstr::format(R"(
-clipp::doc_formatting:
+    return fstr::format(R"( clipp::doc_formatting:
     PRIVATE int paramSep_: {} 
     PRIVATE int groupSep_: {} 
     PRIVATE int altParamSep_: {} 
@@ -6355,8 +6322,7 @@ private:
 // Generated to_string for PUBLIC CLASS_TEMPLATE clipp::detail::formatting_ostream<OStream, StringT>
   public:
   auto to_string() const {
-    return fstr::format(R"(
-clipp::detail::formatting_ostream<OStream, StringT>:
+    return fstr::format(R"( clipp::detail::formatting_ostream<OStream, StringT>:
     PRIVATE OStream={}& os_: {} 
     PRIVATE int curCol_: {} 
     PRIVATE int firstCol_: {} 
@@ -6449,8 +6415,7 @@ private:
     // Generated to_string for PUBLIC STRUCT_DECL clipp::usage_lines::context
   public:
   auto to_string() const {
-    return fstr::format(R"(
-clipp::usage_lines::context:
+    return fstr::format(R"( clipp::usage_lines::context:
     PUBLIC int pos: {} 
     PUBLIC int separators: {} 
     PUBLIC int postfixes: {} 
@@ -6870,8 +6835,7 @@ clipp::usage_lines::context:
 // Generated to_string for PUBLIC CLASS_DECL clipp::usage_lines
   public:
   auto to_string() const {
-    return fstr::format(R"(
-clipp::usage_lines:
+    return fstr::format(R"( clipp::usage_lines:
     PRIVATE const int & cli_: {} 
     PRIVATE doc_formatting fmt_: {} 
     PRIVATE int prefix_: {} 
@@ -7112,19 +7076,18 @@ private:
     }
 
 // Generated formatter for PRIVATE enum clipp::documentation::paragraph of type INT scoped
- friend auto format_as(const clipp::documentation::paragraph obj) {
-  fmt::string_view name = "<unknown>";
+ friend constexpr auto format_as(const clipp::documentation::paragraph obj) {
+  fmt::string_view name = "<missing>";
   switch (obj) {
     case clipp::documentation::paragraph::param: name = "param"; break;  // index=0
     case clipp::documentation::paragraph::group: name = "group"; break;  // index=1
-    }
-    return name;
+  }
+  return name;
 }
 // Generated to_string for PUBLIC CLASS_DECL clipp::documentation
   public:
   auto to_string() const {
-    return fstr::format(R"(
-clipp::documentation:
+    return fstr::format(R"( clipp::documentation:
     PRIVATE const int & cli_: {} 
     PRIVATE doc_formatting fmt_: {} 
     PRIVATE doc_formatting usgFmt_: {} 
@@ -7166,8 +7129,7 @@ public:
     // Generated to_string for PUBLIC CLASS_DECL clipp::man_page::section
   public:
   auto to_string() const {
-    return fstr::format(R"(
-clipp::man_page::section:
+    return fstr::format(R"( clipp::man_page::section:
     PRIVATE int title_: {} 
     PRIVATE int content_: {} 
 )", title_, content_);
@@ -7246,8 +7208,7 @@ private:
 // Generated to_string for PUBLIC CLASS_DECL clipp::man_page
   public:
   auto to_string() const {
-    return fstr::format(R"(
-clipp::man_page:
+    return fstr::format(R"( clipp::man_page:
     PRIVATE int sectionSpc_: {} 
     PRIVATE int sections_: {} 
     PRIVATE int progName_: {} 
@@ -7438,14 +7399,14 @@ void print(OStream& os, const group& g, int level)
 
 
 // Generated formatter for PUBLIC enum clipp::tri of type CHAR_S scoped
-auto format_as(const clipp::tri obj) {
-  fmt::string_view name = "<unknown>";
+constexpr auto format_as(const clipp::tri obj) {
+  fmt::string_view name = "<missing>";
   switch (obj) {
     case clipp::tri::no    : name = "no"    ; break;  // index=0
     case clipp::tri::yes   : name = "yes"   ; break;  // index=1
     case clipp::tri::either: name = "either"; break;  // index=2
-    }
-    return name;
+  }
+  return name;
 }
 
 namespace clipp {using ::format_as;}

@@ -33,8 +33,7 @@ struct Foo {
 // Generated to_string for PUBLIC STRUCT_DECL Foo
   public:
   auto to_string() const {
-    return fstr::format(R"(
-Foo:
+    return fstr::format(R"( Foo:
     PUBLIC int a: {} 
     PUBLIC int[10] b: {} 
 )", a, b);
@@ -49,8 +48,7 @@ struct Bar {
 // Generated to_string for PUBLIC STRUCT_DECL Bar
   public:
   auto to_string() const {
-    return fstr::format(R"(
-Bar:
+    return fstr::format(R"( Bar:
     PUBLIC char[50] name: {} 
     PUBLIC int i: {} 
     PUBLIC double f: {} 
@@ -68,8 +66,7 @@ class Rectangle {
 // Generated to_string for PUBLIC CLASS_DECL Rectangle
   public:
   auto to_string() const {
-    return fstr::format(R"(
-Rectangle:
+    return fstr::format(R"( Rectangle:
     PRIVATE int width: {} 
     PRIVATE int height: {} 
     PUBLIC Bar bar: {} 
