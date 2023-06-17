@@ -36,32 +36,11 @@ struct Auto {
   int v = 1;
 };
 
-/* TODO
 
+#include <array>
 template <auto... Values>
 struct ValueList {
     static constexpr auto values = std::array{Values...};
-
-    static void print() {
-        for (const auto& value : values) {
-            std::cout << value << ' ';
-        }
-        std::cout << '\n';
-    }
-};
-ValueList<42, 'A'>vl;
-*/
-
-// from https://en.cppreference.com/w/cpp/language/class_template_argument_deduction
-template<class T>
-struct A {
-    T a_;
-    T b_;
-    A(T a, T b) {
-      a_ = a;
-      b_ = b;
-        std::cout << "A<" << typeid(T).name() << "> Constructor: " << a << ", " << b << std::endl;
-    }
 };
 
 
@@ -72,7 +51,6 @@ struct Const {
 	int v = N0 + N1 + N2 + N3;
 };
 
-/* TODO
 template<typename T>
 class my_array {};
  
@@ -82,6 +60,7 @@ class Map {
     C<K> key;
     C<V> value;
 };
+
 struct A {
     struct B {
       int X;
@@ -94,7 +73,6 @@ template<class B>
 struct X : A {
     B b; // A's B
 };
-*/
 
 
 template <typename T>
@@ -109,29 +87,53 @@ struct S {T a[N] = {}; };
 
 enum class Cowboys {good, bad, ugly};
 
+// from https://codereview.stackexchange.com/questions/279379/template-complex-class
+#include <type_traits>
+#include <iostream>
+
+template<typename Ty>
+class Complex {
+    static_assert(std::is_arithmetic_v<Ty>, "Complex requires an arithmetic type.");
+
+public:
+    Complex(const Ty& r, const Ty& i) noexcept :
+        r(r), i(i)
+    {}
+
+    Ty real() const noexcept { return r; }
+    Ty imag() const noexcept { return i; }
+
+private:
+    Ty r, i;
+};
+
+
 int main() {
   using std::cout;
 
-	Const<1,1,1,1> c;
-  auto v = LimitedInt<uint16_t, 0, 4094>(10);
-  Auto<'a'> a; 
-  //X<A::B> x;
+  cout << "{ValueList<12, 24, 42>()=}";
+  cout << "{ValueList<'a', 'b', 'c'>()=}";
+  cout << "{Const<1,1,1,1>()=}";
+  cout << "{LimitedInt<uint16_t, 0, 4094>(10)=}";
+  cout << "{Auto<'a'>()=}";
+
   S<bool,10> s; 
   s.a[9] = true;
+  cout << "{s=}";
 
   S<Cowboys,10> cb;
   cb.a[0] = Cowboys::bad;
-  Pair<double> p{ 7.8, 9.0 };
-
-  cout << "{c=}";
-  cout << "{v=}";
-  cout << "{a=}";
-  cout << "{s=}";
   cout << "{cb=}";
-  cout << "{p=}";
 
-  auto y = A{1, 2};
-  cout << "{y=}";
-  cout << "\n";
+  Pair<double> pd{ 7.8, 9.0 };
+  cout << "{pd=}";
+
+  Pair<Cowboys> pc{ Cowboys::bad, Cowboys::good };
+  cout << "{pc=}";
+
+  Complex<double> xa(1.2, 2.25);
+  Complex<int> xb(2, -1);
+  cout << "Complex<double> {xa=}";
+  cout << "Complex<int> {xb=}";
 
 }

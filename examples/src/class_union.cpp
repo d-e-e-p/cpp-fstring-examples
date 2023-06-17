@@ -21,13 +21,17 @@ struct Base {
     int i;
     double d;
     char c;
+  auto to_string() const {
+    return fstr::format(R"( Anon:
+    PUBLIC int i: {} {} {}
+)", i, d, c); }
   } u;
 // Generated to_string for PUBLIC STRUCT_DECL Base
   public:
   auto to_string() const {
     return fstr::format(R"( Base:
-    PUBLIC int a: {} 
-)", a);
+    PUBLIC int a: {} u={}
+)", a, u);
   }
 } b;
 

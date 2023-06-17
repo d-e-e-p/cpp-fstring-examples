@@ -10,13 +10,11 @@
 */
 // from https://stackoverflow.com/questions/41333185/python-clang-getting-template-arguments
 #include <iostream>
-#include <map>
 #include <string>
-#include <vector>
 
 #include "fstr.h"
 
-
+// set1
 class A {
   int a = 32;
 
@@ -66,6 +64,38 @@ class Y : public X<bool> {
   }
 };
 
+
+// set2
+#include <map>
+#include <vector>
+template<typename T>
+struct Obj {
+    T value;
+// Generated to_string for PUBLIC CLASS_TEMPLATE Obj<T>
+  public:
+  auto to_string() const {
+    return fstr::format(R"( Obj<T>:
+    PUBLIC T={} value: {} 
+)", typeid(T).name(), value);
+  }
+};
+
+template<typename K, typename T>
+struct Map {
+  std::map<K, T> map1;
+  std::map<K, Obj<T>> map2;
+  std::map<K, std::vector<Obj<T>>> map3;
+// Generated to_string for PUBLIC CLASS_TEMPLATE Map<K, T>
+  public:
+  auto to_string() const {
+    return fstr::format(R"( Map<K, T>:
+    PUBLIC int map1: {} 
+    PUBLIC int map2: {} 
+)", map1, map2);
+  }
+};
+
+
 int main() {
     using std::cout;
 
@@ -77,7 +107,22 @@ int main() {
     cout << fmt::format(" X<std::string>()={} ", X<std::string>());
     cout << fmt::format(" Y()={} ", Y());
     auto y = Y();
+    // TODO(deep): fix derived template class missing vars
     cout << " Y() should print both y and x="  << y.x << " \n";
+
+    Map<std::string, int> m;
+    m.map1["key1"] = 100;
+    m.map1["key2"] = 200;
+
+    m.map2["key3"] = {300};
+    m.map2["key4"] = {500};
+
+    m.map3["key5"] = {{600}};
+    m.map3["key6"] = {{700}, {800}};
+
+    // TODO(deep): fix derived template class missing map3 
+    // TODO(deep): map2 print is very ugly
+    cout << fmt::format("Map m={}", m);
     
     return 0;
 }

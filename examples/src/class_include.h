@@ -51,8 +51,8 @@ class BaseSampleClass {
   public:
   auto to_string() const {
     return fstr::format(R"( BaseSampleClass:
-    PRIVATE Elephant el_base: {} 
-)", el_base);
+    PRIVATE Eleph el_base: 1={} 2={} 3={} 
+)", 1, 2, 3);
   }
 };
 
@@ -70,17 +70,12 @@ class SampleClass: public BaseSampleClass
 // Generated to_string for PUBLIC CLASS_DECL SampleClass
   public:
   auto to_string() const {
-    return fstr::format(R"( SampleClass:
-    PRIVATE int prop1: {} 
-    PRIVATE int prop2: {} 
-    PRIVATE bool prop3: {} 
-    PRIVATE double prop4: {} 
-    PRIVATE int prop5: {} 
-    PRIVATE Elephant el_derived: {} 
-     PRIVATE Elephant el_base: {} 
-)", prop1, prop2, prop3, prop4, prop5, el_derived, this->el_base);
+    return fstr::format(R"( BaseSampleClass:
+    PRIVATE Eleph el_base: 1={} 2={} 3={} EL_ONE={} EL_TWO={}
+)", 1, 2, 3, EL_ONE, EL_TWO);
   }
 };
+
 namespace Alpha
 {
     class AlphaClass

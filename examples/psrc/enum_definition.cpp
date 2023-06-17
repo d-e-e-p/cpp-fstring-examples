@@ -16,7 +16,10 @@
 
 #include "fstr.h"
 
+// unnamed unscoped enum can't be printed at present
+  // would require generating with std::enable_if_t<std::is_same_v<T, decltype(x)>>
 enum { x, y = x + 2 };
+
 enum class Foo { a, b, c = 10, d, e = 1, f, g = f + c };
 enum class Color { red, yellow, green = 20, blue };
 struct X { enum direction { left = 'l', right = 'r' }; };
@@ -34,8 +37,9 @@ std::map<Color, std::vector<Fruit>> mc = {
 
 int main() {
 
-  // TODO(deep): make {x} work
   std::cout << "x = " << x << "\n";
+  // TODO(deep): make {x} work
+  // std::cout << "{x=}\n";
   
   std::cout << R"(
 
