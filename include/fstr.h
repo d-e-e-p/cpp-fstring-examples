@@ -60,6 +60,7 @@
 #include <type_traits>
 #include <fmt/ranges.h>
 #include <fmt/std.h>
+#include <fmt/xchar.h>
 
 namespace fstr {
 

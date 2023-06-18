@@ -104,16 +104,16 @@ It was a sunny {tm:%A} in {tm:%B} around {tm:%OI}{tm:%p}
 )";
 
   auto va = std::vector<float>{5, M_PI, 10'000'000};
-  int b = 10;
+  int xb = 10;
 
-  for (auto & a : va) {
+  for (auto & ia : va) {
     cout <<  R"(
 
-  when a={a}, b={b} =>
+  when a={ia}, b={xb} =>
 
-      {a} + {b} = {a+b}
-      {a} * {b} = {a*b}
-      {a} ^ {b} = {std::pow(a, b)}
+      {ia} + {xb} = {ia+xb}
+      {ia} * {xb} = {ia*xb}
+      {ia} ^ {xb} = {std::pow(ia, xb)}
 
      )"; // cout
   }
@@ -167,23 +167,21 @@ It was a sunny {tm:%A} in {tm:%B} around {tm:%OI}{tm:%p}
    )" ;
 
   using IArr =  std::valarray<int>;
-  IArr ia {1,2,3};
-  IArr ib {4,5,6};
-  IArr iab = std::pow(ia, ib);
-  IArr iba = std::pow(ib, ia);
-  IArr iabba = iab+iba;
+  IArr a {1,2,3};
+  IArr b {4,5,6};
+  IArr ab = std::pow(a, b);
+  IArr ba = std::pow(b, a);
+  IArr abba = ab+ba;
 
   cout <<  R"(
     Valarray:
-      a^b + b^a = {ia}^{ib} + {ib}^{ia}
-                = {iab} + {iba}
-                = {iabba}
+      a^b + b^a = {a}^{b} + {b}^{a}
+                = {ab} + {ba}
+                = {abba}
 
-      min({iabba}) = {iabba.min()}
-      sum({iabba}) = {iabba.sum()}
-      max({iabba}) = {iabba.max()}
-    
-
+      min({abba}) = {abba.min()}
+      sum({abba}) = {abba.sum()}
+      max({abba}) = {abba.max()}
    )" ;
 
 

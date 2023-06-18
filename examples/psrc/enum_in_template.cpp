@@ -108,7 +108,6 @@ void FixedSizeStringBuffer<SPACE>::print_box_line()
 #include <iostream>
 
 int main() {
-  std::cout << "fixed_size_string_buffer demo \n\n";
   constexpr size_t max_size = 10;
   auto rb = fssb::FixedSizeStringBuffer<max_size>();
   std::cout << " {rb=} ";

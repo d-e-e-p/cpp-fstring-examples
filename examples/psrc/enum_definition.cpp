@@ -35,6 +35,22 @@ std::map<Color, std::vector<Fruit>> mc = {
   {Color::yellow, {Fruit::apple, Fruit::banana}},
 };
 
+enum class Shape { TRIANGLE, SQUARE, };
+struct Point { int x; int y; };
+std::map<Shape, std::vector<Point>> shapes = {
+    {Shape::TRIANGLE, {{0, 0}, {1, 0}, {0, 1}}},
+    {Shape::SQUARE, {{0, 0}, {1, 0}, {1, 1}, {0, 1}}},
+};
+
+enum class Key { Key1, Key2, Key3 };
+enum class SubKey { SubKey1, SubKey2, SubKey3 };
+enum class Value { Value1, Value2, Value3 };
+std::map<Key, std::map<SubKey, Value>> data = {
+    {Key::Key1, {{SubKey::SubKey1, Value::Value1}, {SubKey::SubKey2, Value::Value2}}},
+    {Key::Key2, {{SubKey::SubKey3, Value::Value3}}},
+    {Key::Key3, {}}
+};
+
 int main() {
 
   std::cout << "x = " << x << "\n";
@@ -54,6 +70,10 @@ int main() {
 
   vector<Foo> vc = {vc}
   map<Color, vector<Fruit>> mc = {mc}
+
+  std::map<Shape, std::vector<Point>> {shapes=}
+
+  std::map<Key, std::map<SubKey, Value>> {data=}
 
 )";
 

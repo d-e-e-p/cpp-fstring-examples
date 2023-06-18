@@ -84,6 +84,7 @@ template<typename K, typename T>
 struct Map {
   std::map<K, T> map1;
   std::map<K, Obj<T>> map2;
+  // map3 is not found by libclang
   std::map<K, std::vector<Obj<T>>> map3;
 // Generated to_string for PUBLIC CLASS_TEMPLATE Map<K, T>
   public:

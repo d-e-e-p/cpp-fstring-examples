@@ -51,6 +51,30 @@ std::map<Color, std::vector<Fruit>> mc = {
   {Color::yellow, {Fruit::apple, Fruit::banana}},
 };
 
+enum class Shape { TRIANGLE, SQUARE, };
+struct Point { int x; int y; // Generated to_string for PUBLIC STRUCT_DECL Point
+  public:
+  auto to_string() const {
+    return fstr::format(R"( Point:
+    PUBLIC int x: {} 
+    PUBLIC int y: {} 
+)", x, y);
+  }
+};
+std::map<Shape, std::vector<Point>> shapes = {
+    {Shape::TRIANGLE, {{0, 0}, {1, 0}, {0, 1}}},
+    {Shape::SQUARE, {{0, 0}, {1, 0}, {1, 1}, {0, 1}}},
+};
+
+enum class Key { Key1, Key2, Key3 };
+enum class SubKey { SubKey1, SubKey2, SubKey3 };
+enum class Value { Value1, Value2, Value3 };
+std::map<Key, std::map<SubKey, Value>> data = {
+    {Key::Key1, {{SubKey::SubKey1, Value::Value1}, {SubKey::SubKey2, Value::Value2}}},
+    {Key::Key2, {{SubKey::SubKey3, Value::Value3}}},
+    {Key::Key3, {}}
+};
+
 int main() {
 
   std::cout << "x = " << x << "\n";
@@ -71,7 +95,11 @@ int main() {
   vector<Foo> vc = {}
   map<Color, vector<Fruit>> mc = {}
 
-)", Foo::b, Foo::e, Color::yellow, X::left, X::right, e1, Fruit::apple, S::apple, E11::x, vc, mc);
+  std::map<Shape, std::vector<Point>> shapes={}
+
+  std::map<Key, std::map<SubKey, Value>> data={}
+
+)", Foo::b, Foo::e, Color::yellow, X::left, X::right, e1, Fruit::apple, S::apple, E11::x, vc, mc, shapes, data);
 
 }
 
@@ -124,6 +152,45 @@ constexpr auto format_as(const E11 obj) {
   switch (obj) {
     case E11::x: name = "x"; break;  // index=0
     case E11::y: name = "y"; break;  // index=1
+  }
+  return name;
+}
+// Generated formatter for PUBLIC enum Shape of type INT scoped
+constexpr auto format_as(const Shape obj) {
+  fmt::string_view name = "<missing>";
+  switch (obj) {
+    case Shape::TRIANGLE: name = "TRIANGLE"; break;  // index=0
+    case Shape::SQUARE  : name = "SQUARE"  ; break;  // index=1
+  }
+  return name;
+}
+// Generated formatter for PUBLIC enum Key of type INT scoped
+constexpr auto format_as(const Key obj) {
+  fmt::string_view name = "<missing>";
+  switch (obj) {
+    case Key::Key1: name = "Key1"; break;  // index=0
+    case Key::Key2: name = "Key2"; break;  // index=1
+    case Key::Key3: name = "Key3"; break;  // index=2
+  }
+  return name;
+}
+// Generated formatter for PUBLIC enum SubKey of type INT scoped
+constexpr auto format_as(const SubKey obj) {
+  fmt::string_view name = "<missing>";
+  switch (obj) {
+    case SubKey::SubKey1: name = "SubKey1"; break;  // index=0
+    case SubKey::SubKey2: name = "SubKey2"; break;  // index=1
+    case SubKey::SubKey3: name = "SubKey3"; break;  // index=2
+  }
+  return name;
+}
+// Generated formatter for PUBLIC enum Value of type INT scoped
+constexpr auto format_as(const Value obj) {
+  fmt::string_view name = "<missing>";
+  switch (obj) {
+    case Value::Value1: name = "Value1"; break;  // index=0
+    case Value::Value2: name = "Value2"; break;  // index=1
+    case Value::Value3: name = "Value3"; break;  // index=2
   }
   return name;
 }
