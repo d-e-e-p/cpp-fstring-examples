@@ -49,7 +49,7 @@ struct ValueList {
   // Generated to_string() for PUBLIC CLASS_TEMPLATE ValueList<Values>
   public:
   auto to_string() const {
-    return fstr::format("ValueList<...Values>: const auto values={}\n", values);
+    return fstr::format("ValueList<Values...>: const auto values={}\n", values);
   }
 };
 
