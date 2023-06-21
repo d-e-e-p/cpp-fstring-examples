@@ -9,9 +9,7 @@
    @license MIT License
 */
 #include <iostream>
-#include <map>
 #include <string>
-#include <vector>
 
 #include "fstr.h"
 

@@ -9,6 +9,10 @@
    @license MIT License
 */
 
+#include <map>
+#include <vector>
+#include "fstr.h"
+
 enum { x, y = x + 2 };
 enum class Foo { a, b, c = 10, d, e = 1, f, g = f + c };
 enum class Color { red, yellow, green = 20, blue };

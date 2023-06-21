@@ -9,9 +9,6 @@
 #include <cstring>
 #include <fstream>
 #include <iostream>
-#include <iterator>
-#include <sstream>
-#include <thread>
 #include <vector>
 
 #define TINYPLY_IMPLEMENTATION

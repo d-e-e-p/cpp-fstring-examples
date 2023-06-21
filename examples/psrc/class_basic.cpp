@@ -9,9 +9,6 @@
    @license MIT License
 */
 #include <iostream>
-#include <map>
-#include <string>
-#include <vector>
 
 #include "fstr.h"
 
@@ -30,7 +27,7 @@ struct Bar {
 class Rectangle {
   int width, height;
 
- public:
+  public:
   void set_values(int, int);
   int area(void);
   Bar bar;

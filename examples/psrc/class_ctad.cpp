@@ -10,9 +10,6 @@
 */
 #include <array>
 #include <iostream>
-#include <map>
-#include <string>
-#include <vector>
 
 #include "fstr.h"
 
@@ -33,20 +30,6 @@ struct Auto {
   int v = 1;
 };
 
-/* TODO
-template <auto... Values>
-struct ValueList {
-    static constexpr auto values = std::array{Values...};
-
-    static void print() {
-        for (const auto& value : values) {
-            std::cout << value << ' ';
-        }
-        std::cout << '\n';
-    }
-};
-ValueList<42, 'A'>vl;
-*/
 
 // from https://en.cppreference.com/w/cpp/language/class_template_argument_deduction
 //
@@ -66,6 +49,11 @@ struct B {
   A<T> a;
 };
 
+template <auto... Values>
+struct ValueList {
+    static constexpr auto values = std::array{Values...};
+};
+
 int main()
 {
   using std::cout;
@@ -73,6 +61,8 @@ int main()
 
   A<int> a{1, {2, 3}};
   auto b = B<int>{1, {2, {3, 4}}};
-  cout << "{a=} {b=}";
-  cout << "\n";
+  cout << "{a=}{b=}";
+  cout << "{ValueList<1, 2, 3>()=}";
+  cout << "{ValueList<'a', 'b', 'c'>()=}";
+  cout << "{ValueList<true, false, false>()=}";
 }

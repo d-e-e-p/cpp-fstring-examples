@@ -9,9 +9,7 @@
    @license MIT License
 */
 #include <iostream>
-#include <map>
 #include <string>
-#include <vector>
 
 #include "clipp.h"
 #include "fstr.h"

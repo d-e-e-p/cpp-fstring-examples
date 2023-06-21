@@ -9,6 +9,8 @@
  * @license MIT License
  */
 
+#include <vector>
+
 int main()
 {
   int i;
