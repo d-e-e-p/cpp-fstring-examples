@@ -52,7 +52,7 @@ struct X {
   return name;
 }
 };
-                                 
+
 // test cases from:
 // https://github.com/Neargye/magic_enum/blob/master/test/test.cpp
 // Copyright (c) 2019 - 2023 Daniil Goncharov <neargye@gmail.com>
@@ -110,13 +110,16 @@ enum class rangers {
 
 
 int main() {
+  using std::cout;
+  cout << fmt::format("file: {}\ntime: {}\n", __FILE_NAME__, __TIMESTAMP__);
+
   //TODO(deep): get {a} working...
-  std::cout << fmt::format(R"(
+  cout << fmt::format(R"(
   Color1::GREEN={}
   GREEN={}
   L={} D={} U={} R={}
-  Number1::many={} 
-  Number2::many={} 
+  Number1::many={}
+  Number2::many={}
   Number3::one={} Number3::two={} Number3::three={} Number3::many={}
   Binary::ONE={}
   space::rangers::humans={}
@@ -130,7 +133,7 @@ int main() {
     {Color1::BLUE,  {Number3::many}}
   };
 
-  std::cout << fmt::format("\n vc={} \n mc={}\n", vc, mc);
+  cout << fmt::format("\n vc={} \n mc={}\n", vc, mc);
 
 }
 

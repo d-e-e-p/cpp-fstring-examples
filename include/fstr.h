@@ -1,13 +1,13 @@
 /**
  * @file fstr.h
  * Companion utilities for cpp-fstring, which brings python-style fstring to C++
- * 
+ *
  * This file contains 2 different routines:
  *   1. If a class has a member function called to_string(void), then a custom formatter is inferred for
- *   that class giving fmt::format the ability to display the stringified version of that class. 
+ *   that class giving fmt::format the ability to display the stringified version of that class.
  *   the cpp-fstring routine from https://github.com/d-e-e-p/cpp-fstring automatically generates these
  *   to_string() calls. eg loading fstr.h allows fmt::print to format Foo using it's to_string() function:
- *   
+ *
  *   @code{.cpp}
  *      #include "fstr.h"
  *      struct Foo {
@@ -19,9 +19,9 @@
  *      Foo f;
  *      fmt::print("f={}\n", f);
  *   @endcode
- *  
- *   produces the result:  
- *  
+ *
+ *   produces the result:
+ *
  *   @code{.sh}
  *    Foo: PUBLIC int a: 32
  *   @endcode
@@ -36,13 +36,13 @@
  *        int a[10] = {};
  *        enum class example {yes, no};
  *        example e = example::yes;
- *      
+ *
  *        std::cout << fstr::format("i={}, v={}, a={}, e={}\n", i, v, a, e);
  *      }
  *   @endcode
  *
- *   produces the result:  
- *  
+ *   produces the result:
+ *
  *   @code{.sh}
  *   i=0, v=[1, 3, 4], a=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0], e=<unknown>
  *   @endcode
@@ -58,11 +58,42 @@
 
 #include <string>
 #include <type_traits>
+#include <typeinfo>
+#include <cxxabi.h>
+
 #include <fmt/ranges.h>
 #include <fmt/std.h>
 #include <fmt/xchar.h>
 
+
 namespace fstr {
+
+// return typename in human readable form
+void _remove_substring (std::string& str, const std::string& substr) {
+    size_t pos = str.find(substr);
+    while (pos != std::string::npos) {
+        str.erase(pos, substr.length());
+        pos = str.find(substr, pos);
+    }
+}
+
+template <typename T>
+std::string get_type_name() {
+    const char* mangledName = typeid(T).name();
+    int status {};
+    const std::unique_ptr<char[], decltype(&std::free)> demangledName{
+        abi::__cxa_demangle(mangledName, nullptr, nullptr, &status),
+        std::free
+    };
+    std::string result = (status == 0) ? demangledName.get() : mangledName;
+    const std::string substr = "std::__1::";
+    _remove_substring(result, substr);
+
+    return result;
+}
+
+
+
 
 // Helper function to check if a type has a to_string member function
 template <typename T>
@@ -107,4 +138,3 @@ std::string format(const std::string& fmt_string, const Args&... args) {
 }
 
 } // namespace fstr
-

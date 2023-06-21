@@ -33,7 +33,7 @@ struct Y { enum E1 : int {}; // Generated formatter for PUBLIC enum Y::E1 of typ
 };
 enum E2 { e1 };
 enum class Fruit { orange, apple, banana };
-struct S { using enum Fruit; }; 
+struct S { using enum Fruit; };
 enum struct E11 { x, y };
 
 std::vector<Foo> vc = {Foo::a, Foo::b, Foo::c, Foo::d, Foo::e, Foo::f, Foo::g};
@@ -41,7 +41,6 @@ std::map<Color, std::vector<Fruit>> mc = {
   {Color::red,    {Fruit::apple}},
   {Color::yellow, {Fruit::apple, Fruit::banana}},
 };
-
 
 // Generated formatter for PUBLIC enum Foo of type INT scoped
 constexpr auto format_as(const Foo obj) {

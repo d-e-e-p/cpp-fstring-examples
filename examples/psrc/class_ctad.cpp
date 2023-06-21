@@ -33,7 +33,7 @@ public:
 };
 
 template<auto n>
-struct Auto { 
+struct Auto {
   int v = 1;
 };
 
@@ -58,12 +58,12 @@ ValueList<42, 'A'>vl;
 template<class T>
 struct A {
     T t;
- 
+
     struct {
         long a, b;
     } u;
 };
- 
+
 
 template<class T>
 struct B {
@@ -73,6 +73,7 @@ struct B {
 
 int main() {
   using std::cout;
+  cout << "file: {__FILE_NAME__}\ntime: {__TIMESTAMP__}\n";
 
   A<int> a{1,{2,3}};
   auto b = B<int>{1, {2,{3,4}}};

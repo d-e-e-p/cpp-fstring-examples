@@ -65,22 +65,24 @@ namespace roman {
 
 
 int main() {
+  using std::cout;
+  cout << "file: {__FILE_NAME__}\ntime: {__TIMESTAMP__}\n";
 
-  std::cout << R"(
+  cout << R"(
 
 Test enum namespaces
 --------------------
 
-     {right=}                       {left=} 
-     {cdir::right=}                 {cdir::left=}               
+     {right=}                       {left=}
+     {cdir::right=}                 {cdir::left=}
      {eright=}                     {eleft=}
      {ecdir::right=}                {ecdir::left=}
-     {Xstruct::right=}              {Xstruct::left=}            
-     {Xstruct::cdir::right=}        {Xstruct::cdir::left=}      
-     {Xclass::right=}               {Xclass::left=}             
-     {Xclass::cdir::right=}         {Xclass::cdir::left=}       
-     {Xnamespace::right=}           {Xnamespace::left=}         
-     {Xnamespace::cdir::right=}     {Xnamespace::cdir::left=}   
+     {Xstruct::right=}              {Xstruct::left=}
+     {Xstruct::cdir::right=}        {Xstruct::cdir::left=}
+     {Xclass::right=}               {Xclass::left=}
+     {Xclass::cdir::right=}         {Xclass::cdir::left=}
+     {Xnamespace::right=}           {Xnamespace::left=}
+     {Xnamespace::cdir::right=}     {Xnamespace::cdir::left=}
 
      std::map<sym, int> {roman::numerals=}
 

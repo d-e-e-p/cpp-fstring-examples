@@ -47,13 +47,15 @@ struct C { int c = 42; void echo_dumb(C const &) {} };
 struct D { int d = 24; void echo_dumb(D const &) {} };
 
 int main() {
-    Bar<A, B> bar1 = {};
-    bar1.dumb(A{}); // ok for everyone
-    fmt::print(" {bar1=} ");    
+  fmt::print("file: {__FILE_NAME__}\ntime: {__TIMESTAMP__}\n");
 
-    Bar<C, D> bar2 = {};
-    fmt::print(" {bar2=} ");    
+  Bar<A, B> bar1 = {};
+  bar1.dumb(A{}); // ok for everyone
+  fmt::print(" {bar1=} ");
 
-    //bar.dumb(B{}); // error for clang++, ok for g++
-    return 0;
+  Bar<C, D> bar2 = {};
+  fmt::print(" {bar2=} ");
+
+  //bar.dumb(B{}); // error for clang++, ok for g++
+  return 0;
 }

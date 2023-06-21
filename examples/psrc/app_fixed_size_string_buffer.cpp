@@ -6,10 +6,13 @@
 #include <sstream>
 
 int main() {
-  std::cout << "fixed_size_string_buffer demo \n\n";
+  using std::cout;
+  cout << "file: {__FILE_NAME__}\ntime: {__TIMESTAMP__}\n";
+
+  cout << "fixed_size_string_buffer demo \n\n";
   constexpr size_t max_size = 10;
   auto rb = fssb::FixedSizeStringBuffer<max_size>();
-  std::cout << " {rb=} ";
+  cout << " {rb=} ";
   // add strings
   const std::string str = "The Quick Brown Fox Jumped Over The Lazy Dog";
   std::istringstream ss(str);
@@ -17,5 +20,5 @@ int main() {
   while (ss >> word) {
     rb.push(word);
   }
-  std::cout << " {rb=} ";
+  cout << " {rb=} ";
 }

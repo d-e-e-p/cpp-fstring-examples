@@ -11,7 +11,7 @@
 /**
  * @file demo_misc.cpp
  * misc demo of cpp-fstring for STL variables
- * 
+ *
  * Examples of:
  *   1. Format Specifiers
  *   2. Dates
@@ -36,6 +36,7 @@
 #include <vector>            // for vector
 #include <cmath>
 #include <chrono>
+#include <list>
 
 #include "fstr.h"
 #include "fmt/chrono.h"
@@ -44,6 +45,8 @@ using namespace std::string_literals;
 
 int main() {
   using std::cout;
+  cout << "file: {__FILE_NAME__}\ntime: {__TIMESTAMP__}\n";
+
   std::string str;
   int num = 97;
   cout <<  R"(
@@ -82,19 +85,16 @@ Overview of f-strings in C++
 
 )";
 
-   auto tp = std::chrono::time_point_cast<std::chrono::seconds>(
-      std::chrono::system_clock::now());
-   auto tt = std::chrono::system_clock::to_time_t(tp);
-   auto tm = *std::localtime(&tt);
+  struct tm time = {.tm_year=2023-1900, .tm_mday=1};
    // int large = 10'000'000;
 
   cout <<  R"(
 2. Dates
 ---------
 
-It was a sunny {{tm:%A}} in {{tm:%B}} around {{tm:%OI}}{{tm:%p}}
+It was a sunny {{time:%A}} in {{time:%B}} around {{time:%OI}}{{time:%p}}
           becomes:
-It was a sunny {tm:%A} in {tm:%B} around {tm:%OI}{tm:%p}
+It was a sunny {time:%A} in {time:%B} around {time:%OI}{time:%p}
 
 )";
 
@@ -146,8 +146,8 @@ It was a sunny {tm:%A} in {tm:%B} around {tm:%OI}{tm:%p}
   Maps:
     map<string, int> {m1=}
     map<int, vector<int>> {m2=}
-    
-  Tuples: 
+
+  Tuples:
     tuple<double, char, string> {t1=}
 
    )" ;
@@ -186,4 +186,3 @@ It was a sunny {tm:%A} in {tm:%B} around {tm:%OI}{tm:%p}
 
 
 }
-

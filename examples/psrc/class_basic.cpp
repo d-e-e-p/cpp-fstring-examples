@@ -16,9 +16,9 @@
 #include "fstr.h"
 
 
-struct Foo { 
-  int a = 32; 
-  int b[10] = {}; 
+struct Foo {
+  int a = 32;
+  int b[10] = {};
 };
 
 struct Bar {
@@ -36,12 +36,22 @@ class Rectangle {
     Bar bar;
 } rect;
 
+class Outer {
+  struct {
+    int a = 12;
+    int b = 24;
+    Rectangle r;
+  } anon;
+} out;
+
 int main()
 {
-    struct Local {
-      int x = 0;    
-    };
+  using std::cout;
+  cout << "file: {__FILE_NAME__}\ntime: {__TIMESTAMP__}\n";
+  // can't print loc
+  struct Local {
+    int x = 0;
+  } loc;
 
-    Rectangle r;
-    std::cout << " Rectangle {r=} \n";
+  cout << "{Outer()=}";
 }

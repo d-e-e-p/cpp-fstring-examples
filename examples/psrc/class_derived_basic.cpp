@@ -16,9 +16,9 @@
 #include "fstr.h"
 
 
-struct Base { 
+struct Base {
   std::string bname = "base";
-  int a = 4; 
+  int a = 4;
 };
 
 struct Foo {
@@ -33,7 +33,7 @@ struct Bar: Base {
 
 int main()
 {
-  Foo f;
-  Bar b;
-  std::cout << " {f=} {b=} \n";
+  using std::cout;
+  cout << "file: {__FILE_NAME__}\ntime: {__TIMESTAMP__}\n";
+  cout << " {Foo()=} {Bar()=} \n";
 }

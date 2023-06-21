@@ -43,7 +43,7 @@ enum { a, b, c = 0, d = a + 2 }; // defines a = 0, b = 1, c = 0, d = 2
 struct X {
     enum direction3 { left = 'l', right = 'r' };
 };
-                                 
+
 // test cases from:
 // https://github.com/Neargye/magic_enum/blob/master/test/test.cpp
 // Copyright (c) 2019 - 2023 Daniil Goncharov <neargye@gmail.com>
@@ -101,13 +101,16 @@ enum class rangers {
 
 
 int main() {
+  using std::cout;
+  cout << "file: {__FILE_NAME__}\ntime: {__TIMESTAMP__}\n";
+
   //TODO(deep): get {a} working...
-  std::cout << R"(
+  cout << R"(
   {Color1::GREEN=}
   {GREEN=}
   {L=} {D=} {U=} {R=}
-  {Number1::many=} 
-  {Number2::many=} 
+  {Number1::many=}
+  {Number2::many=}
   {Number3::one=} {Number3::two=} {Number3::three=} {Number3::many==}
   {Binary::ONE=}
   {space::rangers::humans=}
@@ -121,6 +124,6 @@ int main() {
     {Color1::BLUE,  {Number3::many}}
   };
 
-  std::cout << "\n {vc=} \n {mc=}\n";
+  cout << "\n {vc=} \n {mc=}\n";
 
 }

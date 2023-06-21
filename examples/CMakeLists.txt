@@ -5,9 +5,11 @@ include(../cmake/common.cmake)
 # ---- Setup Project ---
 project(examples LANGUAGES ${LANGUAGE}) 
 common_compiler_settings()
-#enable_sanitizers()
-#enable_warnings()
-#enable_analyzers()
+if (CMAKE_BUILD_TYPE MATCHES Debug)
+    enable_sanitizers()
+    enable_warnings()
+    enable_analyzers()
+endif()
 
 # ---- Create libs and standalone example executables ----
 #file(GLOB headers CONFIGURE_DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/../include/*/*.h)
@@ -69,7 +71,7 @@ foreach(target ${targets})
     add_custom_command(
         TARGET ${tgt}
         POST_BUILD
-        COMMAND ${tgt}
+        COMMAND ${tgt} | tee ${CMAKE_CURRENT_SOURCE_DIR}/out/${tgt}.log 2>&1
         WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
         VERBATIM
     )

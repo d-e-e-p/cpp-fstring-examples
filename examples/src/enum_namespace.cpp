@@ -101,22 +101,24 @@ namespace roman {
 
 
 int main() {
+  using std::cout;
+  cout << fmt::format("file: {}\ntime: {}\n", __FILE_NAME__, __TIMESTAMP__);
 
-  std::cout << fmt::format(R"(
+  cout << fmt::format(R"(
 
 Test enum namespaces
 --------------------
 
-     right={}                       left={} 
-     cdir::right={}                 cdir::left={}               
+     right={}                       left={}
+     cdir::right={}                 cdir::left={}
      eright={}                     eleft={}
      ecdir::right={}                ecdir::left={}
-     Xstruct::right={}              Xstruct::left={}            
-     Xstruct::cdir::right={}        Xstruct::cdir::left={}      
-     Xclass::right={}               Xclass::left={}             
-     Xclass::cdir::right={}         Xclass::cdir::left={}       
-     Xnamespace::right={}           Xnamespace::left={}         
-     Xnamespace::cdir::right={}     Xnamespace::cdir::left={}   
+     Xstruct::right={}              Xstruct::left={}
+     Xstruct::cdir::right={}        Xstruct::cdir::left={}
+     Xclass::right={}               Xclass::left={}
+     Xclass::cdir::right={}         Xclass::cdir::left={}
+     Xnamespace::right={}           Xnamespace::left={}
+     Xnamespace::cdir::right={}     Xnamespace::cdir::left={}
 
      std::map<sym, int> roman::numerals={}
 
@@ -194,6 +196,6 @@ constexpr auto format_as(const roman::sym obj) {
 }
 
 namespace  {using ::format_as;}
-namespace roman {using ::format_as;}
 namespace Xnamespace {using ::format_as;}
+namespace roman {using ::format_as;}
 

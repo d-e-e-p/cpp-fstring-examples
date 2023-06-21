@@ -11,6 +11,9 @@
 // from https://stackoverflow.com/questions/41333185/python-clang-getting-template-arguments
 #include <iostream>
 #include <string>
+#include <vector>
+#include <list>
+#include <map>
 
 #include "fstr.h"
 
@@ -19,7 +22,7 @@ class A {
   int a = 32;
 };
 
-class B : public A { 
+class B : public A {
   int b = 13;
 };
 
@@ -29,14 +32,12 @@ template <typename T> class X {
   T x;
 };
 
-class Y : public X<bool> { 
+class Y : public X<bool> {
   int y = 13;
 };
 
 
 // set2
-#include <map>
-#include <vector>
 template<typename T>
 struct Obj {
     T value;
@@ -50,9 +51,36 @@ struct Map {
   std::map<K, std::vector<Obj<T>>> map3;
 };
 
+// from https://stackoverflow.com/questions/66949980/variadic-template-data-structures
+template <class T>
+struct Helper {
+  int value = 1;
+};
+
+template <>
+struct Helper <int> {
+  int value = 2;
+};
+
+//
+// simple template typename example
+//
+
+template <typename T, template<typename...> class C>
+class Container {
+public:
+    void addData(const T& data) {
+        container.push_back(data);
+    }
+
+private:
+    C<T> container;
+};
+
 
 int main() {
-    using std::cout;
+  using std::cout;
+  cout << "file: {__FILE_NAME__}\ntime: {__TIMESTAMP__}\n";
 
     // should print both a and b
     cout << " {B()=} \n";
@@ -75,12 +103,23 @@ int main() {
     m.map3["key5"] = {{600}};
     m.map3["key6"] = {{700}, {800}};
 
-    // TODO(deep): fix derived template class missing map3 
+    // TODO(deep): fix derived template class missing map3
     // TODO(deep): map2 print is very ugly
     cout << "Map {m=}";
-    
+
+    cout << "{Helper<int>()=}";
+    cout << "{Helper<char>()=}";
+
+    Container<int, std::vector> dp1;
+    dp1.addData(10);
+    dp1.addData(20);
+    dp1.addData(30);
+    cout << "Container<int, std::vector> {dp1=}";
+
+
+    Container<std::string, std::list> dp2;
+    dp2.addData("Hello");
+    dp2.addData("World");
+    cout << "Container<std::string, std::list> {dp2=}";
     return 0;
 }
-
-
-

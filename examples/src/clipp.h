@@ -126,13 +126,10 @@ public:
 private:
     size_type at_;
     size_type length_;
-// Generated to_string for PUBLIC CLASS_DECL clipp::subrange
+  // Generated to_string() for PUBLIC CLASS_DECL clipp::subrange
   public:
   auto to_string() const {
-    return fstr::format(R"( clipp::subrange:
-    PRIVATE int at_: {} 
-    PRIVATE int length_: {} 
-)", at_, length_);
+    return fstr::format(": int at_={}, length_={}\n", at_, length_);
   }
 };
 
@@ -259,11 +256,10 @@ check_is_input_range(long) -> std::false_type;
 template<class T>
 struct is_input_range :
     decltype(check_is_input_range<T>(0))
-{// Generated to_string for PUBLIC CLASS_TEMPLATE clipp::traits::is_input_range<T>
+{  // Generated to_string() for PUBLIC CLASS_TEMPLATE clipp::traits::is_input_range<T>
   public:
   auto to_string() const {
-    return fstr::format(R"( clipp::traits::is_input_range<T>:
-)");
+    return fstr::format("clipp::traits::is_input_range<T:={}>: \n", fstr::get_type_name<T>());
   }
 };
 
@@ -286,11 +282,10 @@ check_has_size_getter(long) -> std::false_type;
 template<class T>
 struct has_size_getter :
     decltype(check_has_size_getter<T>(0))
-{// Generated to_string for PUBLIC CLASS_TEMPLATE clipp::traits::has_size_getter<T>
+{  // Generated to_string() for PUBLIC CLASS_TEMPLATE clipp::traits::has_size_getter<T>
   public:
   auto to_string() const {
-    return fstr::format(R"( clipp::traits::has_size_getter<T>:
-)");
+    return fstr::format("clipp::traits::has_size_getter<T:={}>: \n", fstr::get_type_name<T>());
   }
 };
 
@@ -342,11 +337,10 @@ struct limits_clamped {
         }
         return T(v);
     }
-// Generated to_string for PUBLIC CLASS_TEMPLATE clipp::detail::limits_clamped<T, V, bool>
+  // Generated to_string() for PUBLIC CLASS_TEMPLATE clipp::detail::limits_clamped<T, V, bool>
   public:
   auto to_string() const {
-    return fstr::format(R"( clipp::detail::limits_clamped<T, V, bool>:
-)");
+    return fstr::format("clipp::detail::limits_clamped<T:={}, V:={}>: \n", fstr::get_type_name<T>(), fstr::get_type_name<V>());
   }
 };
 
@@ -381,11 +375,10 @@ struct make {
         //a conversion from const char* to / must exist
         return static_cast<T>(s);
     }
-// Generated to_string for PUBLIC CLASS_TEMPLATE clipp::detail::make<T>
+  // Generated to_string() for PUBLIC CLASS_TEMPLATE clipp::detail::make<T>
   public:
   auto to_string() const {
-    return fstr::format(R"( clipp::detail::make<T>:
-)");
+    return fstr::format("clipp::detail::make<T:={}>: \n", fstr::get_type_name<T>());
   }
 };
 
@@ -528,13 +521,10 @@ public:
 private:
     T* t_;
     V v_;
-// Generated to_string for PUBLIC CLASS_TEMPLATE clipp::detail::assign_value<T, V>
+  // Generated to_string() for PUBLIC CLASS_TEMPLATE clipp::detail::assign_value<T, V>
   public:
   auto to_string() const {
-    return fstr::format(R"( clipp::detail::assign_value<T, V>:
-    PRIVATE T={}* t_: {} 
-    PRIVATE V={} v_: {} 
-)", typeid(T).name(), fmt::ptr(t_), typeid(V).name(), v_);
+    return fstr::format("clipp::detail::assign_value<T:={}, V:={}>: T * t_={}, V v_={}\n", fstr::get_type_name<T>(), fstr::get_type_name<V>(), fmt::ptr(t_), v_);
   }
 };
 
@@ -559,12 +549,10 @@ public:
 
 private:
     bool* b_;
-// Generated to_string for PUBLIC CLASS_DECL clipp::detail::flip_bool
+  // Generated to_string() for PUBLIC CLASS_DECL clipp::detail::flip_bool
   public:
   auto to_string() const {
-    return fstr::format(R"( clipp::detail::flip_bool:
-    PRIVATE bool * b_: {} 
-)", fmt::ptr(b_));
+    return fstr::format(": bool * b_={}\n", fmt::ptr(b_));
   }
 };
 
@@ -588,12 +576,10 @@ public:
 
 private:
     T* t_;
-// Generated to_string for PUBLIC CLASS_TEMPLATE clipp::detail::increment<T>
+  // Generated to_string() for PUBLIC CLASS_TEMPLATE clipp::detail::increment<T>
   public:
   auto to_string() const {
-    return fstr::format(R"( clipp::detail::increment<T>:
-    PRIVATE T={}* t_: {} 
-)", typeid(T).name(), fmt::ptr(t_));
+    return fstr::format("clipp::detail::increment<T:={}>: T * t_={}\n", fstr::get_type_name<T>(), fmt::ptr(t_));
   }
 };
 
@@ -617,12 +603,10 @@ public:
 
 private:
     T* t_;
-// Generated to_string for PUBLIC CLASS_TEMPLATE clipp::detail::decrement<T>
+  // Generated to_string() for PUBLIC CLASS_TEMPLATE clipp::detail::decrement<T>
   public:
   auto to_string() const {
-    return fstr::format(R"( clipp::detail::decrement<T>:
-    PRIVATE T={}* t_: {} 
-)", typeid(T).name(), fmt::ptr(t_));
+    return fstr::format("clipp::detail::decrement<T:={}>: T * t_={}\n", fstr::get_type_name<T>(), fmt::ptr(t_));
   }
 };
 
@@ -649,13 +633,10 @@ public:
 private:
     T* t_;
     T by_;
-// Generated to_string for PUBLIC CLASS_TEMPLATE clipp::detail::increment_by<T>
+  // Generated to_string() for PUBLIC CLASS_TEMPLATE clipp::detail::increment_by<T>
   public:
   auto to_string() const {
-    return fstr::format(R"( clipp::detail::increment_by<T>:
-    PRIVATE T={}* t_: {} 
-    PRIVATE T={} by_: {} 
-)", typeid(T).name(), fmt::ptr(t_), typeid(T).name(), by_);
+    return fstr::format("clipp::detail::increment_by<T:={}>: T * t_={}, T by_={}\n", fstr::get_type_name<T>(), fmt::ptr(t_), by_);
   }
 };
 
@@ -680,12 +661,10 @@ public:
 
 private:
     T* t_;
-// Generated to_string for PUBLIC CLASS_TEMPLATE clipp::detail::map_arg_to<T>
+  // Generated to_string() for PUBLIC CLASS_TEMPLATE clipp::detail::map_arg_to<T>
   public:
   auto to_string() const {
-    return fstr::format(R"( clipp::detail::map_arg_to<T>:
-    PRIVATE T={}* t_: {} 
-)", typeid(T).name(), fmt::ptr(t_));
+    return fstr::format("clipp::detail::map_arg_to<T:={}>: T * t_={}\n", fstr::get_type_name<T>(), fmt::ptr(t_));
   }
 };
 
@@ -726,12 +705,10 @@ public:
 
 private:
     bool* t_;
-// Generated to_string for PUBLIC CLASS_DECL clipp::detail::map_arg_to<bool>
+  // Generated to_string() for PUBLIC CLASS_DECL clipp::detail::map_arg_to<bool>
   public:
   auto to_string() const {
-    return fstr::format(R"( clipp::detail::map_arg_to<bool>:
-    PRIVATE bool * t_: {} 
-)", fmt::ptr(t_));
+    return fstr::format(": bool * t_={}\n", fmt::ptr(t_));
   }
 };
 
@@ -1280,12 +1257,10 @@ private:
         void operator() (int) const { action_(); }
     private:
         simple_action action_;
-    // Generated to_string for PUBLIC CLASS_DECL clipp::detail::action_provider<Derived>::simple_action_adapter
+      // Generated to_string() for PUBLIC CLASS_DECL clipp::detail::action_provider<Derived>::simple_action_adapter
   public:
   auto to_string() const {
-    return fstr::format(R"( clipp::detail::action_provider<Derived>::simple_action_adapter:
-    PRIVATE int action_: {} 
-)", action_);
+    return fstr::format(": int action_={}\n", action_);
   }
 };
 
@@ -1528,15 +1503,10 @@ private:
     std::vector<index_action> missingActions_;
     std::vector<index_action> blockedActions_;
     std::vector<index_action> conflictActions_;
-// Generated to_string for PUBLIC CLASS_TEMPLATE clipp::detail::action_provider<Derived>
+  // Generated to_string() for PUBLIC CLASS_TEMPLATE clipp::detail::action_provider<Derived>
   public:
   auto to_string() const {
-    return fstr::format(R"( clipp::detail::action_provider<Derived>:
-    PUBLIC int repeatActions_: {} 
-    PUBLIC int missingActions_: {} 
-    PUBLIC int blockedActions_: {} 
-    PUBLIC int conflictActions_: {} 
-)", repeatActions_, missingActions_, blockedActions_, conflictActions_);
+    return fstr::format("clipp::detail::action_provider<Derived:={}>: int repeatActions_={}, missingActions_={}, blockedActions_={}, conflictActions_={}\n", fstr::get_type_name<Derived>(), repeatActions_, missingActions_, blockedActions_, conflictActions_);
   }
 };
 
@@ -1608,14 +1578,10 @@ private:
     doc_string doc_;
     bool repeatable_ = false;
     bool blocking_ = false;
-// Generated to_string for PUBLIC CLASS_TEMPLATE clipp::detail::token<Derived>
+  // Generated to_string() for PUBLIC CLASS_TEMPLATE clipp::detail::token<Derived>
   public:
   auto to_string() const {
-    return fstr::format(R"( clipp::detail::token<Derived>:
-    PRIVATE int doc_: {} 
-    PRIVATE bool repeatable_: {} 
-    PRIVATE bool blocking_: {} 
-)", doc_, repeatable_, blocking_);
+    return fstr::format("clipp::detail::token<Derived:={}>: int doc_={}, bool repeatable_={}, blocking_={}\n", fstr::get_type_name<Derived>(), doc_, repeatable_, blocking_);
   }
 };
 
@@ -1779,12 +1745,10 @@ public:
 
 private:
     arg_list excluded_;
-// Generated to_string for PUBLIC CLASS_DECL clipp::match::none_of
+  // Generated to_string() for PUBLIC CLASS_DECL clipp::match::none_of
   public:
   auto to_string() const {
-    return fstr::format(R"( clipp::match::none_of:
-    PRIVATE int excluded_: {} 
-)", excluded_);
+    return fstr::format(": int excluded_={}\n", excluded_);
   }
 };
 
@@ -1817,14 +1781,10 @@ private:
     char decpoint_;
     char separator_;
     char exp_;
-// Generated to_string for PUBLIC CLASS_DECL clipp::match::numbers
+  // Generated to_string() for PUBLIC CLASS_DECL clipp::match::numbers
   public:
   auto to_string() const {
-    return fstr::format(R"( clipp::match::numbers:
-    PRIVATE char decpoint_: {} 
-    PRIVATE char separator_: {} 
-    PRIVATE char exp_: {} 
-)", decpoint_, separator_, exp_);
+    return fstr::format(": char decpoint_={}, separator_={}, exp_={}\n", decpoint_, separator_, exp_);
   }
 };
 
@@ -1847,12 +1807,10 @@ public:
 
 private:
     char separator_;
-// Generated to_string for PUBLIC CLASS_DECL clipp::match::integers
+  // Generated to_string() for PUBLIC CLASS_DECL clipp::match::integers
   public:
   auto to_string() const {
-    return fstr::format(R"( clipp::match::integers:
-    PRIVATE char separator_: {} 
-)", separator_);
+    return fstr::format(": char separator_={}\n", separator_);
   }
 };
 
@@ -1878,12 +1836,10 @@ public:
 
 private:
     char separator_;
-// Generated to_string for PUBLIC CLASS_DECL clipp::match::positive_integers
+  // Generated to_string() for PUBLIC CLASS_DECL clipp::match::positive_integers
   public:
   auto to_string() const {
-    return fstr::format(R"( clipp::match::positive_integers:
-    PRIVATE char separator_: {} 
-)", separator_);
+    return fstr::format(": char separator_={}\n", separator_);
   }
 };
 
@@ -1907,12 +1863,10 @@ public:
 
 private:
     arg_string str_;
-// Generated to_string for PUBLIC CLASS_DECL clipp::match::substring
+  // Generated to_string() for PUBLIC CLASS_DECL clipp::match::substring
   public:
   auto to_string() const {
-    return fstr::format(R"( clipp::match::substring:
-    PRIVATE int str_: {} 
-)", str_);
+    return fstr::format(": int str_={}\n", str_);
   }
 };
 
@@ -1935,12 +1889,10 @@ public:
 
 private:
     arg_string prefix_;
-// Generated to_string for PUBLIC CLASS_DECL clipp::match::prefix
+  // Generated to_string() for PUBLIC CLASS_DECL clipp::match::prefix
   public:
   auto to_string() const {
-    return fstr::format(R"( clipp::match::prefix:
-    PRIVATE int prefix_: {} 
-)", prefix_);
+    return fstr::format(": int prefix_={}\n", prefix_);
   }
 };
 
@@ -1963,12 +1915,10 @@ public:
 
 private:
     arg_string prefix_;
-// Generated to_string for PUBLIC CLASS_DECL clipp::match::prefix_not
+  // Generated to_string() for PUBLIC CLASS_DECL clipp::match::prefix_not
   public:
   auto to_string() const {
-    return fstr::format(R"( clipp::match::prefix_not:
-    PRIVATE int prefix_: {} 
-)", prefix_);
+    return fstr::format(": int prefix_={}\n", prefix_);
   }
 };
 
@@ -2003,13 +1953,10 @@ public:
 private:
     std::size_t min_;
     std::size_t max_;
-// Generated to_string for PUBLIC CLASS_DECL clipp::match::length
+  // Generated to_string() for PUBLIC CLASS_DECL clipp::match::length
   public:
   auto to_string() const {
-    return fstr::format(R"( clipp::match::length:
-    PRIVATE int min_: {} 
-    PRIVATE int max_: {} 
-)", min_, max_);
+    return fstr::format(": int min_={}, max_={}\n", min_, max_);
   }
 };
 
@@ -2064,12 +2011,10 @@ class parameter :
 
     private:
         match_predicate match_;
-    // Generated to_string for PUBLIC CLASS_DECL clipp::parameter::predicate_adapter
+      // Generated to_string() for PUBLIC CLASS_DECL clipp::parameter::predicate_adapter
   public:
   auto to_string() const {
-    return fstr::format(R"( clipp::parameter::predicate_adapter:
-    PRIVATE int match_: {} 
-)", match_);
+    return fstr::format(": int match_={}\n", match_);
   }
 };
 
@@ -2322,16 +2267,10 @@ private:
     doc_string label_;
     bool required_ = false;
     bool greedy_ = false;
-// Generated to_string for PUBLIC CLASS_DECL clipp::parameter
+  // Generated to_string() for PUBLIC CLASS_DECL clipp::parameter
   public:
   auto to_string() const {
-    return fstr::format(R"( clipp::parameter:
-    PRIVATE int flags_: {} 
-    PRIVATE int matcher_: {} 
-    PRIVATE int label_: {} 
-    PRIVATE bool required_: {} 
-    PRIVATE bool greedy_: {} 
-)", flags_, matcher_, label_, required_, greedy_);
+    return fstr::format(": int flags_={}, matcher_={}, label_={}, bool required_={}, greedy_={}\n", flags_, matcher_, label_, required_, greedy_);
   }
 };
 
@@ -4518,18 +4457,10 @@ private:
     bool ignoreBlocks_ = false;
     bool repeatGroupStarted_ = false;
     bool repeatGroupContinues_ = false;
-// Generated to_string for PUBLIC CLASS_DECL clipp::detail::scoped_dfs_traverser
+  // Generated to_string() for PUBLIC CLASS_DECL clipp::detail::scoped_dfs_traverser
   public:
   auto to_string() const {
-    return fstr::format(R"( clipp::detail::scoped_dfs_traverser:
-    PRIVATE int pos_: {} 
-    PRIVATE int lastMatch_: {} 
-    PRIVATE int posAfterLastMatch_: {} 
-    PRIVATE int scopes_: {} 
-    PRIVATE bool ignoreBlocks_: {} 
-    PRIVATE bool repeatGroupStarted_: {} 
-    PRIVATE bool repeatGroupContinues_: {} 
-)", pos_, lastMatch_, posAfterLastMatch_, scopes_, ignoreBlocks_, repeatGroupStarted_, repeatGroupContinues_);
+    return fstr::format(": int pos_={}, lastMatch_={}, posAfterLastMatch_={}, scopes_={}, bool ignoreBlocks_={}, repeatGroupStarted_={}, repeatGroupContinues_={}\n", pos_, lastMatch_, posAfterLastMatch_, scopes_, ignoreBlocks_, repeatGroupStarted_, repeatGroupContinues_);
   }
 };
 
@@ -4584,13 +4515,10 @@ public:
 private:
     arg_string str_;
     scoped_dfs_traverser pos_;
-// Generated to_string for PUBLIC CLASS_DECL clipp::detail::match_t
+  // Generated to_string() for PUBLIC CLASS_DECL clipp::detail::match_t
   public:
   auto to_string() const {
-    return fstr::format(R"( clipp::detail::match_t:
-    PRIVATE int str_: {} 
-    PRIVATE scoped_dfs_traverser pos_: {} 
-)", str_, pos_);
+    return fstr::format(": int str_={}, scoped_dfs_traverser pos_={}\n", str_, pos_);
   }
 };
 
@@ -4648,7 +4576,7 @@ longest_prefix_match(scoped_dfs_traverser pos, const arg_string& arg,
                         return match_t{arg, std::move(pos)};
                     }
                     else if(match.length() > longest.length()) {
-                        longest = match_t{arg.substr(match.at(), match.length()), 
+                        longest = match_t{arg.substr(match.at(), match.length()),
                                           pos};
                     }
                 }
@@ -4761,18 +4689,10 @@ public:
         bool startsRepeatGroup_;
         bool blocked_;
         bool conflict_;
-    // Generated to_string for PUBLIC CLASS_DECL clipp::parser::arg_mapping
+      // Generated to_string() for PUBLIC CLASS_DECL clipp::parser::arg_mapping
   public:
   auto to_string() const {
-    return fstr::format(R"( clipp::parser::arg_mapping:
-    PRIVATE arg_index index_: {} 
-    PRIVATE int arg_: {} 
-    PRIVATE int match_: {} 
-    PRIVATE int repeat_: {} 
-    PRIVATE bool startsRepeatGroup_: {} 
-    PRIVATE bool blocked_: {} 
-    PRIVATE bool conflict_: {} 
-)", index_, arg_, match_, repeat_, startsRepeatGroup_, blocked_, conflict_);
+    return fstr::format(": arg_index index_={}, int arg_={}, match_={}, repeat_={}, bool startsRepeatGroup_={}, blocked_={}, conflict_={}\n", index_, arg_, match_, repeat_, startsRepeatGroup_, blocked_, conflict_);
   }
 };
 
@@ -4793,13 +4713,10 @@ public:
     private:
         const parameter* param_;
         arg_index aftIndex_;
-    // Generated to_string for PUBLIC CLASS_DECL clipp::parser::missing_event
+      // Generated to_string() for PUBLIC CLASS_DECL clipp::parser::missing_event
   public:
   auto to_string() const {
-    return fstr::format(R"( clipp::parser::missing_event:
-    PRIVATE const parameter * param_: {} 
-    PRIVATE arg_index aftIndex_: {} 
-)", fmt::ptr(param_), aftIndex_);
+    return fstr::format(": const parameter * param_={}, arg_index aftIndex_={}\n", fmt::ptr(param_), aftIndex_);
   }
 };
 
@@ -4819,14 +4736,10 @@ public:
         dfs_traverser pos;
         arg_index index;
         bool startsRepeatGroup;
-    // Generated to_string for PUBLIC STRUCT_DECL clipp::parser::miss_candidate
+      // Generated to_string() for PUBLIC STRUCT_DECL clipp::parser::miss_candidate
   public:
   auto to_string() const {
-    return fstr::format(R"( clipp::parser::miss_candidate:
-    PUBLIC int pos: {} 
-    PUBLIC arg_index index: {} 
-    PUBLIC bool startsRepeatGroup: {} 
-)", pos, index, startsRepeatGroup);
+    return fstr::format(": int pos={}, arg_index index={}, bool startsRepeatGroup={}\n", pos, index, startsRepeatGroup);
   }
 };
     using miss_candidates = std::vector<miss_candidate>;
@@ -5307,18 +5220,10 @@ private:
     arg_mappings args_;
     miss_candidates missCand_;
     bool blocked_;
-// Generated to_string for PUBLIC CLASS_DECL clipp::parser
+  // Generated to_string() for PUBLIC CLASS_DECL clipp::parser
   public:
   auto to_string() const {
-    return fstr::format(R"( clipp::parser:
-    PRIVATE const int * root_: {} 
-    PRIVATE scoped_dfs_traverser pos_: {} 
-    PRIVATE arg_index index_: {} 
-    PRIVATE arg_index eaten_: {} 
-    PRIVATE int args_: {} 
-    PRIVATE int missCand_: {} 
-    PRIVATE bool blocked_: {} 
-)", fmt::ptr(root_), pos_, index_, eaten_, args_, missCand_, blocked_);
+    return fstr::format(": const int * root_={}, scoped_dfs_traverser pos_={}, arg_index index_={}, eaten_={}, int args_={}, missCand_={}, bool blocked_={}\n", fmt::ptr(root_), pos_, index_, eaten_, args_, missCand_, blocked_);
   }
 };
 
@@ -5405,13 +5310,10 @@ private:
     //-----------------------------------------------------
     arg_mappings arg2param_;
     missing_events missing_;
-// Generated to_string for PUBLIC CLASS_DECL clipp::parsing_result
+  // Generated to_string() for PUBLIC CLASS_DECL clipp::parsing_result
   public:
   auto to_string() const {
-    return fstr::format(R"( clipp::parsing_result:
-    PRIVATE int arg2param_: {} 
-    PRIVATE int missing_: {} 
-)", arg2param_, missing_);
+    return fstr::format(": int arg2param_={}, missing_={}\n", arg2param_, missing_);
   }
 };
 
@@ -5956,44 +5858,10 @@ private:
     bool mergeAltCommonPfx_ = false;
     bool mergeJoinableCommonPfx_ = true;
     bool ignoreNewlines_ = false;
-// Generated to_string for PUBLIC CLASS_DECL clipp::doc_formatting
+  // Generated to_string() for PUBLIC CLASS_DECL clipp::doc_formatting
   public:
   auto to_string() const {
-    return fstr::format(R"( clipp::doc_formatting:
-    PRIVATE int paramSep_: {} 
-    PRIVATE int groupSep_: {} 
-    PRIVATE int altParamSep_: {} 
-    PRIVATE int altGroupSep_: {} 
-    PRIVATE int flagSep_: {} 
-    PRIVATE int labelPre_: {} 
-    PRIVATE int labelPst_: {} 
-    PRIVATE int optionPre_: {} 
-    PRIVATE int optionPst_: {} 
-    PRIVATE int repeatPre_: {} 
-    PRIVATE int repeatPst_: {} 
-    PRIVATE int groupPre_: {} 
-    PRIVATE int groupPst_: {} 
-    PRIVATE int alternPre_: {} 
-    PRIVATE int alternPst_: {} 
-    PRIVATE int alternFlagPre_: {} 
-    PRIVATE int alternFlagPst_: {} 
-    PRIVATE int joinablePre_: {} 
-    PRIVATE int joinablePst_: {} 
-    PRIVATE int emptyLabel_: {} 
-    PRIVATE int firstCol_: {} 
-    PRIVATE int docCol_: {} 
-    PRIVATE int lastCol_: {} 
-    PRIVATE int indentSize_: {} 
-    PRIVATE int maxAltInUsage_: {} 
-    PRIVATE int maxAltInDocs_: {} 
-    PRIVATE int lineSpc_: {} 
-    PRIVATE int paragraphSpc_: {} 
-    PRIVATE int groupSplitSize_: {} 
-    PRIVATE bool splitTopAlt_: {} 
-    PRIVATE bool mergeAltCommonPfx_: {} 
-    PRIVATE bool mergeJoinableCommonPfx_: {} 
-    PRIVATE bool ignoreNewlines_: {} 
-)", paramSep_, groupSep_, altParamSep_, altGroupSep_, flagSep_, labelPre_, labelPst_, optionPre_, optionPst_, repeatPre_, repeatPst_, groupPre_, groupPst_, alternPre_, alternPst_, alternFlagPre_, alternFlagPst_, joinablePre_, joinablePst_, emptyLabel_, firstCol_, docCol_, lastCol_, indentSize_, maxAltInUsage_, maxAltInDocs_, lineSpc_, paragraphSpc_, groupSplitSize_, splitTopAlt_, mergeAltCommonPfx_, mergeJoinableCommonPfx_, ignoreNewlines_);
+    return fstr::format(": int paramSep_={}, groupSep_={}, altParamSep_={}, altGroupSep_={}, flagSep_={}, labelPre_={}, labelPst_={}, optionPre_={}, optionPst_={}, repeatPre_={}, repeatPst_={}, groupPre_={}, groupPst_={}, alternPre_={}, alternPst_={}, alternFlagPre_={}, alternFlagPst_={}, joinablePre_={}, joinablePst_={}, emptyLabel_={}, firstCol_={}, docCol_={}, lastCol_={}, indentSize_={}, maxAltInUsage_={}, maxAltInDocs_={}, lineSpc_={}, paragraphSpc_={}, groupSplitSize_={}, bool splitTopAlt_={}, mergeAltCommonPfx_={}, mergeJoinableCommonPfx_={}, ignoreNewlines_={}\n", paramSep_, groupSep_, altParamSep_, altGroupSep_, flagSep_, labelPre_, labelPst_, optionPre_, optionPst_, repeatPre_, repeatPst_, groupPre_, groupPst_, alternPre_, alternPst_, alternFlagPre_, alternFlagPst_, joinablePre_, joinablePst_, emptyLabel_, firstCol_, docCol_, lastCol_, indentSize_, maxAltInUsage_, maxAltInDocs_, lineSpc_, paragraphSpc_, groupSplitSize_, splitTopAlt_, mergeAltCommonPfx_, mergeJoinableCommonPfx_, ignoreNewlines_);
   }
 };
 
@@ -6319,22 +6187,10 @@ private:
     int curParagraphLines_;
     int totalNonBlankLines_;
     bool ignoreInputNls_;
-// Generated to_string for PUBLIC CLASS_TEMPLATE clipp::detail::formatting_ostream<OStream, StringT>
+  // Generated to_string() for PUBLIC CLASS_TEMPLATE clipp::detail::formatting_ostream<OStream, StringT>
   public:
   auto to_string() const {
-    return fstr::format(R"( clipp::detail::formatting_ostream<OStream, StringT>:
-    PRIVATE OStream={}& os_: {} 
-    PRIVATE int curCol_: {} 
-    PRIVATE int firstCol_: {} 
-    PRIVATE int lastCol_: {} 
-    PRIVATE int hangingIndent_: {} 
-    PRIVATE int paragraphSpacing_: {} 
-    PRIVATE int paragraphSpacingThreshold_: {} 
-    PRIVATE int curBlankLines_: {} 
-    PRIVATE int curParagraphLines_: {} 
-    PRIVATE int totalNonBlankLines_: {} 
-    PRIVATE bool ignoreInputNls_: {} 
-)", typeid(OStream).name(), os_, curCol_, firstCol_, lastCol_, hangingIndent_, paragraphSpacing_, paragraphSpacingThreshold_, curBlankLines_, curParagraphLines_, totalNonBlankLines_, ignoreInputNls_);
+    return fstr::format("clipp::detail::formatting_ostream<OStream:={}, StringT:={}>: OStream & os_={}, int curCol_={}, firstCol_={}, lastCol_={}, hangingIndent_={}, paragraphSpacing_={}, paragraphSpacingThreshold_={}, curBlankLines_={}, curParagraphLines_={}, totalNonBlankLines_={}, bool ignoreInputNls_={}\n", fstr::get_type_name<OStream>(), fstr::get_type_name<StringT>(), os_, curCol_, firstCol_, lastCol_, hangingIndent_, paragraphSpacing_, paragraphSpacingThreshold_, curBlankLines_, curParagraphLines_, totalNonBlankLines_, ignoreInputNls_);
   }
 };
 
@@ -6412,19 +6268,10 @@ private:
         bool is_alternative() const noexcept {
             return pos.parent().exclusive();
         }
-    // Generated to_string for PUBLIC STRUCT_DECL clipp::usage_lines::context
+      // Generated to_string() for PUBLIC STRUCT_DECL clipp::usage_lines::context
   public:
   auto to_string() const {
-    return fstr::format(R"( clipp::usage_lines::context:
-    PUBLIC int pos: {} 
-    PUBLIC int separators: {} 
-    PUBLIC int postfixes: {} 
-    PUBLIC int level: {} 
-    PUBLIC const int * outermost: {} 
-    PUBLIC bool linestart: {} 
-    PUBLIC bool useOutermost: {} 
-    PUBLIC int line: {} 
-)", pos, separators, postfixes, level, fmt::ptr(outermost), linestart, useOutermost, line);
+    return fstr::format(": int pos={}, separators={}, postfixes={}, level={}, const int * outermost={}, bool linestart={}, useOutermost={}, int line={}\n", pos, separators, postfixes, level, fmt::ptr(outermost), linestart, useOutermost, line);
   }
 };
 
@@ -6832,15 +6679,10 @@ private:
             }
         }
     }
-// Generated to_string for PUBLIC CLASS_DECL clipp::usage_lines
+  // Generated to_string() for PUBLIC CLASS_DECL clipp::usage_lines
   public:
   auto to_string() const {
-    return fstr::format(R"( clipp::usage_lines:
-    PRIVATE const int & cli_: {} 
-    PRIVATE doc_formatting fmt_: {} 
-    PRIVATE int prefix_: {} 
-    PRIVATE bool ommitOutermostSurrounders_: {} 
-)", cli_, fmt_, prefix_, ommitOutermostSurrounders_);
+    return fstr::format(": const int & cli_={}, doc_formatting fmt_={}, int prefix_={}, bool ommitOutermostSurrounders_={}\n", cli_, fmt_, prefix_, ommitOutermostSurrounders_);
   }
 };
 
@@ -7075,6 +6917,11 @@ private:
         return lbl;
     }
 
+  // Generated to_string() for PUBLIC CLASS_DECL clipp::documentation
+  public:
+  auto to_string() const {
+    return fstr::format(": const int & cli_={}, doc_formatting fmt_={}, usgFmt_={}, int filter_={}\n", cli_, fmt_, usgFmt_, filter_);
+  }
 // Generated formatter for PRIVATE enum clipp::documentation::paragraph of type INT scoped
  friend constexpr auto format_as(const clipp::documentation::paragraph obj) {
   fmt::string_view name = "<missing>";
@@ -7084,16 +6931,6 @@ private:
   }
   return name;
 }
-// Generated to_string for PUBLIC CLASS_DECL clipp::documentation
-  public:
-  auto to_string() const {
-    return fstr::format(R"( clipp::documentation:
-    PRIVATE const int & cli_: {} 
-    PRIVATE doc_formatting fmt_: {} 
-    PRIVATE doc_formatting usgFmt_: {} 
-    PRIVATE int filter_: {} 
-)", cli_, fmt_, usgFmt_, filter_);
-  }
 };
 
 
@@ -7126,13 +6963,10 @@ public:
     private:
         string title_;
         string content_;
-    // Generated to_string for PUBLIC CLASS_DECL clipp::man_page::section
+      // Generated to_string() for PUBLIC CLASS_DECL clipp::man_page::section
   public:
   auto to_string() const {
-    return fstr::format(R"( clipp::man_page::section:
-    PRIVATE int title_: {} 
-    PRIVATE int content_: {} 
-)", title_, content_);
+    return fstr::format(": int title_={}, content_={}\n", title_, content_);
   }
 };
 
@@ -7205,14 +7039,10 @@ private:
     int sectionSpc_ = 1;
     section_store sections_;
     string progName_;
-// Generated to_string for PUBLIC CLASS_DECL clipp::man_page
+  // Generated to_string() for PUBLIC CLASS_DECL clipp::man_page
   public:
   auto to_string() const {
-    return fstr::format(R"( clipp::man_page:
-    PRIVATE int sectionSpc_: {} 
-    PRIVATE int sections_: {} 
-    PRIVATE int progName_: {} 
-)", sectionSpc_, sections_, progName_);
+    return fstr::format(": int sectionSpc_={}, sections_={}, progName_={}\n", sectionSpc_, sections_, progName_);
   }
 };
 
@@ -7396,7 +7226,6 @@ void print(OStream& os, const group& g, int level)
 } //namespace clipp
 
 #endif
-
 
 // Generated formatter for PUBLIC enum clipp::tri of type CHAR_S scoped
 constexpr auto format_as(const clipp::tri obj) {

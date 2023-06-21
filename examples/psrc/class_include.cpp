@@ -24,7 +24,8 @@
 
 int main()
 {
-    using std::cout;
+  using std::cout;
+  cout << "file: {__FILE_NAME__}\ntime: {__TIMESTAMP__}\n";
     cout << "1. {SampleClass()}";
     cout << "2. {Bug_3488053()}";
     cout << "3. {Bananna()}";

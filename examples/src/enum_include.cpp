@@ -18,20 +18,22 @@
 #include "enum_include.h"
 
 int main() {
+  using std::cout;
+  cout << fmt::format("file: {}\ntime: {}\n", __FILE_NAME__, __TIMESTAMP__);
 
-  // TODO make {x} work
-  std::cout << "x = " << x << "\n";
-  
-  std::cout << fmt::format(R"(
+  // TODO(deep):  make {x} work?
+  cout << "x = " << x << "\n";
+
+  cout << fmt::format(R"(
 
   Foo::b={} Foo::e={}
 
   Color::yellow={}
-  X::left={} X::right={}       
-  e1={}            
-  Fruit::apple={}  
+  X::left={} X::right={}
+  e1={}
+  Fruit::apple={}
   S::apple={}
-  E11::x={}        
+  E11::x={}
 
   vector<Foo> vc = {}
   map<Color, vector<Fruit>> mc = {}

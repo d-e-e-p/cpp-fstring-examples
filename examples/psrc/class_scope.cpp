@@ -53,22 +53,32 @@ private:
  };
 
 
-class documentation {
+class doc {
   public:
     int foo = 0;
   private:
-    enum class paragraph { param, group };
-    paragraph bar = paragraph::param;
+    enum class paragraph { words, punctuation };
+    paragraph bar = paragraph::words;
     // TODO(deep): find workaround for ::iterator and ::const_iterator issue with libclang
     // see https://github.com/llvm/llvm-project/issues/63277
     //std::vector<KeyValue>::const_iterator m_iter;
 };
 
+
+// from https://github.com/llvm/llvm-project/issues/48732
+struct S {
+    template <int> using N = int;
+    static constexpr int size = 5;
+};
+
 int main() {
+  using std::cout;
+  cout << "file: {__FILE_NAME__}\ntime: {__TIMESTAMP__}\n";
+
   bool target = false;
   auto as = assign_value<bool>{target,true};
-  std::cout << " {as=} \n";
-  documentation doc;
-  std::cout << " {doc=} \n";
+  cout << " {as=} \n";
+  cout << " {doc()=} \n";
+  cout << " {S()=} \n";
   return 0;
 }

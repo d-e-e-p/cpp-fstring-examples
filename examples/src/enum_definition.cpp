@@ -42,7 +42,7 @@ struct Y { enum E1 : int {}; // Generated formatter for PUBLIC enum Y::E1 of typ
 };
 enum E2 { e1 };
 enum class Fruit { orange, apple, banana };
-struct S { using enum Fruit; }; 
+struct S { using enum Fruit; };
 enum struct E11 { x, y };
 
 std::vector<Foo> vc = {Foo::a, Foo::b, Foo::c, Foo::d, Foo::e, Foo::f, Foo::g};
@@ -52,13 +52,10 @@ std::map<Color, std::vector<Fruit>> mc = {
 };
 
 enum class Shape { TRIANGLE, SQUARE, };
-struct Point { int x; int y; // Generated to_string for PUBLIC STRUCT_DECL Point
+struct Point { int x; int y;   // Generated to_string() for PUBLIC STRUCT_DECL Point
   public:
   auto to_string() const {
-    return fstr::format(R"( Point:
-    PUBLIC int x: {} 
-    PUBLIC int y: {} 
-)", x, y);
+    return fstr::format(": int x={}, y={}\n", x, y);
   }
 };
 std::map<Shape, std::vector<Point>> shapes = {
@@ -76,21 +73,23 @@ std::map<Key, std::map<SubKey, Value>> data = {
 };
 
 int main() {
+  using std::cout;
+  cout << fmt::format("file: {}\ntime: {}\n", __FILE_NAME__, __TIMESTAMP__);
 
-  std::cout << "x = " << x << "\n";
+  cout << "x = " << x << "\n";
   // TODO(deep): make {x} work
   // std::cout << "{x=}\n";
-  
-  std::cout << fmt::format(R"(
+
+  cout << fmt::format(R"(
 
   Foo::b={} Foo::e={}
 
   Color::yellow={}
-  X::left={} X::right={}       
-  e1={}            
-  Fruit::apple={}  
+  X::left={} X::right={}
+  e1={}
+  Fruit::apple={}
   S::apple={}
-  E11::x={}        
+  E11::x={}
 
   vector<Foo> vc = {}
   map<Color, vector<Fruit>> mc = {}

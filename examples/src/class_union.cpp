@@ -15,23 +15,22 @@
 
 #include "fstr.h"
 
-struct Base { 
-  int a; 
+struct Base {
+  int a;
   union {
     int i;
     double d;
     char c;
-  auto to_string() const {
-    return fstr::format(R"( Anon:
-    PUBLIC int i: {} {} {}
-)", i, d, c); }
-  } u;
-// Generated to_string for PUBLIC STRUCT_DECL Base
+    // Generated to_string() for PUBLIC UNION_DECL Base::(unnamed union)
   public:
   auto to_string() const {
-    return fstr::format(R"( Base:
-    PUBLIC int a: {} u={}
-)", a, u);
+    return fstr::format(": int i={}, double d={}, char c={}\n", i, d, c);
+  }
+} u;
+  // Generated to_string() for PUBLIC STRUCT_DECL Base
+  public:
+  auto to_string() const {
+    return fstr::format(": int a={}\n", a);
   }
 } b;
 
@@ -40,27 +39,25 @@ union Onion {
   int i;
   double d;
   char c;
-// Generated to_string for PUBLIC UNION_DECL Onion
+  // Generated to_string() for PUBLIC UNION_DECL Onion
   public:
   auto to_string() const {
-    return fstr::format(R"( Onion:
-    PUBLIC int i: {} 
-    PUBLIC double d: {} 
-    PUBLIC char c: {} 
-)", i, d, c);
+    return fstr::format(": int i={}, double d={}, char c={}\n", i, d, c);
   }
 } u;
 
 
 int main()
 {
-    std::cout << fmt::format(" b={} \n", b);
+  using std::cout;
+  cout << fmt::format("file: {}\ntime: {}\n", __FILE_NAME__, __TIMESTAMP__);
 
-    u.i = 10;
-    u.d = 4.2;
-    u.c = 'u';
-    std::cout << "u.i = " << u.i <<  " u.d = " << u.d <<  " u.c = " << u.c << " \n";
-    std::cout << fmt::format(" u={} \n", u);
+  cout << fmt::format(" b={} \n", b);
+  u.i = 10;
+  u.d = 4.2;
+  u.c = 'u';
+  cout << "u.i = " << u.i <<  " u.d = " << u.d <<  " u.c = " << u.c << " \n";
+  cout << fmt::format(" u={} \n", u);
 }
 
 

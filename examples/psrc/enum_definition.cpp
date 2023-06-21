@@ -26,7 +26,7 @@ struct X { enum direction { left = 'l', right = 'r' }; };
 struct Y { enum E1 : int {}; };
 enum E2 { e1 };
 enum class Fruit { orange, apple, banana };
-struct S { using enum Fruit; }; 
+struct S { using enum Fruit; };
 enum struct E11 { x, y };
 
 std::vector<Foo> vc = {Foo::a, Foo::b, Foo::c, Foo::d, Foo::e, Foo::f, Foo::g};
@@ -52,21 +52,23 @@ std::map<Key, std::map<SubKey, Value>> data = {
 };
 
 int main() {
+  using std::cout;
+  cout << "file: {__FILE_NAME__}\ntime: {__TIMESTAMP__}\n";
 
-  std::cout << "x = " << x << "\n";
+  cout << "x = " << x << "\n";
   // TODO(deep): make {x} work
   // std::cout << "{x=}\n";
-  
-  std::cout << R"(
+
+  cout << R"(
 
   {Foo::b=} {Foo::e=}
 
   {Color::yellow=}
-  {X::left=} {X::right=}       
-  {e1=}            
-  {Fruit::apple=}  
+  {X::left=} {X::right=}
+  {e1=}
+  {Fruit::apple=}
   {S::apple=}
-  {E11::x=}        
+  {E11::x=}
 
   vector<Foo> vc = {vc}
   map<Color, vector<Fruit>> mc = {mc}

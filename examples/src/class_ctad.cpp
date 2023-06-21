@@ -30,24 +30,20 @@ public:
    T getValue() const {
       return mValue;
    }
-// Generated to_string for PUBLIC CLASS_TEMPLATE LimitedInt<T, Min, Max>
+  // Generated to_string() for PUBLIC CLASS_TEMPLATE LimitedInt<T, Min, Max>
   public:
   auto to_string() const {
-    return fstr::format(R"( LimitedInt<T, Min, Max>:
-    PRIVATE T={} mValue: {} 
-)", typeid(T).name(), mValue);
+    return fstr::format("LimitedInt<T:={}, Min:={}, Max:={}>: T mValue={}\n", fstr::get_type_name<T>(), Min, Max, mValue);
   }
 };
 
 template<auto n>
-struct Auto { 
+struct Auto {
   int v = 1;
-// Generated to_string for PUBLIC CLASS_TEMPLATE Auto<n>
+  // Generated to_string() for PUBLIC CLASS_TEMPLATE Auto<n>
   public:
   auto to_string() const {
-    return fstr::format(R"( Auto<n>:
-    PUBLIC int v: {} 
-)", v);
+    return fstr::format("Auto<n:={}>: int v={}\n", n, v);
   }
 };
 
@@ -72,38 +68,37 @@ ValueList<42, 'A'>vl;
 template<class T>
 struct A {
     T t;
- 
+
     struct {
         long a, b;
-    } u;
-// Generated to_string for PUBLIC CLASS_TEMPLATE A<T>
+      // Generated to_string() for PUBLIC STRUCT_DECL A<T>::(unnamed struct)
   public:
   auto to_string() const {
-    return fstr::format(R"( A<T>:
-    PUBLIC T={} t: {} 
-     PUBLIC long u.a: {} 
-     PUBLIC long u.b: {} 
-)", typeid(T).name(), t, this->u.a, this->u.b);
+    return fstr::format(": long a={}, b={}\n", a, b);
+  }
+} u;
+  // Generated to_string() for PUBLIC CLASS_TEMPLATE A<T>
+  public:
+  auto to_string() const {
+    return fstr::format("A<T:={}>: T t={}, long u.a={}, u.b={}\n", fstr::get_type_name<T>(), t, this->u.a, this->u.b);
   }
 };
- 
+
 
 template<class T>
 struct B {
     T t;
     A<T> a;
-// Generated to_string for PUBLIC CLASS_TEMPLATE B<T>
+  // Generated to_string() for PUBLIC CLASS_TEMPLATE B<T>
   public:
   auto to_string() const {
-    return fstr::format(R"( B<T>:
-    PUBLIC T={} t: {} 
-    PUBLIC A<T> a: {} 
-)", typeid(T).name(), t, a);
+    return fstr::format("B<T:={}>: T t={}, A<T> a={}\n", fstr::get_type_name<T>(), t, a);
   }
 };
 
 int main() {
   using std::cout;
+  cout << fmt::format("file: {}\ntime: {}\n", __FILE_NAME__, __TIMESTAMP__);
 
   A<int> a{1,{2,3}};
   auto b = B<int>{1, {2,{3,4}}};

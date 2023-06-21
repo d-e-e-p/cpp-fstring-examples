@@ -20,6 +20,7 @@ int main()
 {
   using namespace clipp;
   using std::cout;
+  cout << fmt::format("file: {}\ntime: {}\n", __FILE_NAME__, __TIMESTAMP__);
 
   bool a = false, b = false, c = true; //target variables
 
@@ -30,7 +31,7 @@ int main()
         option("--hi")([]{cout << "hi!\n";}) % "says hi");
 
   auto usage = usage_lines(cli, "prefix>");
-  
+
   cout << fmt::format(" cli={} \n", cli);
   cout << fmt::format(" usage={} \n", usage);
 }

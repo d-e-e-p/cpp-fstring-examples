@@ -13,17 +13,20 @@
 
 // Anonymous Class : Class is not having any name
 struct {
-    int i; 
+    int i;
+  // Generated to_string() for PUBLIC STRUCT_DECL (unnamed struct)
+  public:
+  auto to_string() const {
+    return fstr::format(": int i={}\n", i);
+  }
 } obj0;
 
 struct Base {
-    int i; 
-// Generated to_string for PUBLIC STRUCT_DECL Base
+    int i;
+  // Generated to_string() for PUBLIC STRUCT_DECL Base
   public:
   auto to_string() const {
-    return fstr::format(R"( Base:
-    PUBLIC int i: {} 
-)", i);
+    return fstr::format(": int i={}\n", i);
   }
 };
 
@@ -34,39 +37,33 @@ struct enclose {
       static int x;
       int y;
       Base b;
-    // Generated to_string for PUBLIC STRUCT_DECL a::b::c::enclose::outer::inner
+      // Generated to_string() for PUBLIC STRUCT_DECL a::b::c::enclose::outer::inner
   public:
   auto to_string() const {
-    return fstr::format(R"( a::b::c::enclose::outer::inner:
-    PUBLIC int x: {} 
-    PUBLIC int y: {} 
-    PUBLIC Base b: {} 
-)", x, y, b);
+    return fstr::format(": int x={}, y={}, Base b={}\n", x, y, b);
   }
 } foo;
-   // Generated to_string for PUBLIC STRUCT_DECL a::b::c::enclose::outer
+     // Generated to_string() for PUBLIC STRUCT_DECL a::b::c::enclose::outer
   public:
   auto to_string() const {
-    return fstr::format(R"( a::b::c::enclose::outer:
-    PUBLIC struct inner foo: {} 
-)", foo);
+    return fstr::format(": struct inner foo={}\n", foo);
   }
 } bar;
-// Generated to_string for PUBLIC STRUCT_DECL a::b::c::enclose
+  // Generated to_string() for PUBLIC STRUCT_DECL a::b::c::enclose
   public:
   auto to_string() const {
-    return fstr::format(R"( a::b::c::enclose:
-    PUBLIC struct outer bar: {} 
-)", bar);
+    return fstr::format(": struct outer bar={}\n", bar);
   }
 } obj1;
 
 } // end namespace a::b::c
-int a::b::c::enclose::outer::inner::x = 42; 
+int a::b::c::enclose::outer::inner::x = 42;
 
 int main() {
+  using std::cout;
+  cout << fmt::format("file: {}\ntime: {}\n", __FILE_NAME__, __TIMESTAMP__);
     a::b::c::obj1.bar.foo.y = 24;
-    std::cout << fmt::format(" a::b::c::obj1={} \n", a::b::c::obj1);
+    cout << fmt::format(" a::b::c::obj1={} \n", a::b::c::obj1);
     return 0;
 }
 

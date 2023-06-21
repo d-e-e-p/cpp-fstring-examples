@@ -22,7 +22,7 @@ BROWSER := python3 -c "$$BROWSER_PYSCRIPT"
 help: ## this message
 	@python3 -c "$$PRINT_HELP_PYSCRIPT" < $(MAKEFILE_LIST)
 
-all: clean debug release test bench coverage install validate docs
+all: clean debug release test 
 
 clean: ## remove build dir
 	rm -rf build/
@@ -37,49 +37,7 @@ release: ## create optimized version of examples
 	cmake -S examples -B build/release -DCMAKE_BUILD_TYPE=Release
 	cmake --build build/release --config Release 
 
-test: ## exercise all queue operations 
-	rm -rf ./build/test/CMakeCache.txt
-	cmake -S test -B build/test -DCMAKE_BUILD_TYPE=Debug
-	cmake --build build/test --config Debug
-	cd build/test && ctest -C Debug -VV
-
-bench: ## run benchmark on push operation 
-	rm -rf ./build/bench/CMakeCache.txt
-	cmake -S bench -B build/bench -DCMAKE_BUILD_TYPE=Release
-	cmake --build build/bench --config Release --target unit_bench
-	./build/bench/bin/unit_bench
-
-coverage: ## check code coverage 
-	rm -rf ./build/coverage/CMakeCache.txt
-	rm -rf ./build/coverage/CMakeFiles/unit_tests.dir
-	cmake -S coverage -B build/coverage -DCMAKE_BUILD_TYPE=Debug
-	cmake --build build/coverage --config Debug
-	cd build/coverage && ctest -C Debug -VV
-	cd build/coverage && make coverage
-	-open build/coverage/coverage/index.html
-
-install: ## copy include files to install location
-	rm -rf ./build/install/CMakeCache.txt
-	cmake -S install -B build/install -DCMAKE_INSTALL_PREFIX=$(INSTALL_LOCATION)
-	cmake --build build/install --config Release --target install
-
-validate: ## execute from the installed version
-	rm -rf ./build/validate/CMakeCache.txt
-	#cmake -S validate -B build/validate -DCMAKE_INSTALL_PREFIX=$(INSTALL_LOCATION) -DCMAKE_RULE_MESSAGES=OFF -DCMAKE_VERBOSE_MAKEFILE=ON
-	cmake -S validate -B build/validate -DCMAKE_INSTALL_PREFIX=$(INSTALL_LOCATION)
-	cmake --build build/validate --config Release
-	build/validate/bin/basic_example_fp
-	build/validate/bin/basic_example_cpm
-
-docs: ## generate Doxygen HTML documentation, including API docs
-	rm -rf ./build/docs/CMakeCache.txt
-	rm -rf ./build/docs/doxygen
-	cmake -S docs -B build/docs
-	cmake --build build/docs --target GenerateDocs -v
-	-open build/docs/doxygen/html/index.html
-
-windows_unicode_fix: ## needed for unicode output on windows
-	chcp.com 65001
-
+test: release ## exercise all examples and compare output against validated version
+	pytest -v
 
 

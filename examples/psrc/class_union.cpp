@@ -15,8 +15,8 @@
 
 #include "fstr.h"
 
-struct Base { 
-  int a; 
+struct Base {
+  int a;
   union {
     int i;
     double d;
@@ -34,11 +34,13 @@ union Onion {
 
 int main()
 {
-    std::cout << " {b=} \n";
+  using std::cout;
+  cout << "file: {__FILE_NAME__}\ntime: {__TIMESTAMP__}\n";
 
-    u.i = 10;
-    u.d = 4.2;
-    u.c = 'u';
-    std::cout << "u.i = " << u.i <<  " u.d = " << u.d <<  " u.c = " << u.c << " \n";
-    std::cout << " {u=} \n";
+  cout << " {b=} \n";
+  u.i = 10;
+  u.d = 4.2;
+  u.c = 'u';
+  cout << "u.i = " << u.i <<  " u.d = " << u.d <<  " u.c = " << u.c << " \n";
+  cout << " {u=} \n";
 }
