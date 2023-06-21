@@ -13,8 +13,8 @@
 #include <string>
 #include <vector>
 
-#include "fstr.h"
 #include "clipp.h"
+#include "fstr.h"
 
 int main()
 {
@@ -22,13 +22,13 @@ int main()
   using std::cout;
   cout << "file: {__FILE_NAME__}\ntime: {__TIMESTAMP__}\n";
 
-  bool a = false, b = false, c = true; //target variables
+  bool a = false, b = false, c = true;  // target variables
 
   auto cli = (
-        option("-a").set(a)                  % "activates a",
-        option("-b").set(b)                  % "activates b",
-        option("-c", "--noc").set(c,false)   % "deactivates c",
-        option("--hi")([]{cout << "hi!\n";}) % "says hi");
+      option("-a").set(a)                  % "activates a",
+      option("-b").set(b)                  % "activates b",
+      option("-c", "--noc").set(c,false)   % "deactivates c",
+      option("--hi")([]{cout << "hi!\n";}) % "says hi");
 
   auto usage = usage_lines(cli, "prefix>");
 
