@@ -53,17 +53,14 @@ jobs:
         if: runner.os == 'Windows'
         run: chcp.com 65001
 
-      - if: runner.os == 'Windows'
-        run: conda install -c conda-forge fmt
-          
-      - if: runner.os == 'Windows'
-        run: vcpkg install fmt
-          
-      - if: runner.os == 'macOS'
-        run: brew install fmt
- 
-      - if: runner.os == 'Linux'
-        run: sudo apt install libfmt-dev
+          #- if: runner.os == 'Windows'
+          #run: conda install -c conda-forge fmt
+          #- if: runner.os == 'Windows'
+          #run: vcpkg install fmt
+          #- if: runner.os == 'macOS'
+          #run: brew install fmt
+          #- if: runner.os == 'Linux'
+          #run: sudo apt install libfmt-dev
 
       - run: make debug
       - run: make release
