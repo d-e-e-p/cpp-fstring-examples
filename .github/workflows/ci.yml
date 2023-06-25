@@ -59,10 +59,10 @@ jobs:
       - if: runner.os == 'Windows'
         run: vcpkg install fmt
           
-      - if: runner.os == 'MacOS'
+      - if: runner.os == 'macOS'
         run: brew install fmt
  
-      - if: runner.os == 'Ubuntu'
+      - if: runner.os == 'Linux'
         run: sudo apt install libfmt-dev
 
       - run: make debug
