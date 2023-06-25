@@ -1,0 +1,8 @@
+file: class_scope.cpp
+time: Wed Jun 21 23:46:50 2023
+ as=assign_value<T:=bool, V:=bool>: T * t_=0x16f85ea7f, V v_=true
+ 
+ doc()=doc: int foo=0, paragraph bar=words
+ 
+ S()=S: const int size=5
+ 

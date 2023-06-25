@@ -1,0 +1,14 @@
+file: enum_magic_enum.cpp
+time: Wed Jun 21 21:22:38 2023
+
+  Color1::GREEN=GREEN
+  GREEN=GREEN
+  L=L D=D U=U R=R
+  Number1::many=many
+  Number2::many=many
+  Number3::one=one Number3::two=two Number3::three=three Number3::many=many
+  Binary::ONE=ONE
+  space::rangers::humans=humans
+
+ vc=[RED, GREEN, BLUE] 
+ mc={RED: [one, two], GREEN: [three], BLUE: [many]}
