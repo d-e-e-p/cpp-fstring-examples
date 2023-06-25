@@ -94,6 +94,7 @@ function(get_compiler_warnings flags)
       -Wlogical-op   # warn about logical operations being used where bitwise were
                      # probably wanted
       -Wuseless-cast # warn if you perform a cast to the same type
+      -Wno-error=using-enum # error: ‘using enum’ only available with ‘-std=c++20’ 
   )
 
   set(CLANG_WARNINGS ${UNIX_WARNINGS})

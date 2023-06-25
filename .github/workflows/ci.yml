@@ -18,6 +18,8 @@ jobs:
           - { os: macos-latest,   shell: bash }
         configuration:
           - placeholder
+      fail-fast: false
+
     defaults:
       run:
         shell: ${{ matrix.sys.shell }}
