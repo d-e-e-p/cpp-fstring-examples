@@ -62,8 +62,8 @@ jobs:
           #- if: runner.os == 'Linux'
           #run: sudo apt install libfmt-dev
 
-      - run: make debug
       - run: make release
       - run: make test
+      - run: make debug
 
       - run: echo "🍏 This job's status is ${{ job.status }}."
