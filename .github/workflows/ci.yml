@@ -1,0 +1,61 @@
+---
+name: CI
+run-name: ${{ github.actor }} CI
+on:
+  push:
+    paths-ignore:
+      - 'README.md'
+      - 'docs/**'
+jobs:
+  build-and-test:
+    runs-on: ${{ matrix.sys.os }}
+    timeout-minutes: 15
+    strategy:
+      matrix:
+        sys:
+          - { os: windows-latest, shell: bash }
+          - { os: ubuntu-latest,  shell: bash }
+          - { os: macos-latest,   shell: bash }
+        configuration:
+          - placeholder
+    defaults:
+      run:
+        shell: ${{ matrix.sys.shell }}
+    env:
+      OS: ${{ matrix.sys.os }}
+      CTEST_OUTPUT_ON_FAILURE: 1
+      CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+      CPM_SOURCE_CACHE: ${{ github.workspace }}/.cache/CPM
+      HOMEBREW_NO_AUTO_UPDATE: 1
+
+
+    steps:
+      - run: |
+          echo "🎉 job triggered by ${{ github.event_name }} event."
+          echo "🐧 running on ${{ runner.os }} server branch ${{ github.ref }} repository  ${{ github.repository }}."
+          echo "💡 cloning ${{ github.repository }} to ${{ runner.os }}"
+
+      - name: Checkout Code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 1
+
+      - uses: actions/cache@v3
+        with:
+          path: "**/.cache/CPM"
+          key: ${{ github.workflow }}-${{ runner.os }}-cpm-modules-${{ hashFiles('**/CMakeLists.txt', '**/*.cmake') }}
+
+      - run: |
+          echo "install cpp-fstring"
+          python3 -m pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple/ cpp-fstring
+
+      - name: set windows code page to support unicode (UTF-8)
+        if: runner.os == 'Windows'
+        shell: bash
+        run: chcp.com 65001
+
+      - run: make debug
+      - run: make release
+      - run: make test
+
+      - run: echo "🍏 This job's status is ${{ job.status }}."
