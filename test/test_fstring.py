@@ -29,6 +29,8 @@ def filter_lines(input):
         line = line.strip()
         if "T * t_=0x" in line:
             continue
+        if "Class()=Class: unsigned char x=" in line:
+            continue
         if line.startswith("time: "):
             continue
         if line.isspace():
