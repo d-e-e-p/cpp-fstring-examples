@@ -38,6 +38,6 @@ release: ## create optimized version of examples
 	cmake --build build/release --config Release 
 
 test: release ## exercise all examples and compare output against validated version
-	pytest -v test/test_fstring.py
+	pytest -v 
 
 
