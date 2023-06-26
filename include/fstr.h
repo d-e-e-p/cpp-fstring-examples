@@ -59,16 +59,22 @@
 #include <string>
 #include <type_traits>
 #include <typeinfo>
-#include <cxxabi.h>
 
 #include <fmt/ranges.h>
 #include <fmt/std.h>
 #include <fmt/xchar.h>
 
+#ifdef _MSC_VER
+#include <windows.h>
+#include <dbghelp.h>
+#pragma comment(lib, "dbghelp.lib")
+#else
+#include <cxxabi.h>
+#endif
 
 namespace fstr {
 
-// return typename in human readable form
+// return typename in human readable form (demangle)
 void _remove_substring (std::string& str, const std::string& substr) {
     size_t pos = str.find(substr);
     while (pos != std::string::npos) {
@@ -77,15 +83,31 @@ void _remove_substring (std::string& str, const std::string& substr) {
     }
 }
 
+
 template <typename T>
 std::string get_type_name() {
     const char* mangledName = typeid(T).name();
-    int status {};
-    const std::unique_ptr<char[], decltype(&std::free)> demangledName{
+    std::string result;
+
+#ifdef _MSC_VER
+    // Using __unDName for Microsoft Visual C++
+    DWORD bufferSize = 1024;
+    std::unique_ptr<char[]> buffer(new char[bufferSize]);
+    DWORD status = 0;
+    if (__unDName(buffer.get(), mangledName, bufferSize, 0) != 0) {
+        result = buffer.get();
+    } else {
+        result = mangledName;
+    }
+#else
+    // Using abi::__cxa_demangle for other compilers
+    int status = 0;
+    std::unique_ptr<char, decltype(&std::free)> demangledName{
         abi::__cxa_demangle(mangledName, nullptr, nullptr, &status),
         std::free
     };
-    std::string result = (status == 0) ? demangledName.get() : mangledName;
+    result = (status == 0) ? demangledName.get() : mangledName;
+#endif
     // std::__1::char_traits -> char_traits
     _remove_substring(result, "std::__1::");
     // basic_string<char, char_traits<char>, allocator<char>> -> basic_string
@@ -93,9 +115,6 @@ std::string get_type_name() {
 
     return result;
 }
-
-
-
 
 // Helper function to check if a type has a to_string member function
 template <typename T>
