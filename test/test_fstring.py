@@ -27,7 +27,7 @@ def filter_lines(input):
     output = []
     for line in input:
         line = line.strip()
-        if "t_=0x16" in line:
+        if "T * t_=0x" in line:
             continue
         if line.startswith("time: "):
             continue

@@ -1,5 +1,5 @@
 file: class_scope.cpp
 time: Sun Jun 25 21:38:27 2023
- as=assign_value<T:=bool, V:=bool>: T * t_=0x16b26a7ff, V v_=true 
+ as=assign_value<T:=bool, V:=bool>: T * t_=0x16d2b67ff, V v_=true 
  doc()=doc: int foo=0, paragraph bar=words 
  S()=S: const int size=5 
