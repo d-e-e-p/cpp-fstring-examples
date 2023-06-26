@@ -37,7 +37,7 @@
 
 using namespace std::string_literals;
 
-enum vtypes {INT, FLOAT, STRING, CHAR};
+enum class vtypes {INT, FLOAT, STRING, CHAR};
 
 int main()
 {
