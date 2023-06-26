@@ -15,6 +15,9 @@
  *   @license MIT License
  */
 
+#define _USE_MATH_DEFINES
+#undef __STRICT_ANSI__
+
 #include <chrono>
 #include <cmath>
 #include <ctime>     // for tm
