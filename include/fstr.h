@@ -94,7 +94,7 @@ std::string get_type_name() {
     DWORD bufferSize = 1024;
     std::unique_ptr<char[]> buffer(new char[bufferSize]);
     DWORD status = 0;
-    if (__unDName(buffer.get(), mangledName, bufferSize, 0) != 0) {
+    if (UnDecorateSymbolName(mangledName, buffer.get(), bufferSize, UNDNAME_COMPLETE) != 0) {
         result = buffer.get();
     } else {
         result = mangledName;
