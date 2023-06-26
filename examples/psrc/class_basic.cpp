@@ -51,5 +51,5 @@ int main()
     int x = 0;
   } loc;
 
-  cout << "{Outer()=}";
+  cout << "{Outer()=}\n";
 }

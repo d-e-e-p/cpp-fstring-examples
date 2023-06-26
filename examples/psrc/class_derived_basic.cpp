@@ -33,5 +33,5 @@ int main()
 {
   using std::cout;
   cout << "file: {__FILE_NAME__}\ntime: {__TIMESTAMP__}\n";
-  cout << " {Foo()=} {Bar()=} \n";
+  cout << " {Foo()=}\n {Bar()=}\n";
 }

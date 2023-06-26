@@ -1,5 +1,5 @@
 file: class_namespace2.cpp
-time: Sun Jun 25 21:38:27 2023
+time: Sun Jun 25 22:10:53 2023
  old Func()=old_ns::Func()=Hello from old s = old_ns::s=Test::old_ns::S: int a=0 
  new Func()=Func()=Hello from new s = Test::new_ns::S: int a=1 
  Base0()=Base0: int a=0, b=0, base0=0 Base1()=Base1: int c=0, d=0, base1=0 Derived0()=Derived0: int a=10, derived0=0, b=0, base0=0 Derived1()=Derived1: int c=21, derived1=0, d=0, base1=0 Derived2()=Derived2: int b=42, d=42, derived2=0, a=10, derived0=0, base0=0, c=21, derived1=0, base1=0

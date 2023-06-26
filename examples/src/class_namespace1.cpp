@@ -99,10 +99,10 @@ int main()
   cout << fmt::format("file: {}\ntime: {}\n", __FILE_NAME__, __TIMESTAMP__);
 
   // (unnamed struct) !
-  cout << fmt::format("obj3={}", obj3);
+  cout << fmt::format("obj3={}\n", obj3);
 
   a::b::c::obj1.bar.foo.y = 24;
-  cout << fmt::format(" a::b::c::obj1={}", a::b::c::obj1);
+  cout << fmt::format(" a::b::c::obj1={}\n", a::b::c::obj1);
   return 0;
 }
 

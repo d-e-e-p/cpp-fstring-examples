@@ -57,7 +57,7 @@ int main()
 {
   using std::cout;
   cout << "file: {__FILE_NAME__}\ntime: {__TIMESTAMP__}\n";
-  cout << " {Class()=} ";
-  cout << " {Class(1)=} ";
-  cout << " {Class(0.1)=} ";
+  cout << " {Class()=}\n";
+  cout << " {Class(1)=}\n";
+  cout << " {Class(0.1)=}\n";
 }

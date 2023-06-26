@@ -1,3 +1,8 @@
 file: class_include.cpp
-time: Sun Jun 25 21:38:26 2023
-1. SampleClass: int prop1=, prop2=0, bool prop3=false, double prop4=0, int prop5=0, Elephant el_derived=EL_TEN, el_base=EL_TWO2. Bug_3488053: class Bug_3488053_Nested nest=Bug_3488053::Bug_3488053_Nested: int x=03. Bananna: int bo=14. Bird: int[7] items=[0, 0, 0, 0, 0, 0, 0], otherItems=[0, 0, 0, 0, 0, 0, 0], int oneItem=05. EagleClass: int[7] a=[0, 0, 0, 0, 0, 0, 0]6. FrogClass: struct (unnamed struct) x=FrogClass::(unnamed struct): int a=0, y=FrogClass::(unnamed struct): int b=0, z=FrogClass::(unnamed struct): int c=0
+time: Sun Jun 25 22:19:59 2023
+1. SampleClass: int prop1=, prop2=0, bool prop3=false, double prop4=0, int prop5=0, Elephant el_derived=EL_TEN, el_base=EL_TWO
+2. Bug_3488053: class Bug_3488053_Nested nest=Bug_3488053::Bug_3488053_Nested: int x=0
+3. Bananna: int bo=1
+4. Bird: int[7] items=[0, 0, 0, 0, 0, 0, 0], otherItems=[0, 0, 0, 0, 0, 0, 0], int oneItem=0
+5. EagleClass: int[7] a=[0, 0, 0, 0, 0, 0, 0]
+6. FrogClass: struct (unnamed struct) x=FrogClass::(unnamed struct): int a=0, y=FrogClass::(unnamed struct): int b=0, z=FrogClass::(unnamed struct): int c=0

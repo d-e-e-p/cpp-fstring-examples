@@ -62,8 +62,8 @@ int main()
 
   A<int> a{1, {2, 3}};
   auto b = B<int>{1, {2, {3, 4}}};
-  cout << "{a=}{b=}";
-  cout << "{ValueList<1, 2, 3>()=}";
-  cout << "{ValueList<'a', 'b', 'c'>()=}";
-  cout << "{ValueList<true, false, false>()=}";
+  cout << "{a=}\n{b=}\n";
+  cout << "{ValueList<1, 2, 3>()=}\n";
+  cout << "{ValueList<'a', 'b', 'c'>()=}\n";
+  cout << "{ValueList<true, false, false>()=}\n";
 }

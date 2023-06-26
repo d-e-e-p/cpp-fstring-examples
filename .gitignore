@@ -34,3 +34,4 @@
 # dirs
 build/
 .cache
+test/__pycache__

@@ -51,9 +51,9 @@ int main()
   cout << "file: {__FILE_NAME__}\ntime: {__TIMESTAMP__}\n";
 
   // (unnamed struct) !
-  cout << "{obj3=}";
+  cout << "{obj3=}\n";
 
   a::b::c::obj1.bar.foo.y = 24;
-  cout << " {a::b::c::obj1=}";
+  cout << " {a::b::c::obj1=}\n";
   return 0;
 }

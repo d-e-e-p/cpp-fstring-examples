@@ -69,9 +69,9 @@ int main()
 {
   using std::cout;
   cout << fmt::format("file: {}\ntime: {}\n", __FILE_NAME__, __TIMESTAMP__);
-  cout << fmt::format(" Class()={} ", Class());
-  cout << fmt::format(" Class(1)={} ", Class(1));
-  cout << fmt::format(" Class(0.1)={} ", Class(0.1));
+  cout << fmt::format(" Class()={}\n", Class());
+  cout << fmt::format(" Class(1)={}\n", Class(1));
+  cout << fmt::format(" Class(0.1)={}\n", Class(0.1));
 }
 
 

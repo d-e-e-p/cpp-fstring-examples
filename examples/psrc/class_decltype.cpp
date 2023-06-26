@@ -60,8 +60,8 @@ int main()
 {
   fmt::print("file: {__FILE_NAME__}\ntime: {__TIMESTAMP__}\n");
 
-  fmt::print("{Bar<A, B>()=}");
-  fmt::print("{Bar<C, D>()=}");
+  fmt::print("{Bar<A, B>()=}\n");
+  fmt::print("{Bar<C, D>()=}\n");
 
   return 0;
 }

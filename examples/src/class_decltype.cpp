@@ -84,8 +84,8 @@ int main()
 {
   fmt::print(fmt::format("file: {}\ntime: {}\n", __FILE_NAME__, __TIMESTAMP__));
 
-  fmt::print(fmt::format("Bar<A, B>()={}", Bar<A, B>()));
-  fmt::print(fmt::format("Bar<C, D>()={}", Bar<C, D>()));
+  fmt::print(fmt::format("Bar<A, B>()={}\n", Bar<A, B>()));
+  fmt::print(fmt::format("Bar<C, D>()={}\n", Bar<C, D>()));
 
   return 0;
 }

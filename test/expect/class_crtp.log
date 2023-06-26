@@ -1,3 +1,8 @@
 file: class_crtp.cpp
-time: Sun Jun 25 21:38:24 2023
- A::CBase()=A::CBase: int cbase=0  A::TBase<A::CBase>()=A::TBase<T:=A::CBase>: int tbase=0  base x1=A::X1: int x1=0  derived x2=A::X2: int x2=0, cbase=0  base y1=B::Y1: int y1=0  derived y2=B::Y2: int y2=0, cbase=0 
+time: Sun Jun 25 22:19:53 2023
+ A::CBase()=A::CBase: int cbase=0
+ A::TBase<A::CBase>()=A::TBase<T:=A::CBase>: int tbase=0
+ base x1=A::X1: int x1=0
+ derived x2=A::X2: int x2=0, cbase=0
+ base y1=B::Y1: int y1=0
+ derived y2=B::Y2: int y2=0, cbase=0

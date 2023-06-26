@@ -1,3 +1,13 @@
 file: class_template1.cpp
-time: Sun Jun 25 21:38:28 2023
-ValueList<12, 24, 42>()=ValueList<Values...>: const auto values=[12, 24, 42]ValueList<'a', 'b', 'c'>()=ValueList<Values...>: const auto values=['a', 'b', 'c']Const<1,1,1,1>()=Const<N0:=1, N1:=1, N2:=1, N3:=1>: int v=4LimitedInt<uint16_t, 0, 4094>(10)=LimitedInt<T:=unsigned short, Min:=0, Max:=4094>: T mValue=10Auto<'a'>()=Auto<n:=a>: int v=1s=S<T:=bool, N:=10>: T[N] a=[false, false, false, false, false, false, false, false, false, true]cb=S<T:=Cowboys, N:=10>: T[N] a=[bad, good, good, good, good, good, good, good, good, good]pd=Pair<T:=double>: T first=7.8, second=9pc=Pair<T:=Cowboys>: T first=bad, second=goodComplex<double> xa=Complex<Ty:=double>: Ty r=1.2, i=2.25Complex<int> xb=Complex<Ty:=int>: Ty r=2, i=-1
+time: Sun Jun 25 22:20:01 2023
+ValueList<12, 24, 42>()=ValueList<Values...>: const auto values=[12, 24, 42]
+ValueList<'a', 'b', 'c'>()=ValueList<Values...>: const auto values=['a', 'b', 'c']
+Const<1,1,1,1>()=Const<N0:=1, N1:=1, N2:=1, N3:=1>: int v=4
+LimitedInt<uint16_t, 0, 4094>(10)=LimitedInt<T:=unsigned short, Min:=0, Max:=4094>: T mValue=10
+Auto<'a'>()=Auto<n:=a>: int v=1
+s=S<T:=bool, N:=10>: T[N] a=[false, false, false, false, false, false, false, false, false, true]
+cb=S<T:=Cowboys, N:=10>: T[N] a=[bad, good, good, good, good, good, good, good, good, good]
+pd=Pair<T:=double>: T first=7.8, second=9
+pc=Pair<T:=Cowboys>: T first=bad, second=good
+Complex<double> xa=Complex<Ty:=double>: Ty r=1.2, i=2.25
+Complex<int> xb=Complex<Ty:=int>: Ty r=2, i=-1

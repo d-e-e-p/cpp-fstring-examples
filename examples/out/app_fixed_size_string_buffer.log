@@ -1,5 +1,6 @@
 file: app_fixed_size_string_buffer.cpp
-time: Sun Jun 25 21:38:23 2023
+time: Sun Jun 25 22:19:46 2023
 fixed_size_string_buffer demo 
 
- rb=fssb::FixedSizeStringBuffer<SPACE:=10>: int chars_=['\x00', '\x00', '\x00', '\x00', '\x00', '\x00', '\x00', '\x00', '\x00', '\x00', '\x00'], ptr_=[], back_=0, max_chars_=10, free_chars_=10, bool debug_=false  rb=fssb::FixedSizeStringBuffer<SPACE:=10>: int chars_=['a', 'z', 'y', 'D', 'o', 'g', 'T', 'h', 'e', 'L', '\x00'], ptr_=[fssb::FixedSizeStringBuffer<SPACE>::Pointer: int front=6, len=3, fssb::FixedSizeStringBuffer<SPACE>::Pointer: int front=9, len=4, fssb::FixedSizeStringBuffer<SPACE>::Pointer: int front=3, len=3], back_=6, max_chars_=10, free_chars_=0, bool debug_=false 
+rb=fssb::FixedSizeStringBuffer<SPACE:=10>: int chars_=['\x00', '\x00', '\x00', '\x00', '\x00', '\x00', '\x00', '\x00', '\x00', '\x00', '\x00'], ptr_=[], back_=0, max_chars_=10, free_chars_=10, bool debug_=false
+rb=fssb::FixedSizeStringBuffer<SPACE:=10>: int chars_=['a', 'z', 'y', 'D', 'o', 'g', 'T', 'h', 'e', 'L', '\x00'], ptr_=[fssb::FixedSizeStringBuffer<SPACE>::Pointer: int front=6, len=3, fssb::FixedSizeStringBuffer<SPACE>::Pointer: int front=9, len=4, fssb::FixedSizeStringBuffer<SPACE>::Pointer: int front=3, len=3], back_=6, max_chars_=10, free_chars_=0, bool debug_=false

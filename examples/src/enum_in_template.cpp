@@ -112,7 +112,7 @@ int main()
 
   constexpr size_t max_size = 10;
   auto rb = fssb::FixedSizeStringBuffer<max_size>();
-  cout << fmt::format(" rb={} ", rb);
+  cout << fmt::format(" rb={}\n", rb);
 }
 
 

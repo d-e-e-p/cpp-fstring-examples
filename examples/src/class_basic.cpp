@@ -81,7 +81,7 @@ int main()
     int x = 0;
   } loc;
 
-  cout << fmt::format("Outer()={}", Outer());
+  cout << fmt::format("Outer()={}\n", Outer());
 }
 
 

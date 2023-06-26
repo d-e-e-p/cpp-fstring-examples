@@ -30,6 +30,6 @@ int main()
 
   auto usage = usage_lines(cli, "prefix>");
 
-  cout << " {cli=} \n";
-  cout << " {usage=} \n";
+  cout << "{cli=}\n";
+  cout << "{usage=}\n";
 }

@@ -1,3 +1,7 @@
 file: class_ctad.cpp
-time: Sun Jun 25 21:38:25 2023
-a=A<T:=int>: T t=1, struct (unnamed struct) u=A<T>::(unnamed struct): long a=2, b=3b=B<T:=int>: T t=1, A<T> a=A<T:=int>: T t=2, struct (unnamed struct) u=A<T>::(unnamed struct): long a=3, b=4ValueList<1, 2, 3>()=ValueList<Values...>: const auto values=[1, 2, 3]ValueList<'a', 'b', 'c'>()=ValueList<Values...>: const auto values=['a', 'b', 'c']ValueList<true, false, false>()=ValueList<Values...>: const auto values=[true, false, false]
+time: Sun Jun 25 22:19:54 2023
+a=A<T:=int>: T t=1, struct (unnamed struct) u=A<T>::(unnamed struct): long a=2, b=3
+b=B<T:=int>: T t=1, A<T> a=A<T:=int>: T t=2, struct (unnamed struct) u=A<T>::(unnamed struct): long a=3, b=4
+ValueList<1, 2, 3>()=ValueList<Values...>: const auto values=[1, 2, 3]
+ValueList<'a', 'b', 'c'>()=ValueList<Values...>: const auto values=['a', 'b', 'c']
+ValueList<true, false, false>()=ValueList<Values...>: const auto values=[true, false, false]

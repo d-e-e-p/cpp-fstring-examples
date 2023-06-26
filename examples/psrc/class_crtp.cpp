@@ -68,17 +68,17 @@ int main()
   auto x1 = A::X1();
   auto x2 = A::X2();
 
-  cout << " {A::CBase()=} ";
-  cout << " {A::TBase<A::CBase>()=} ";
-  cout << " base {x1=} ";
-  cout << " derived {x2=} ";
+  cout << " {A::CBase()=}\n";
+  cout << " {A::TBase<A::CBase>()=}\n";
+  cout << " base {x1=}\n";
+  cout << " derived {x2=}\n";
 
   auto y1 = B::Y1();
   auto y2 = B::Y2();
 
   // see https://cplusplus.com/doc/tutorial/inheritance/
-  cout << " base {y1=} ";
-  cout << " derived {y2=} ";
+  cout << " base {y1=}\n";
+  cout << " derived {y2=}\n";
 
   return 0;
 }

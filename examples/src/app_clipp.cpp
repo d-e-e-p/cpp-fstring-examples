@@ -30,8 +30,8 @@ int main()
 
   auto usage = usage_lines(cli, "prefix>");
 
-  cout << fmt::format(" cli={} \n", cli);
-  cout << fmt::format(" usage={} \n", usage);
+  cout << fmt::format("cli={}\n", cli);
+  cout << fmt::format("usage={}\n", usage);
 }
 
 
