@@ -1,3 +1,3 @@
 file: enum_in_template.cpp
-time: Sun Jun 25 22:20:03 2023
+time: Mon Jun 26 00:37:11 2023
  rb=fssb::FixedSizeStringBuffer<SPACE:=10>: int chars_=['\x00', '\x00', '\x00', '\x00', '\x00', '\x00', '\x00', '\x00', '\x00', '\x00', '\x00'], max_chars_=10, const int box_top={right: '\xab', space: ' ', dash: '\x00', close: 'n', open: 'm', left: '\xa7'}, box_bot={right: '\xad', space: ' ', dash: '\x00', close: 'o', open: 'p', left: '\xa9'}

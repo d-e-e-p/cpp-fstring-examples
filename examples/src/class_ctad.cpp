@@ -12,6 +12,7 @@
 #include <iostream>
 
 #include "fstr.h"
+#include "utils.h"
 
 // from
 // https://stackoverflow.com/questions/65781641/im-trying-to-format-a-template-using-fmt
@@ -94,7 +95,7 @@ struct ValueList {
 int main()
 {
   using std::cout;
-  cout << fmt::format("file: {}\ntime: {}\n", __FILE_NAME__, __TIMESTAMP__);
+  print_info(__FILE__, __TIMESTAMP__);
 
   A<int> a{1, {2, 3}};
   auto b = B<int>{1, {2, {3, 4}}};

@@ -6,6 +6,7 @@
 #include <string>
 
 #include "fstr.h"
+#include "utils.h"
 
 struct Base {
   int n{};
@@ -56,7 +57,7 @@ struct Class : public Base {
 int main()
 {
   using std::cout;
-  cout << "file: {__FILE_NAME__}\ntime: {__TIMESTAMP__}\n";
+  print_info(__FILE__, __TIMESTAMP__);
   cout << " {Class()=}\n";
   cout << " {Class(1)=}\n";
   cout << " {Class(0.1)=}\n";

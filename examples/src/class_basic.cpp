@@ -12,6 +12,7 @@
 #include <iostream>
 
 #include "fstr.h"
+#include "utils.h"
 
 struct Foo {
   int a = 32;
@@ -72,10 +73,12 @@ class Outer {
   }
 } out;
 
+
 int main()
 {
   using std::cout;
-  cout << fmt::format("file: {}\ntime: {}\n", __FILE_NAME__, __TIMESTAMP__);
+  print_info(__FILE__, __TIMESTAMP__);
+
   // can't print loc
   struct Local {
     int x = 0;

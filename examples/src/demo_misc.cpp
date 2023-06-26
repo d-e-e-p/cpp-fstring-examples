@@ -30,6 +30,7 @@
 
 #include "fmt/chrono.h"
 #include "fstr.h"
+#include "utils.h"
 
 using namespace std::string_literals;
 
@@ -38,7 +39,7 @@ enum vtypes {INT, FLOAT, STRING, CHAR};
 int main()
 {
   using std::cout;
-  cout << fmt::format("file: {}\ntime: {}\n", __FILE_NAME__, __TIMESTAMP__);
+  print_info(__FILE__, __TIMESTAMP__);
 
   std::string str;
   int num = 97;

@@ -14,6 +14,7 @@
 #include <vector>
 
 #include "fstr.h"
+#include "utils.h"
 
 // from
 // https://stackoverflow.com/questions/65781641/im-trying-to-format-a-template-using-fmt
@@ -175,7 +176,7 @@ class Complex {
 int main()
 {
   using std::cout;
-  cout << fmt::format("file: {}\ntime: {}\n", __FILE_NAME__, __TIMESTAMP__);
+  print_info(__FILE__, __TIMESTAMP__);
 
   cout << fmt::format("ValueList<12, 24, 42>()={}\n", ValueList<12, 24, 42>());
   cout << fmt::format("ValueList<'a', 'b', 'c'>()={}\n", ValueList<'a', 'b', 'c'>());

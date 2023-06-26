@@ -1,5 +1,5 @@
 file: class_derived_template.cpp
-time: Sun Jun 25 22:25:27 2023
+time: Mon Jun 26 00:36:55 2023
  D()=D: int d=4, c=3, b=2, a=1
  X<int>()=X<T:=int>: T x=0 
  X<bool>()=X<T:=bool>: T x=false 

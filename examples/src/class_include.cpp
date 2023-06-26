@@ -21,11 +21,12 @@
 #include <vector>
 
 #include "fstr.h"
+#include "utils.h"
 
 int main()
 {
   using std::cout;
-  cout << fmt::format("file: {}\ntime: {}\n", __FILE_NAME__, __TIMESTAMP__);
+  print_info(__FILE__, __TIMESTAMP__);
   cout << fmt::format("1. {}\n", SampleClass());
   cout << fmt::format("2. {}\n", Bug_3488053());
   cout << fmt::format("3. {}\n", Bananna());

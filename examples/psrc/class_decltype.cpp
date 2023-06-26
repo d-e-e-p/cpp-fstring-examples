@@ -15,6 +15,7 @@
 #include <utility>
 
 #include "fstr.h"
+#include "utils.h"
 
 // TODO(deep): Base class template functions don't get detected correctly in
 // libclang

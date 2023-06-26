@@ -13,11 +13,12 @@
 
 #include "fixed_size_string_buffer.h"
 #include "fstr.h"
+#include "utils.h"
 
 int main()
 {
   using std::cout;
-  cout << fmt::format("file: {}\ntime: {}\n", __FILE_NAME__, __TIMESTAMP__);
+  print_info(__FILE__, __TIMESTAMP__);
 
   cout << "fixed_size_string_buffer demo \n\n";
   constexpr size_t max_size = 10;

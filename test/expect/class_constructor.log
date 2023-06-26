@@ -1,5 +1,5 @@
 file: class_constructor.cpp
-time: Sun Jun 25 22:19:52 2023
+time: Mon Jun 26 00:36:50 2023
  Class()=Class: unsigned char x=0, y=1, int m=<unknown>, lg=<unknown>, f=<unknown>, s=, n=0
  Class(1)=Class: unsigned char x=1, y=0, int m=<unknown>, lg=<unknown>, f=<unknown>, s=Class, n=123
  Class(0.1)=Class: unsigned char x=0, y=1, int m=<unknown>, lg=<unknown>, f=<unknown>, s=, n=0

@@ -1,5 +1,5 @@
 file: class_crtp.cpp
-time: Sun Jun 25 22:19:53 2023
+time: Mon Jun 26 00:36:51 2023
  A::CBase()=A::CBase: int cbase=0
  A::TBase<A::CBase>()=A::TBase<T:=A::CBase>: int tbase=0
  base x1=A::X1: int x1=0

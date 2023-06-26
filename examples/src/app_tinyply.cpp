@@ -13,6 +13,7 @@
 
 #define TINYPLY_IMPLEMENTATION
 #include "fstr.h"
+#include "utils.h"
 #include "tinyply.h"
 
 inline std::vector<uint8_t> read_file_binary(const std::string &pathToFile)
@@ -203,7 +204,7 @@ inline geometry make_cube_geometry()
 int main(int argc, char *argv[])
 {
   using std::cout;
-  cout << fmt::format("file: {}\ntime: {}\n", __FILE_NAME__, __TIMESTAMP__);
+  print_info(__FILE__, __TIMESTAMP__);
 
   geometry cube = make_cube_geometry();
   fmt::print(fmt::format(" cube={}\n", cube));

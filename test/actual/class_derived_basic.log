@@ -1,4 +1,4 @@
 file: class_derived_basic.cpp
-time: Sun Jun 25 22:19:56 2023
+time: Mon Jun 26 00:36:54 2023
  Foo()=Foo: char[50] name=foo, Base b=Base: int bname=base, a=4
  Bar()=Bar: char[50] name=bar, int bname=base, a=4

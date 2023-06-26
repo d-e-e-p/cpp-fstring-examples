@@ -12,6 +12,7 @@
 #include <string>
 
 #include "fstr.h"
+#include "utils.h"
 
 //
 // from:
@@ -113,7 +114,7 @@ class Y2 : public CBase {
 int main()
 {
   using std::cout;
-  cout << fmt::format("file: {}\ntime: {}\n", __FILE_NAME__, __TIMESTAMP__);
+  print_info(__FILE__, __TIMESTAMP__);
 
   auto x1 = A::X1();
   auto x2 = A::X2();

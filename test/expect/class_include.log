@@ -1,5 +1,5 @@
 file: class_include.cpp
-time: Sun Jun 25 22:19:59 2023
+time: Mon Jun 26 00:36:58 2023
 1. SampleClass: int prop1=, prop2=0, bool prop3=false, double prop4=0, int prop5=0, Elephant el_derived=EL_TEN, el_base=EL_TWO
 2. Bug_3488053: class Bug_3488053_Nested nest=Bug_3488053::Bug_3488053_Nested: int x=0
 3. Bananna: int bo=1

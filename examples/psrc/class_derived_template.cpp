@@ -18,6 +18,7 @@
 #include <vector>
 
 #include "fstr.h"
+#include "utils.h"
 
 // set1
 class A {
@@ -91,7 +92,7 @@ class Container {
 int main()
 {
   using std::cout;
-  cout << "file: {__FILE_NAME__}\ntime: {__TIMESTAMP__}\n";
+  print_info(__FILE__, __TIMESTAMP__);
 
   // should print a, b, c, d
   cout << " {D()=}\n";

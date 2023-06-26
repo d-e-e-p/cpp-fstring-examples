@@ -11,6 +11,7 @@
 #include <iostream>
 
 #include "fstr.h"
+#include "utils.h"
 
 // Anonymous Class : Class not having a name
 struct {
@@ -96,7 +97,7 @@ const int a::b::c::enclose::outer::inner::x = 42;
 int main()
 {
   using std::cout;
-  cout << fmt::format("file: {}\ntime: {}\n", __FILE_NAME__, __TIMESTAMP__);
+  print_info(__FILE__, __TIMESTAMP__);
 
   // (unnamed struct) !
   cout << fmt::format("obj3={}\n", obj3);

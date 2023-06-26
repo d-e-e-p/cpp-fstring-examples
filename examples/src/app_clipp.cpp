@@ -13,12 +13,13 @@
 
 #include "clipp.h"
 #include "fstr.h"
+#include "utils.h"
 
 int main()
 {
   using namespace clipp;
   using std::cout;
-  cout << fmt::format("file: {}\ntime: {}\n", __FILE_NAME__, __TIMESTAMP__);
+  print_info(__FILE__, __TIMESTAMP__);
 
   bool a = false, b = false, c = true;  // target variables
 

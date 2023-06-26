@@ -1,5 +1,5 @@
 file: class_template1.cpp
-time: Sun Jun 25 22:20:01 2023
+time: Mon Jun 26 00:37:03 2023
 ValueList<12, 24, 42>()=ValueList<Values...>: const auto values=[12, 24, 42]
 ValueList<'a', 'b', 'c'>()=ValueList<Values...>: const auto values=['a', 'b', 'c']
 Const<1,1,1,1>()=Const<N0:=1, N1:=1, N2:=1, N3:=1>: int v=4
