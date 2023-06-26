@@ -1,10 +1,3 @@
 file: class_namespace1.cpp
-time: Wed Jun 21 23:51:38 2023
-obj3=(unnamed struct): int i=3, struct (unnamed struct) obj2=(unnamed struct): int j=2, struct (unnamed struct) obj1=(unnamed struct): int k=1, struct (unnamed struct) obj0=(unnamed struct): int l=0
-
-
-
- a::b::c::obj1=a::b::c::enclose: struct outer bar=a::b::c::enclose::outer: struct inner foo=a::b::c::enclose::outer::inner: const int x=42, int y=24, Base b=Base: int i=0
-
-
-
+time: Sun Jun 25 21:38:26 2023
+obj3=(unnamed struct): int i=3, struct (unnamed struct) obj2=(unnamed struct): int j=2, struct (unnamed struct) obj1=(unnamed struct): int k=1, struct (unnamed struct) obj0=(unnamed struct): int l=0 a::b::c::obj1=a::b::c::enclose: struct outer bar=a::b::c::enclose::outer: struct inner foo=a::b::c::enclose::outer::inner: const int x=42, int y=24, Base b=Base: int i=0

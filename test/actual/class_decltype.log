@@ -1,6 +1,3 @@
 file: class_decltype.cpp
-time: Wed Jun 21 23:46:48 2023
-Bar<A, B>()=Bar<T:=A, U:=B>: T t=<unknown>, U u=<unknown>
-Bar<C, D>()=Bar<T:=C, U:=D>: T t=C: int c=42
-, U u=D: int d=24
-
+time: Sun Jun 25 21:38:25 2023
+Bar<A, B>()=Bar<T:=A, U:=B>: T t=<unknown>, U u=<unknown>Bar<C, D>()=Bar<T:=C, U:=D>: T t=C: int c=42, U u=D: int d=24
