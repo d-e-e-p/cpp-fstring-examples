@@ -112,6 +112,7 @@ std::string get_type_name() {
     _remove_substring(result, "std::__1::");
     // basic_string<char, char_traits<char>, allocator<char>> -> basic_string
     _remove_substring(result, "<char, char_traits<char>, allocator<char>>");
+    _remove_substring(result, "<char, char_traits<char>, allocator<char> >");
 
     return result;
 }
