@@ -13,7 +13,8 @@
 inline void print_info(const char* filename, const char* timestamp) {
     const std::filesystem::path path(filename);
     auto basename = path.filename().string();
-    std::cout << "file: " << basename << "\ntime: " << timestamp << "\n";
+    // std::cout << "file: " << basename << "\ntime: " << timestamp << "\n";
+    std::cout << "file: " << basename << "\n";
 }
 
 
