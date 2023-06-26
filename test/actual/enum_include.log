@@ -1,0 +1,17 @@
+file: enum_include.cpp
+time: Wed Jun 21 23:46:53 2023
+x = 0
+
+
+  Foo::b=b Foo::e=b
+
+  Color::yellow=yellow
+  X::left=left X::right=right
+  e1=e1
+  Fruit::apple=apple
+  S::apple=apple
+  E11::x=x
+
+  vector<Foo> vc = [a, b, c, d, b, f, g]
+  map<Color, vector<Fruit>> mc = {red: [apple], yellow: [apple, banana]}
+

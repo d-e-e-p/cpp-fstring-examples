@@ -1,0 +1,21 @@
+file: enum_namespace.cpp
+time: Wed Jun 21 23:46:53 2023
+
+
+Test enum namespaces
+--------------------
+
+     right=right                       left=left
+     cdir::right=right                 cdir::left=left
+     eright=eright                     eleft=eleft
+     ecdir::right=right                ecdir::left=left
+     Xstruct::right=right              Xstruct::left=left
+     Xstruct::cdir::right=right        Xstruct::cdir::left=left
+     Xclass::right=right               Xclass::left=left
+     Xclass::cdir::right=right         Xclass::cdir::left=left
+     Xnamespace::right=right           Xnamespace::left=left
+     Xnamespace::cdir::right=right     Xnamespace::cdir::left=left
+
+     std::map<sym, int> roman::numerals={M: 1000, D: 500, C: 100, L: 50, X: 10, V: 5, I: 1}
+
+  
