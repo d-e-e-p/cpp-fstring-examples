@@ -50,6 +50,7 @@ jobs:
       - run: |
           echo "install cpp-fstring"
           python3 -m pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple/ cpp-fstring
+          python3 -m pip install pytest
 
       - name: set windows code page to support unicode (UTF-8)
         if: runner.os == 'Windows'

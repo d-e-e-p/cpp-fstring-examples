@@ -13,7 +13,8 @@ function(common_compiler_settings)
     endif()
 
     if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
-        set(OPT -Wno-error=using-enum) # error: ‘using enum’ only available with ‘-std=c++20’ 
+        set(OPT -Wdeprecated-enum-enum-conversion) # error: ‘using enum’ only available with ‘-std=c++20’ 
+        #set(OPT -Wno-error=using-enum) # error: ‘using enum’ only available with ‘-std=c++20’ 
         add_compile_options(${OPT})
         message(STATUS "adding compile option ${OPT}")
     endif()
