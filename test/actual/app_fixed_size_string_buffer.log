@@ -1,5 +1,4 @@
 file: app_fixed_size_string_buffer.cpp
-time: Mon Jun 26 00:36:45 2023
 fixed_size_string_buffer demo 
 
 rb=fssb::FixedSizeStringBuffer<SPACE:=10>: int chars_=['\x00', '\x00', '\x00', '\x00', '\x00', '\x00', '\x00', '\x00', '\x00', '\x00', '\x00'], ptr_=[], back_=0, max_chars_=10, free_chars_=10, bool debug_=false

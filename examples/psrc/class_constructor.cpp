@@ -13,8 +13,8 @@ struct Base {
 };
 
 struct Class : public Base {
-  unsigned char x;
-  unsigned char y;
+  unsigned char x {};
+  unsigned char y {};
   std::mutex m;
   std::lock_guard<std::mutex> lg;
   std::fstream f;
