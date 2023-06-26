@@ -41,8 +41,8 @@ def filter_lines(input):
 
 def compare_output(actual_file, expect_file):
     # Compare the actual output with the expected output using pytest
-    with open(actual_file, "r") as factual:
-        with open(expect_file, "r") as fexpect:
+    with open(actual_file, "r", encoding='utf8', errors='ignore') as factual:
+        with open(expect_file, "r", encoding='utf8', errors='ignore') as fexpect:
             actual = factual.read().split("\n")
             expect = fexpect.read().split("\n")
             actual = filter_lines(actual)
