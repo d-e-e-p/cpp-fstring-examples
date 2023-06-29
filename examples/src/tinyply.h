@@ -111,7 +111,7 @@ namespace tinyply
       // Generated to_string() for PUBLIC STRUCT_DECL tinyply::PlyData
   public:
   auto to_string() const {
-    const std::string fmt_string = "tinyply::PlyData: Type t={}, Buffer buffer={}, int count={}, bool isList={}";
+    const std::string fmt_string = "tinyply::PlyData: t={}, buffer={}, int count={}, bool isList={}";
     return fstr::format(fmt_string, t, buffer, count, isList);
   }
 };
@@ -130,7 +130,7 @@ namespace tinyply
       // Generated to_string() for PUBLIC STRUCT_DECL tinyply::PlyProperty
   public:
   auto to_string() const {
-    const std::string fmt_string = "tinyply::PlyProperty: int name={}, Type propertyType={}, bool isList={}, Type listType={}, int listCount={}";
+    const std::string fmt_string = "tinyply::PlyProperty: int name={}, propertyType={}, bool isList={}, listType={}, int listCount={}";
     return fstr::format(fmt_string, name, propertyType, isList, listType, listCount);
   }
 };

@@ -17,103 +17,88 @@
  *
  */
 
-#ifdef _MSC_VER
-#pragma execution_character_set("utf-8")
-#endif
 
-#include <array>
-#include <cctype>  // for isprint
-#include <codecvt>
-#include <cstddef>  // for size_t
-#include <deque>
-#include <iomanip>
-#include <iostream>
-#include <string>
-#include <string_view>
-#include <unordered_map>
-#include <vector>
-//
+#include <iostream>        // for operator<<, cout
+#include <string>          // for basic_string
+#include <unordered_map>   // for unordered_map
+                           
 #include "fstr.h"
 #include "utils.h"
 
-namespace fssb {
-
-template <size_t SPACE>
-class FixedSizeStringBuffer {
- private:
-  // main storage for strings...search for plus1 for the reason for +1
-  std::array<char, SPACE + 1> chars_ = {};
-  size_t max_chars_;
-
- public:
-  ///  @brief Constructor that creates a string buffer of fixed character size
-  ///  template value (eg <10>) has to be a constexpr, ie known at compile-time
-  FixedSizeStringBuffer<SPACE>() : max_chars_(SPACE) {}
-
-  enum class CT { left, open, close, dash, space, right };
-  using BOX = std::unordered_map<CT, char>;
-
-  const BOX box_top = {
-      {CT::left, L'⎧'}, {CT::open, L'╭'},  {CT::close, L'╮'},
-      {CT::dash, L'─'}, {CT::space, L' '}, {CT::right, L'⎫'},
-  };
-
-  const BOX box_bot = {
-      {CT::left, L'⎩'}, {CT::open, L'╰'},  {CT::close, L'╯'},
-      {CT::dash, L'─'}, {CT::space, L' '}, {CT::right, L'⎭'},
-  };
-
-  void print_box_line();
-  // Generated to_string() for PUBLIC CLASS_TEMPLATE fssb::FixedSizeStringBuffer<SPACE>
-  public:
-  auto to_string() const {
-    const std::string fmt_string = "fssb::FixedSizeStringBuffer<SPACE:={}>: int chars_={}, max_chars_={}, const int box_top={}, box_bot={}";
-    return fstr::format(fmt_string, SPACE, chars_, max_chars_, box_top, box_bot);
-  }
-// Generated formatter for PUBLIC enum fssb::FixedSizeStringBuffer<SPACE>::CT of type INT scoped
- friend constexpr auto format_as(const fssb::FixedSizeStringBuffer<SPACE>::CT obj) {
+struct EC {
+  enum class hdir { left, right };
+  hdir hval;
+  struct {
+    // enum inside unnamed class/struct can't be printed
+    enum class ab { a, b };
+    ab val;
+  
+/************ skipped because enum in inside unnamed struct/class **
+// Generated formatter for PUBLIC enum EC::(unnamed struct)::ab of type INT scoped
+ friend constexpr auto format_as(const EC::(unnamed struct)::ab obj) {
   fmt::string_view name = "<missing>";
   switch (obj) {
-    case fssb::FixedSizeStringBuffer<SPACE>::CT::left : name = "left" ; break;  // index=0
-    case fssb::FixedSizeStringBuffer<SPACE>::CT::open : name = "open" ; break;  // index=0
-    case fssb::FixedSizeStringBuffer<SPACE>::CT::close: name = "close"; break;  // index=0
-    case fssb::FixedSizeStringBuffer<SPACE>::CT::dash : name = "dash" ; break;  // index=0
-    case fssb::FixedSizeStringBuffer<SPACE>::CT::space: name = "space"; break;  // index=0
-    case fssb::FixedSizeStringBuffer<SPACE>::CT::right: name = "right"; break;  // index=0
+    case EC::(unnamed struct)::ab::a: name = "a"; break;  // index=0
+    case EC::(unnamed struct)::ab::b: name = "b"; break;  // index=1
+  }
+  return name;
+}
+
+******************** skipped */
+  // Generated to_string() for PUBLIC STRUCT_DECL EC::(unnamed struct)
+  public:
+  auto to_string() const {
+    const std::string fmt_string = "EC::(unnamed struct): val={}";
+    return fstr::format(fmt_string, val);
+  }
+} var;
+  // Generated to_string() for PUBLIC STRUCT_DECL EC
+  public:
+  auto to_string() const {
+    const std::string fmt_string = "EC: hval={}, var={}";
+    return fstr::format(fmt_string, hval, var);
+  }
+// Generated formatter for PUBLIC enum EC::hdir of type INT scoped
+ friend constexpr auto format_as(const EC::hdir obj) {
+  fmt::string_view name = "<missing>";
+  switch (obj) {
+    case EC::hdir::left : name = "left" ; break;  // index=0
+    case EC::hdir::right: name = "right"; break;  // index=1
   }
   return name;
 }
 };
 
-template <size_t SPACE>
-void FixedSizeStringBuffer<SPACE>::print_box_line()
-{
-  enum class CB { left, open, close, dash, space, right };
-  typedef std::unordered_map<CB, wchar_t> BOX;
-
-  static const BOX box_top = {
-      {CB::left, L'⎧'}, {CB::open, L'╭'},  {CB::close, L'╮'},
-      {CB::dash, L'─'}, {CB::space, L' '}, {CB::right, L'⎫'},
-  };
-
-  static const BOX box_bot = {
-      {CB::left, L'⎩'}, {CB::open, L'╰'},  {CB::close, L'╯'},
-      {CB::dash, L'─'}, {CB::space, L' '}, {CB::right, L'⎭'},
-  };
+template <typename T>
+class ET {
+  enum class vdir { up, down };
+  vdir vval;
+  T tval{};
+  // Generated to_string() for PUBLIC CLASS_TEMPLATE ET<T>
+  public:
+  auto to_string() const {
+    const std::string fmt_string = "ET<T:={}>: vval={}, T tval={}";
+    return fstr::format(fmt_string, fstr::get_type_name<T>(), vval, tval);
+  }
+// Generated formatter for PRIVATE enum ET<T>::vdir of type INT scoped
+ friend constexpr auto format_as(const ET<T>::vdir obj) {
+  fmt::string_view name = "<missing>";
+  switch (obj) {
+    case ET<T>::vdir::up  : name = "up"  ; break;  // index=0
+    case ET<T>::vdir::down: name = "down"; break;  // index=0
+  }
+  return name;
+}
 };
 
-}  // end namespace fssb
 
-#include <iostream>
 
 int main()
 {
   using std::cout;
   print_info(__FILE__, __TIMESTAMP__);
-
-  constexpr size_t max_size = 10;
-  auto rb = fssb::FixedSizeStringBuffer<max_size>();
-  cout << fmt::format(" rb={}\n", rb);
+  cout << fmt::format(" ET<int>()={}\n", ET<int>());
+  cout << fmt::format(" ET<ET<EC>>()={}\n", ET<ET<EC>>());
 }
 
 

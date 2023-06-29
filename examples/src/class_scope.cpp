@@ -73,7 +73,7 @@ class doc {
   // Generated to_string() for PUBLIC CLASS_DECL doc
   public:
   auto to_string() const {
-    const std::string fmt_string = "doc: int foo={}, paragraph bar={}";
+    const std::string fmt_string = "doc: int foo={}, bar={}";
     return fstr::format(fmt_string, foo, bar);
   }
 // Generated formatter for PRIVATE enum doc::paragraph of type INT scoped

@@ -4,4 +4,4 @@ file: class_namespace2.cpp
  Base0()=Base0: int a=0, b=0, base0=0 Base1()=Base1: int c=0, d=0, base1=0 Derived0()=Derived0: int a=10, derived0=0, b=0, base0=0 Derived1()=Derived1: int c=21, derived1=0, d=0, base1=0 Derived2()=Derived2: int b=42, d=42, derived2=0, a=10, derived0=0, base0=0, c=21, derived1=0, base1=0
  obj=A::Derived<T:=int>: T y=2, x=1 
  c=Parent::new_ns::C<T:=int>: T member=0 
- m1=Map<K:=int, V:=basic_string>: C<K> key=my_array<T:=int>: T x=0, C<V> value=my_array<T:=basic_string>: T x= 
+ m1=Map<K:=int, V:=basic_string>: key=my_array<T:=int>: T x=0, value=my_array<T:=basic_string>: T x= 

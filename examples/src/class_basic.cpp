@@ -33,7 +33,7 @@ struct Bar {
   // Generated to_string() for PUBLIC STRUCT_DECL Bar
   public:
   auto to_string() const {
-    const std::string fmt_string = "Bar: char[50] name={}, int i={}, double f={}, Foo foo={}";
+    const std::string fmt_string = "Bar: char[50] name={}, int i={}, double f={}, foo={}";
     return fstr::format(fmt_string, name, i, f, foo);
   }
 };
@@ -48,7 +48,7 @@ class Rectangle {
   // Generated to_string() for PUBLIC CLASS_DECL Rectangle
   public:
   auto to_string() const {
-    const std::string fmt_string = "Rectangle: int width={}, height={}, Bar bar={}";
+    const std::string fmt_string = "Rectangle: int width={}, height={}, bar={}";
     return fstr::format(fmt_string, width, height, bar);
   }
 } rect;
@@ -61,14 +61,14 @@ class Outer {
     // Generated to_string() for PRIVATE STRUCT_DECL Outer::(unnamed struct)
   public:
   auto to_string() const {
-    const std::string fmt_string = "Outer::(unnamed struct): int a={}, b={}, Rectangle r={}";
+    const std::string fmt_string = "Outer::(unnamed struct): int a={}, b={}, r={}";
     return fstr::format(fmt_string, a, b, r);
   }
 } anon;
   // Generated to_string() for PUBLIC CLASS_DECL Outer
   public:
   auto to_string() const {
-    const std::string fmt_string = "Outer: struct (unnamed struct) anon={}";
+    const std::string fmt_string = "Outer: anon={}";
     return fstr::format(fmt_string, anon);
   }
 } out;

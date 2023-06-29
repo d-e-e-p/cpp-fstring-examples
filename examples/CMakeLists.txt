@@ -16,11 +16,12 @@ endif()
 file(GLOB sources CONFIGURE_DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/psrc/*.cpp)
 file(GLOB headers CONFIGURE_DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/psrc/*.h)
 
-CPMAddPackage(NAME fmt SOURCE_DIR "${CMAKE_CURRENT_LIST_DIR}/fmt" GIT_REPOSITORY "https://github.com/fmtlib/fmt.git" GIT_TAG "master")
+#CPMAddPackage(NAME fmt SOURCE_DIR "${CMAKE_CURRENT_LIST_DIR}/fmt" GIT_REPOSITORY "https://github.com/fmtlib/fmt.git" GIT_TAG "master")
 # CPMAddPackage("gh:fmtlib/fmt#10.0.0")
-cmake_print_properties(TARGETS fmt PROPERTIES NAME TYPE INTERFACE_INCLUDE_DIRECTORIES)
-#find_package(fmt)
-#cmake_print_properties(TARGETS fmt::fmt PROPERTIES NAME TYPE INTERFACE_INCLUDE_DIRECTORIES)
+#cmake_print_properties(TARGETS fmt PROPERTIES NAME TYPE INTERFACE_INCLUDE_DIRECTORIES)
+
+find_package(fmt)
+cmake_print_properties(TARGETS fmt::fmt PROPERTIES NAME TYPE INTERFACE_INCLUDE_DIRECTORIES)
 
 # ---- Executable ----
 
@@ -61,8 +62,8 @@ foreach(target ${targets})
     get_filename_component(tgt ${target} NAME_WE)
     message(STATUS " adding exe ${tgt} from ${target}")
     add_executable(${tgt} ${target})
-    #target_link_libraries(${tgt} fmt::fmt)
-    target_link_libraries(${tgt} fmt)
+    target_link_libraries(${tgt} fmt::fmt)
+    #target_link_libraries(${tgt} fmt)
     target_include_directories(${tgt} PRIVATE "../include" "psrc")
     target_compile_features(${tgt} PRIVATE cxx_std_17)
     add_dependencies(${tgt} gen_headers)

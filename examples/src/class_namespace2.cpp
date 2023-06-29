@@ -169,7 +169,7 @@ struct Map {
   // Generated to_string() for PUBLIC CLASS_TEMPLATE Map<K, V, C>
   public:
   auto to_string() const {
-    const std::string fmt_string = "Map<K:={}, V:={}>: C<K> key={}, C<V> value={}";
+    const std::string fmt_string = "Map<K:={}, V:={}>: key={}, value={}";
     return fstr::format(fmt_string, fstr::get_type_name<K>(), fstr::get_type_name<V>(), key, value);
   }
 };
@@ -199,7 +199,7 @@ struct X : Y {
   // Generated to_string() for PUBLIC CLASS_TEMPLATE X<B>
   public:
   auto to_string() const {
-    const std::string fmt_string = "X<B:={}>: B b={}, int C={}, Y={}";
+    const std::string fmt_string = "X<B:={}>: b={}, int C={}, Y={}";
     return fstr::format(fmt_string, fstr::get_type_name<B>(), b, this->C, this->Y);
   }
 };

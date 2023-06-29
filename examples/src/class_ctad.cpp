@@ -51,20 +51,31 @@ template <class T>
 struct A {
   T t;
 
+  // anon structs
   struct {
-    long a, b;
+    long long a, b;
     // Generated to_string() for PUBLIC STRUCT_DECL A<T>::(unnamed struct)
   public:
   auto to_string() const {
-    const std::string fmt_string = "A<T>::(unnamed struct): long a={}, b={}";
+    const std::string fmt_string = "A<T>::(unnamed struct): long long a={}, b={}";
     return fstr::format(fmt_string, a, b);
   }
 } u;
+
+  struct {
+    char a, b;
+    // Generated to_string() for PUBLIC STRUCT_DECL A<T>::(unnamed struct)
+  public:
+  auto to_string() const {
+    const std::string fmt_string = "A<T>::(unnamed struct): char a={}, b={}";
+    return fstr::format(fmt_string, a, b);
+  }
+} v;
   // Generated to_string() for PUBLIC CLASS_TEMPLATE A<T>
   public:
   auto to_string() const {
-    const std::string fmt_string = "A<T:={}>: T t={}, struct (unnamed struct) u={}";
-    return fstr::format(fmt_string, fstr::get_type_name<T>(), t, u);
+    const std::string fmt_string = "A<T:={}>: T t={}, u={}, v={}";
+    return fstr::format(fmt_string, fstr::get_type_name<T>(), t, u, v);
   }
 };
 
@@ -75,7 +86,7 @@ struct B {
   // Generated to_string() for PUBLIC CLASS_TEMPLATE B<T>
   public:
   auto to_string() const {
-    const std::string fmt_string = "B<T:={}>: T t={}, A<T> a={}";
+    const std::string fmt_string = "B<T:={}>: T t={}, a={}";
     return fstr::format(fmt_string, fstr::get_type_name<T>(), t, a);
   }
 };
@@ -97,8 +108,8 @@ int main()
   using std::cout;
   print_info(__FILE__, __TIMESTAMP__);
 
-  A<int> a{1, {2, 3}};
-  auto b = B<int>{1, {2, {3, 4}}};
+  A<int> a{1, {2, 3}, {'a', 'b'}};
+  auto b = B<int>{1, a};
   cout << fmt::format("a={}\nb={}\n", a, b);
   cout << fmt::format("ValueList<1, 2, 3>()={}\n", ValueList<1, 2, 3>());
   cout << fmt::format("ValueList<'a', 'b', 'c'>()={}\n", ValueList<'a', 'b', 'c'>());

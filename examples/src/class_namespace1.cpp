@@ -32,21 +32,21 @@ struct {
       // Generated to_string() for PUBLIC STRUCT_DECL (unnamed struct)
   public:
   auto to_string() const {
-    const std::string fmt_string = "(unnamed struct): int k={}, struct (unnamed struct) obj0={}";
+    const std::string fmt_string = "(unnamed struct): int k={}, obj0={}";
     return fstr::format(fmt_string, k, obj0);
   }
 } obj1 ;
     // Generated to_string() for PUBLIC STRUCT_DECL (unnamed struct)
   public:
   auto to_string() const {
-    const std::string fmt_string = "(unnamed struct): int j={}, struct (unnamed struct) obj1={}";
+    const std::string fmt_string = "(unnamed struct): int j={}, obj1={}";
     return fstr::format(fmt_string, j, obj1);
   }
 } obj2 ;
   // Generated to_string() for PUBLIC STRUCT_DECL (unnamed struct)
   public:
   auto to_string() const {
-    const std::string fmt_string = "(unnamed struct): int i={}, struct (unnamed struct) obj2={}";
+    const std::string fmt_string = "(unnamed struct): int i={}, obj2={}";
     return fstr::format(fmt_string, i, obj2);
   }
 } obj3;
@@ -72,21 +72,21 @@ struct enclose {
       // Generated to_string() for PUBLIC STRUCT_DECL a::b::c::enclose::outer::inner
   public:
   auto to_string() const {
-    const std::string fmt_string = "a::b::c::enclose::outer::inner: const int x={}, int y={}, Base b={}";
+    const std::string fmt_string = "a::b::c::enclose::outer::inner: const int x={}, int y={}, b={}";
     return fstr::format(fmt_string, x, y, b);
   }
 } foo;
     // Generated to_string() for PUBLIC STRUCT_DECL a::b::c::enclose::outer
   public:
   auto to_string() const {
-    const std::string fmt_string = "a::b::c::enclose::outer: struct inner foo={}";
+    const std::string fmt_string = "a::b::c::enclose::outer: foo={}";
     return fstr::format(fmt_string, foo);
   }
 } bar;
   // Generated to_string() for PUBLIC STRUCT_DECL a::b::c::enclose
   public:
   auto to_string() const {
-    const std::string fmt_string = "a::b::c::enclose: struct outer bar={}";
+    const std::string fmt_string = "a::b::c::enclose: bar={}";
     return fstr::format(fmt_string, bar);
   }
 } obj1;

@@ -1,9 +1,11 @@
 
 # cpp_fstring_examples
 
-Examples of using a preprocessing script cpp-fstring to expand python-style 
-f-strings in C++ code to equivalent fmt::format (or one day std::format) commands.
-This companion site shows how to run cpp-format and shows results of running some examples.
+Examples of using a C++ preprocessing script [cpp-fstring](https://github.com/d-e-e-p/cpp-fstring) 
+to process python-style f-strings.   
+
+This companion repository shows how to incorporate cpp-format in a cmake environment,
+and has examples of using C++ f-strings.
 
 ## Credits/Motivation
 
@@ -39,10 +41,16 @@ Look at the Makefile for debug or release targets.
 The cmake command generates run files under `build` dir and then
 uses cpp-fstring to convert files under `psrc` dir to `src` dir.
 This generated code is compiled and executed. in `examples/CMakeLists.txt`
-the following cmake command add cpp-fstring step:
+the following cmake command adds the cpp-fstring step:
 
 ```bash
-COMMAND cpp-fstring ${header} -I src -I ../include > ${target}
+COMMAND cpp-fstring ${source} -I src -I ../include > ${target}
+```
+
+for a single file like `examples/psrc/class_basic.cpp` this is equvalent to:
+
+```bash
+cpp-fstring examples/psrc/class_basic.cpp -I src -I ../include > examples/src/class_basic.cpp
 ```
 
 

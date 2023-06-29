@@ -1,6 +1,6 @@
 file: class_ctad.cpp
-a=A<T:=int>: T t=1, struct (unnamed struct) u=A<T>::(unnamed struct): long a=2, b=3
-b=B<T:=int>: T t=1, A<T> a=A<T:=int>: T t=2, struct (unnamed struct) u=A<T>::(unnamed struct): long a=3, b=4
+a=A<T:=int>: T t=1, u=A<T>::(unnamed struct): long long a=2, b=3, v=A<T>::(unnamed struct): char a=a, b=b
+b=B<T:=int>: T t=1, a=A<T:=int>: T t=1, u=A<T>::(unnamed struct): long long a=2, b=3, v=A<T>::(unnamed struct): char a=a, b=b
 ValueList<1, 2, 3>()=ValueList<Values...>: const auto values=[1, 2, 3]
-ValueList<'a', 'b', 'c'>()=ValueList<Values...>: const auto values=['a', 'b', 'c']
+ValueList<'a', 'b', 'c'>()=ValueList<Values...>: const auto values=[a, b, c]
 ValueList<true, false, false>()=ValueList<Values...>: const auto values=[true, false, false]

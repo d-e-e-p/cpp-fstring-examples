@@ -4544,7 +4544,7 @@ private:
   // Generated to_string() for PUBLIC CLASS_DECL clipp::detail::match_t
   public:
   auto to_string() const {
-    const std::string fmt_string = "clipp::detail::match_t: int str_={}, scoped_dfs_traverser pos_={}";
+    const std::string fmt_string = "clipp::detail::match_t: int str_={}, pos_={}";
     return fstr::format(fmt_string, str_, pos_);
   }
 };
@@ -4719,7 +4719,7 @@ public:
       // Generated to_string() for PUBLIC CLASS_DECL clipp::parser::arg_mapping
   public:
   auto to_string() const {
-    const std::string fmt_string = "clipp::parser::arg_mapping: arg_index index_={}, int arg_={}, match_={}, repeat_={}, bool startsRepeatGroup_={}, blocked_={}, conflict_={}";
+    const std::string fmt_string = "clipp::parser::arg_mapping: index_={}, int arg_={}, match_={}, repeat_={}, bool startsRepeatGroup_={}, blocked_={}, conflict_={}";
     return fstr::format(fmt_string, index_, arg_, match_, repeat_, startsRepeatGroup_, blocked_, conflict_);
   }
 };
@@ -4744,7 +4744,7 @@ public:
       // Generated to_string() for PUBLIC CLASS_DECL clipp::parser::missing_event
   public:
   auto to_string() const {
-    const std::string fmt_string = "clipp::parser::missing_event: const parameter * param_={}, arg_index aftIndex_={}";
+    const std::string fmt_string = "clipp::parser::missing_event: const parameter * param_={}, aftIndex_={}";
     return fstr::format(fmt_string, fmt::ptr(param_), aftIndex_);
   }
 };
@@ -4768,7 +4768,7 @@ public:
       // Generated to_string() for PUBLIC STRUCT_DECL clipp::parser::miss_candidate
   public:
   auto to_string() const {
-    const std::string fmt_string = "clipp::parser::miss_candidate: int pos={}, arg_index index={}, bool startsRepeatGroup={}";
+    const std::string fmt_string = "clipp::parser::miss_candidate: int pos={}, index={}, bool startsRepeatGroup={}";
     return fstr::format(fmt_string, pos, index, startsRepeatGroup);
   }
 };
@@ -5253,7 +5253,7 @@ private:
   // Generated to_string() for PUBLIC CLASS_DECL clipp::parser
   public:
   auto to_string() const {
-    const std::string fmt_string = "clipp::parser: const int * root_={}, scoped_dfs_traverser pos_={}, arg_index index_={}, eaten_={}, int args_={}, missCand_={}, bool blocked_={}";
+    const std::string fmt_string = "clipp::parser: const int * root_={}, pos_={}, index_={}, eaten_={}, int args_={}, missCand_={}, bool blocked_={}";
     return fstr::format(fmt_string, fmt::ptr(root_), pos_, index_, eaten_, args_, missCand_, blocked_);
   }
 };
@@ -6717,7 +6717,7 @@ private:
   // Generated to_string() for PUBLIC CLASS_DECL clipp::usage_lines
   public:
   auto to_string() const {
-    const std::string fmt_string = "clipp::usage_lines: const int & cli_={}, doc_formatting fmt_={}, int prefix_={}, bool ommitOutermostSurrounders_={}";
+    const std::string fmt_string = "clipp::usage_lines: const int & cli_={}, fmt_={}, int prefix_={}, bool ommitOutermostSurrounders_={}";
     return fstr::format(fmt_string, cli_, fmt_, prefix_, ommitOutermostSurrounders_);
   }
 };
@@ -6956,7 +6956,7 @@ private:
   // Generated to_string() for PUBLIC CLASS_DECL clipp::documentation
   public:
   auto to_string() const {
-    const std::string fmt_string = "clipp::documentation: const int & cli_={}, doc_formatting fmt_={}, usgFmt_={}, int filter_={}";
+    const std::string fmt_string = "clipp::documentation: const int & cli_={}, fmt_={}, usgFmt_={}, int filter_={}";
     return fstr::format(fmt_string, cli_, fmt_, usgFmt_, filter_);
   }
 // Generated formatter for PRIVATE enum clipp::documentation::paragraph of type INT scoped

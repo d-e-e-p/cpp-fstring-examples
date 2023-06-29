@@ -38,7 +38,7 @@ class BaseSampleClass {
   // Generated to_string() for PUBLIC CLASS_DECL BaseSampleClass
   public:
   auto to_string() const {
-    const std::string fmt_string = "BaseSampleClass: Elephant el_base={}";
+    const std::string fmt_string = "BaseSampleClass: el_base={}";
     return fstr::format(fmt_string, el_base);
   }
 // Generated formatter for PRIVATE enum BaseSampleClass::Elephant of type UINT 
@@ -67,7 +67,7 @@ class SampleClass : public BaseSampleClass {
   // Generated to_string() for PUBLIC CLASS_DECL SampleClass
   public:
   auto to_string() const {
-    const std::string fmt_string = "SampleClass: int prop1={}, prop2={}, bool prop3={}, double prop4={}, int prop5={}, Elephant el_derived={}, el_base={}";
+    const std::string fmt_string = "SampleClass: int prop1={}, prop2={}, bool prop3={}, double prop4={}, int prop5={}, el_derived={}, el_base={}";
     return fstr::format(fmt_string, prop1, prop2, prop3, prop4, prop5, el_derived, this->el_base);
   }
 };
@@ -167,7 +167,7 @@ class Bug_3488053 {
   // Generated to_string() for PUBLIC CLASS_DECL Bug_3488053
   public:
   auto to_string() const {
-    const std::string fmt_string = "Bug_3488053: class Bug_3488053_Nested nest={}";
+    const std::string fmt_string = "Bug_3488053: nest={}";
     return fstr::format(fmt_string, nest);
   }
 };
@@ -305,7 +305,7 @@ struct AnonHolderClass {
   // Generated to_string() for PUBLIC STRUCT_DECL AnonHolderClass
   public:
   auto to_string() const {
-    const std::string fmt_string = "AnonHolderClass: struct (unnamed struct) a={}";
+    const std::string fmt_string = "AnonHolderClass: a={}";
     return fstr::format(fmt_string, a);
   }
 };
@@ -364,7 +364,7 @@ struct FrogClass {
   // Generated to_string() for PUBLIC STRUCT_DECL FrogClass
   public:
   auto to_string() const {
-    const std::string fmt_string = "FrogClass: struct (unnamed struct) x={}, y={}, z={}";
+    const std::string fmt_string = "FrogClass: x={}, y={}, z={}";
     return fstr::format(fmt_string, x, y, z);
   }
 };
@@ -429,7 +429,7 @@ class HogClass {
   // Generated to_string() for PUBLIC CLASS_DECL HogClass
   public:
   auto to_string() const {
-    const std::string fmt_string = "HogClass: union HogUnion u={}";
+    const std::string fmt_string = "HogClass: u={}";
     return fstr::format(fmt_string, u);
   }
 };

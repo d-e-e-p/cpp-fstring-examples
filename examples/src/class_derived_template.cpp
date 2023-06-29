@@ -162,7 +162,7 @@ class Container {
   // Generated to_string() for PUBLIC CLASS_TEMPLATE Container<T, C>
   public:
   auto to_string() const {
-    const std::string fmt_string = "Container<T:={}>: C<T> container={}";
+    const std::string fmt_string = "Container<T:={}>: container={}";
     return fstr::format(fmt_string, fstr::get_type_name<T>(), container);
   }
 };

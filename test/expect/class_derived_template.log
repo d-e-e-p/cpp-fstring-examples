@@ -6,10 +6,3 @@ file: class_derived_template.cpp
  Y()=Y: int y=13 
 
  Y() should print both y and x=0
-Map m=Map<K:=basic_string, T:=int>: int map1={"key1": 100, "key2": 200}, map2={"key3": Obj<T:=int>: T value=300, "key4": Obj<T:=int>: T value=500}
-Helper<int>()=Helper<int>: int value=2
-Helper<char>()=Helper<T:=char>: int value=1
-Container<int, std::vector> dp1=Container<T:=int>: C<T> container=[10, 20, 30]
-Container<std::string, std::list> dp2=Container<T:=basic_string>: C<T> container=["Hello", "World"]
-Container<std::tuple<int, char, double>, std::vector> Container<T:=tuple<int, char, double>>: C<T> container=[(10, 'a', 1), (20, 'b', 2)]
-Container<D, std::vector> Container<T:=D>: C<T> container=[D: int d=4, c=3, b=2, a=1, D: int d=4, c=3, b=2, a=1]

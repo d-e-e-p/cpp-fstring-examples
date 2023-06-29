@@ -1,3 +1,4 @@
 file: class_derived_basic.cpp
- Foo()=Foo: char[50] name=foo, Base b=Base: int bname=base, a=4
- Bar()=Bar: char[50] name=bar, int bname=base, a=4
+ Embed()=Embed: int name=embed, b1=Base1: int name=base1, a=1, b2=Base2: int name=base2, b=2
+ Derived()=Derived: int name=derived, a=1, b=2
+ Out: node=Out::Node: int data=0, Node * next=0x0

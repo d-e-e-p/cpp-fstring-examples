@@ -1,4 +1,4 @@
 file: class_decltype.cpp
-time: Mon Jun 26 00:36:53 2023
 Bar<A, B>()=Bar<T:=A, U:=B>: T t=<unknown>, U u=<unknown>
 Bar<C, D>()=Bar<T:=C, U:=D>: T t=C: int c=42, U u=D: int d=24
+shapes=[variant(Circle: double radius=2.5), variant(Rectangle: double width=3, height=4), variant(Triangle: double base=5, height=6)]

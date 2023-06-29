@@ -1,2 +1,2 @@
 file: class_basic.cpp
-Outer()=Outer: struct (unnamed struct) anon=Outer::(unnamed struct): int a=12, b=24, Rectangle r=Rectangle: int width=0, height=0, Bar bar=Bar: char[50] name=foo, int i=10, double f=3.14, Foo foo=Foo: int a=32, int[10] b=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Outer()=Outer: anon=Outer::(unnamed struct): int a=12, b=24, r=Rectangle: int width=0, height=0, bar=Bar: char[50] name=foo, int i=10, double f=3.14, foo=Foo: int a=32, int[10] b=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]

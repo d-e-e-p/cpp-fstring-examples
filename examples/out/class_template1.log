@@ -1,6 +1,6 @@
 file: class_template1.cpp
 ValueList<12, 24, 42>()=ValueList<Values...>: const auto values=[12, 24, 42]
-ValueList<'a', 'b', 'c'>()=ValueList<Values...>: const auto values=['a', 'b', 'c']
+ValueList<'a', 'b', 'c'>()=ValueList<Values...>: const auto values=[a, b, c]
 Const<1,1,1,1>()=Const<N0:=1, N1:=1, N2:=1, N3:=1>: int v=4
 LimitedInt<uint16_t, 0, 4094>(10)=LimitedInt<T:=unsigned short, Min:=0, Max:=4094>: T mValue=10
 Auto<'a'>()=Auto<n:=a>: int v=1
