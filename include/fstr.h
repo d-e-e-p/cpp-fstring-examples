@@ -83,7 +83,7 @@ void _remove_substring (std::string& str, const std::string& substr) {
     }
 }
 
-
+// get unmangled name for template or variable types
 template <typename T>
 std::string get_type_name() {
     const char* mangledName = typeid(T).name();
@@ -125,28 +125,13 @@ constexpr auto has_to_string(int)
 template <typename T>
 constexpr auto has_to_string(...) -> std::false_type;
 
-} // namespace fstr
-
-// Custom formatter for classes and structs with a to_string member function
-template <typename T>
-struct fmt::formatter<T, char, std::enable_if_t<decltype(fstr::has_to_string<T>(0))::value>> {
-    constexpr auto parse(format_parse_context& ctx) { return ctx.begin(); }
-
-    template <typename FormatContext>
-    auto format(const T& obj, FormatContext& ctx) const {
-        // Call the to_string function and format the resulting string
-        return fmt::format_to(ctx.out(), "{}", obj.to_string());
-    }
-};
 
 // safe format returns <unknown> string for un-formattable variables
-namespace fstr {
-
 // return param if it's formattable, else return <unknown> atring.
 template <typename T>
 auto safe_format(const T& value) -> std::string {
   if constexpr (fmt::is_formattable<T>::value) {
-    return fmt::format("{}", value);
+    return fmt::to_string(value); 
   } else {
     return "<unknown>";
   }
@@ -160,3 +145,16 @@ std::string format(const std::string& fmt_string, const Args&... args) {
 }
 
 } // namespace fstr
+
+// Custom formatter for classes and structs with a to_string member function
+namespace fmt {
+template <typename T>
+struct formatter <T, char, std::enable_if_t<decltype(fstr::has_to_string<T>(0))::value>> {
+    constexpr auto parse(format_parse_context& ctx) { return ctx.begin(); }
+    template <typename FormatContext>
+    auto format(const T& obj, FormatContext& ctx) const {
+        // Call the to_string function and format the resulting string
+        return fmt::format_to(ctx.out(), obj.to_string());
+    }
+};
+} // namespace fmt
