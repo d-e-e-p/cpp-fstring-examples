@@ -1,6 +1,6 @@
 /**
  * @file class_derived_basic.cpp
- * misc demo of cpp-fstring
+ * demo of cpp-fstring 
  *
  * @ingroup examples
  *
@@ -16,23 +16,45 @@
 #include "fstr.h"
 #include "utils.h"
 
-struct Base {
-  std::string bname = "base";
-  int a = 4;
+using std::string;
+
+// example 1
+struct Base1 {
+  string name = "base1";
+  int a = 1;
 };
 
-struct Foo {
-  char name[50] = "foo";
-  Base b;
+struct Base2 {
+  string name = "base2";
+  int b = 2;
 };
 
-struct Bar : Base {
-  char name[50] = "bar";
+struct Embed {
+  string name  = "embed";
+  Base1 b1;
+  Base2 b2;
 };
+
+struct Derived : Base1, Base2 {
+  string name = "derived";
+};
+
+// example 2
+
+// example 3
+class Out {
+    class Node {
+       public:
+          int data;
+          Node* next;
+    } node;
+};
+   
 
 int main()
 {
   using std::cout;
   print_info(__FILE__, __TIMESTAMP__);
-  cout << " {Foo()=}\n {Bar()=}\n";
+  cout << " {Embed()=}\n {Derived()=}\n";
+  cout << " {Out()}\n";
 }

@@ -17,19 +17,31 @@
 #include "utils.h"
 
 struct Base {
-  int a;
+  int a{};
   union {
     int i;
     double d;
     char c;
-  } u;
+  } u{};
 } b;
 
-union Onion {
+union Onion1 {
   int i;
   double d;
   char c;
-} u;
+} ui{10}, ud{20}, uc{30};
+
+union Onion2 {
+  float f;
+  char c;
+};
+
+
+union Outer {
+  Onion1 u1;
+  Onion2 u2;
+} out;
+
 
 int main()
 {
@@ -37,9 +49,9 @@ int main()
   print_info(__FILE__, __TIMESTAMP__);
 
   cout << " {b=} \n";
-  u.i = 10;
-  u.d = 4.2;
-  u.c = 'u';
-  cout << "u.i = " << u.i << " u.d = " << u.d << " u.c = " << u.c << " \n";
-  cout << " {u=} \n";
+  ui.i = 1;
+  ud.d = 4.2;
+  uc.c = 'u';
+  cout << " {ui=}\n {ud=}\n {uc=}\n";
+  cout << " {out}\n";
 }

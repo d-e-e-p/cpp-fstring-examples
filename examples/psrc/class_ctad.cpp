@@ -39,9 +39,14 @@ template <class T>
 struct A {
   T t;
 
+  // anon structs
   struct {
-    long a, b;
+    long long a, b;
   } u;
+
+  struct {
+    char a, b;
+  } v;
 };
 
 template <class T>
@@ -61,8 +66,8 @@ int main()
   using std::cout;
   print_info(__FILE__, __TIMESTAMP__);
 
-  A<int> a{1, {2, 3}};
-  auto b = B<int>{1, {2, {3, 4}}};
+  A<int> a{1, {2, 3}, {'a', 'b'}};
+  auto b = B<int>{1, a};
   cout << "{a=}\n{b=}\n";
   cout << "{ValueList<1, 2, 3>()=}\n";
   cout << "{ValueList<'a', 'b', 'c'>()=}\n";
